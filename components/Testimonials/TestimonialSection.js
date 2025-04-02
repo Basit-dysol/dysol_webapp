@@ -85,19 +85,19 @@ export default function TestimonialSection() {
               </div>
             </div>
             {/* Right-aligned carousel arrows */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mt-2">
               <button
                 onClick={handlePrev}
                 className=" hover:text-black transition group">
                 <img
                   src="/testimonialarrows/left.svg"
                   alt="Previous"
-                  className="group-hover:hidden"
+                  className="h-12 group-hover:hidden"
                 />
                 <img
                   src="/testimonialarrows/lefthover.svg"
                   alt="Previous Hover"
-                  className="hidden group-hover:block"
+                  className="h-12 hidden group-hover:block"
                 />
               </button>
               <button
@@ -106,12 +106,12 @@ export default function TestimonialSection() {
                 <img
                   src="/testimonialarrows/right.svg"
                   alt="Next"
-                  className="group-hover:hidden"
+                  className="h-12 group-hover:hidden"
                 />
                 <img
                   src="/testimonialarrows/righthover.svg"
                   alt="Next Hover"
-                  className="hidden group-hover:block"
+                  className="h-12 hidden group-hover:block"
                 />
               </button>
             </div>
