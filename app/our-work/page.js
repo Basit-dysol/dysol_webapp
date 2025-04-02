@@ -11,8 +11,8 @@ export default function OurWorkPage() {
   ];
 
   return (
-    <main className="p-10">
-      <h1 className="text-3xl font-bold">Our Work</h1>
+    <main className="flex flex-col items-baseline justify-center bg-[url('/LandingPage.png')] bg-cover bg-center text-center ">
+      <h1 className="mt-4 items-start text-left text-lg">Our Work</h1>
       <ul className="mt-5 space-y-3">
         {projects.map((project) => (
           <li key={project}>

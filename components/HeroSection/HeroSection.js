@@ -7,8 +7,8 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="h-[150vh] flex flex-col  items-baseline justify-center bg-[url('/LandingPage.png')] bg-cover bg-center text-center px-20 space-y-10 pr-0 lg:pr-[45vw]">
-        <h1 className="text-7xl text-left font-medium pt-20">
+      <section className="flex flex-col  items-baseline justify-center bg-[url('/LandingPage.png')] bg-cover text-center pt-28 rounded-b-4xl pb-14 px-20 space-y-10 pr-0 lg:pr-[45vw]">
+        <h1 className="text-7xl text-left font-medium pt-28">
           Let’s take your idea from concept to market
         </h1>
         <p className="mt-4 items-start text-left text-lg">

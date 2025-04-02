@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-4">
           {/* Become a Client Button */}
           <button
-            className="w-[183px] h-11 px-4 py-3 rounded-[16px] bg-white text-gray-950 font-normal text-base flex items-center justify-center gap-2"
+            className="w-[183px] h-11 px-4 py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2"
             onClick={() => setContactVisible(true)}>
             <img src="/becomeclient.svg" alt="" />
             Become a client
