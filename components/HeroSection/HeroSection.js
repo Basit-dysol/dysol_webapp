@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import ContactUs from '../ContactUs/ContactUs';
+import TellUsMoreButton from '../TellUsMoreButton/TellUsMoreButton';
 
 export default function HeroSection() {
   const [isContactVisible, setContactVisible] = useState(false);
@@ -19,12 +20,7 @@ export default function HeroSection() {
           to help your business make an impact. Are you ready to pioneer the
           future?
         </p>
-        <button
-          className="w-[226px] lg:w-[294px] h-11 lg:h-14 px-4 py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2"
-          onClick={() => setContactVisible(true)}>
-          <img src="/tellmore.svg" alt="" />
-          Tell us about your project
-        </button>
+        <TellUsMoreButton/>
       </section>
       {/* Contact Modal */}
       {isContactVisible && (
