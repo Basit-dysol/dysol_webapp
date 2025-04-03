@@ -57,7 +57,7 @@ export default function TestimonialSection() {
         {/* Left Column: Decorative or Icon Cluster */}
         <div className="bg-black flex items-center justify-center rounded-lg p-6">
           {/* You can replace this with an actual image or icon collage */}
-          <img src="" alt="Icon Collage" className="max-w-xs w-full h-auto" />
+          <img  alt="Icon Collage" className="max-w-xs w-full h-auto" />
         </div>
 
         {/* Right Column: Testimonial Carousel */}
@@ -69,7 +69,7 @@ export default function TestimonialSection() {
           <div className="flex items-center space-x-4">
             {/* Avatar (Optional) */}
             <img
-              src=""
+              // src=""
               alt={name}
               className="w-12 h-12 rounded-full object-cover"
             />
