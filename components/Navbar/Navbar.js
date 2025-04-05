@@ -22,14 +22,14 @@ export default function Navbar() {
     <>
       {/* Navbar with split background when open */}
       <nav
-        className={`fixed top-0 left-0 right-0 w-full p-4 z-50 flex items-center justify-between ${
-          isOpen ? 'relative' : 'bg-transparent backdrop-blur-sm'
+        className={`sticky top-0 left-0 right-0 w-full p-4 z-50 flex items-center justify-between ${
+          isOpen ? 'sticky' : 'bg-transparent backdrop-blur-sm'
         }`}>
         {/* Split background overlay */}
         {isOpen && (
           <div className="absolute inset-0 z-[-1] flex">
-            <div className="w-[70%] bg-[#220A39]"></div>
-            <div className="w-[30%] bg-[#B93182]"></div>
+            {/* <div className="w-2/3 bg-[#220A39]"></div>
+            <div className="w-1/3 bg-[#B93182]"></div> */}
           </div>
         )}
 
@@ -64,14 +64,16 @@ export default function Navbar() {
             className={`text-white p-2 rounded-full transition-all duration-300 ${
               isOpen ? 'bg-[#f1c4f4]' : 'bg-[#FFFFFF]/40'
             }`}>
-            {isOpen ? <X size={25} /> : <AlignRight size={25} />}
+            {isOpen ?
+              <X size={25} />
+            : <AlignRight size={25} />}
           </button>
         </div>
       </nav>
 
       {/* Full-screen Menu */}
       {isOpen && (
-        <div className="fixed inset-0 w-full h-full text-white/60 z-40">
+        <div className="sticky inset-0 w-full h-screen text-white/60 z-40">
           <div className="w-full h-full flex">
             {/* Left Column */}
             <div className="w-[70%] flex flex-col justify-end pb-12 bg-[#220A39] pl-20">
