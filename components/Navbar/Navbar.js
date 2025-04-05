@@ -80,18 +80,18 @@ export default function Navbar() {
               <h1 className=" mb-8">Navigation</h1>
               <div className="space-y-8">
                 {[
-                  'Home',
-                  'About us',
-                  'Our Work',
-                  'Our Process',
-                  'Contact us',
-                ].map((item) => (
+                  { name: 'Home', path: '/' },
+                  { name: 'About us', path: '/about-us' },
+                  { name: 'Our Work', path: '/our-work' },
+                  { name: 'Our Process', path: '/our-process' },
+                  { name: 'Contact us', path: '/contact-us' },
+                ].map(({ name, path }) => (
                   <Link
-                    key={item}
-                    href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                    key={name}
+                    href={path}
                     onClick={() => setIsOpen(false)}
                     className="text-4xl font-medium hover:text-white/80 transition-colors block">
-                    {item}
+                    {name}
                   </Link>
                 ))}
               </div>
