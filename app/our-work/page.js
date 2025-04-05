@@ -47,10 +47,10 @@ export default async function OurWorkPage() {
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
           {projects.map((project) => (
             <ProductCardOurWork
-              key={project.slug.current}
-              image={project.image}
+              key={project._id}
+              image={projects[0]?.projectImages} // First image from array
               description={project.title}
-              subdescription={project.idea}
+              subdescription={project.projectIdea}
               slug={project.slug.current}
               tags={project.tags}
             />

@@ -8,16 +8,15 @@ export async function GET() {
     console.log('🔁 Starting fetch from Sanity');
 
     const query = `
-      *[_type == "project"] {
-        _id,
-        title,
-        slug,
-        mainImage,
-        overview,
-        tags,
-        projectIdea
-      }
-    `;
+    *[_type == "project"] {
+    _id,
+    title,
+    slug,
+    projectImages,
+    overview,
+    tags,
+    projectIdea
+    }`;
 
     const projects = await client.fetch(query);
 
