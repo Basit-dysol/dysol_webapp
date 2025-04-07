@@ -48,7 +48,7 @@ export default async function OurWorkPage() {
           {projects.map((project) => (
             <ProductCardOurWork
               key={project._id}
-              image={projects[0]?.projectImages} // First image from array
+              image={project?.projectImages} // First image from array
               description={project.title}
               subdescription={project.projectIdea}
               slug={project.slug.current}
