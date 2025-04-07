@@ -71,8 +71,8 @@ export default function ProductCardOurWork({
     return `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}-${dimensions}.${format}`;
   };
 
-  const imageUrl = image?.asset?._ref ? getImageUrl(image.asset._ref) : null;
-  console.log('The final image url:   ', imageUrl);
+  const imageUrl =
+    image[0]?.asset?._ref ? getImageUrl(image[0].asset._ref) : null;
 
   return (
     <Link
