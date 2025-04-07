@@ -72,6 +72,7 @@ export default function ProductCardOurWork({
   };
 
   const imageUrl = image?.asset?._ref ? getImageUrl(image.asset._ref) : null;
+  console.log('The final image url:   ', imageUrl);
 
   return (
     <Link
