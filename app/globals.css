@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 ::-webkit-scrollbar {
   display: none;
@@ -7,7 +7,8 @@
 :root {
   --background: #ededed;
   --foreground: #1a1a1a;
-  --font-sans: 'Plus Jakarta Sans', Arial, sans-serif;
+  --font-sans: "Plus Jakarta Sans", Arial, sans-serif;
+  --font-jakarta: "Plus Jakarta Sans";
 }
 
 @theme inline {
@@ -22,4 +23,21 @@ body {
   color: var(--foreground);
   font-family: var(--font-jakarta), sans-serif;
   /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.nav-items {
+  gap: 14px;
+  width: 487px;
+  button {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* height: 62px; */
+    height: 55px;
+    border-radius: 16px;
+    .nav-items__text {
+      font-family: var(--font-jakarta), sans-serif;
+      /* font-size: 30px; */
+      /* font-size: 30px; */
+      font-weight: 500;
+    }
+  }
 }
