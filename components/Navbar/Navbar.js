@@ -28,7 +28,9 @@ export default function Navbar() {
         )}
 
         {/* Logo */}
-        <Link href="/" className="flex px-32 items-center transition-colors">
+        <Link
+          href="/"
+          className="flex xl:px-24 2xl:px-32 items-center transition-colors">
           <span>
             <img src="/dysollogo.svg" alt="" />
           </span>
@@ -77,8 +79,10 @@ export default function Navbar() {
           <div className="w-full h-full flex">
             {/* Left Column */}
             <div className="w-[70%] flex flex-col justify-center  md:justify-end  pb-12 bg-[#220A39] pl-10 md:pl-20">
-              <h1 className=" mb-8 font-medium text-2xl">Navigation</h1>
-              <div className="space-y-9">
+              <h1 className=" mb-8 font-medium xl:text-xl 2xl:text-2xl">
+                Navigation
+              </h1>
+              <div className="xl:space-y-6 2xl:space-y-9">
                 {[
                   { name: 'Home', path: '/' },
                   { name: 'About us', path: '/about-us' },
@@ -90,7 +94,7 @@ export default function Navbar() {
                     key={name}
                     href={path}
                     onClick={() => setIsOpen(false)}
-                    className=" text-3xl md:text-6xl font-medium hover:text-white/80 transition-colors block">
+                    className=" text-3xl xl:text-5xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
                     {name}
                   </Link>
                 ))}
