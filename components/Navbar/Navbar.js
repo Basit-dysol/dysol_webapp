@@ -16,9 +16,9 @@ export default function Navbar() {
     <>
       {/* Navbar with split background when open */}
       <nav
-        className={`sticky top-0 left-0 right-0 w-full p-4 z-50 flex items-center justify-between ${
-          isOpen ? 'sticky' : 'bg-transparent backdrop-blur-sm'
-          }`}>
+        className={`sticky top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${
+          isOpen ? 'sticky' : ''
+        }`}>
         {/* Split background overlay */}
         {isOpen && (
           <div className="absolute inset-0 z-[-1] flex">
@@ -28,7 +28,7 @@ export default function Navbar() {
         )}
 
         {/* Logo */}
-        <Link href="/" className="flex mx-14 items-center transition-colors">
+        <Link href="/" className="flex px-32 items-center transition-colors">
           <span>
             <img src="/dysollogo.svg" alt="" />
           </span>
@@ -36,7 +36,7 @@ export default function Navbar() {
         </Link>
 
         {/* Right Section */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center px-16 gap-4">
           {/* Become a Client Button */}
           <button
             className="md:w-[183px]  h-11 px-3 md:px-[18px]  py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2"
@@ -53,14 +53,20 @@ export default function Navbar() {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`text-white p-3 rounded-full transition-all duration-300 ${isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
-              }`}>
-            {isOpen ?
-              <Image src='/cross.svg' alt="Close Menu" width={24} height={24} />
-
-              // <X size={25} />
-              : <Image src='/menu.svg' alt="Open Menu" width={24} height={24} />}
-
+            className={`text-white p-3 rounded-full transition-all duration-300 ${
+              isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
+            }`}>
+            {
+              isOpen ?
+                <Image
+                  src="/cross.svg"
+                  alt="Close Menu"
+                  width={24}
+                  height={24}
+                />
+                // <X size={25} />
+              : <Image src="/menu.svg" alt="Open Menu" width={24} height={24} />
+            }
           </button>
         </div>
       </nav>
@@ -104,10 +110,9 @@ export default function Navbar() {
                 <button
                   key={text}
                   className="w-full max-w-md h-12 px-5 py-3 flex items-center gap-5 rounded-xl border border-white/20 bg-white/20 hover:bg-white/10 transition-colors">
-                  <Image src={Icon} alt={text} width={36} height={36}  />
+                  <Image src={Icon} alt={text} width={36} height={36} />
 
-                  <div
-                    className=" h-[24px] min-h-[1em] w-[1px] bg-[rgba(255,255,255,0.2)] dark:bg-white/10"></div>
+                  <div className=" h-[24px] min-h-[1em] w-[1px] bg-[rgba(255,255,255,0.2)] dark:bg-white/10"></div>
 
                   <span className="nav-items__text text-2xl">{text}</span>
                 </button>

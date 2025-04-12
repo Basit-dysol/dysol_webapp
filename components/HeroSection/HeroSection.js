@@ -8,11 +8,11 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="flex flex-col h-[130vh] -translate-y-16 text-white/90 items-baseline justify-end bg-[url('/LandingPage.png')] bg-cover text-center rounded-b-4xl pb-[18vh] px-20 space-y-10 pr-0 lg:pr-[45vw]">
-        <h1 className="text-[clamp(2.5rem,3.5vw,7rem)] text-left font-medium pt-28">
+      <section className="flex flex-col -translate-y-18 h-screen text-white justify-end bg-[url('/LandingPage.png')] bg-cover rounded-4xl m-3 pb-20 px-32 space-y-8 pr-0 lg:pr-[45vw]">
+        <h1 className="text-[5.125rem] lg:w-3xl text-left font-medium leading-24">
           Let's take your idea from concept to market
         </h1>
-        <p className="mt-4 text-left text-[clamp(1rem,1.25vw,2.5rem)] leading-relaxed max-w-3xl">
+        <p className="text-xl text-white/60 font-extralight lg:w-3xl text-left leading-relaxed">
           At Dysol, we bring your product idea to life with top-tier engineering
           and design. From idea to manufacturing, we're your trusted partner in
           end-to-end product development.

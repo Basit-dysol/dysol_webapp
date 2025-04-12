@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 ::-webkit-scrollbar {
   display: none;
@@ -7,8 +7,8 @@
 :root {
   --background: #ededed;
   --foreground: #1a1a1a;
-  --font-sans: "Plus Jakarta Sans", Arial, sans-serif;
-  --font-jakarta: "Plus Jakarta Sans";
+  --font-sans: 'Plus Jakarta Sans', Arial, sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans';
 }
 
 @theme inline {
@@ -27,7 +27,7 @@ body {
 
 .nav-items {
   gap: 14px;
-  width: 487px;
+  width: 30%;
   button {
     border: 1px solid rgba(255, 255, 255, 0.2);
     /* height: 62px; */
