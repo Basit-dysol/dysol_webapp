@@ -16,9 +16,7 @@ export default function Navbar() {
     <>
       {/* Navbar with split background when open */}
       <nav
-        className={`sticky top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${
-          isOpen ? 'sticky' : ''
-        }`}>
+        className={`absolute max-w-[1728px] top-0  pt-6 right-0 w-full z-50 flex justify-self-center items-center justify-between }`}>
         {/* Split background overlay */}
         {isOpen && (
           <div className="absolute inset-0 z-[-1] flex">

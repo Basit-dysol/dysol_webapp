@@ -8,7 +8,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="flex flex-col -translate-y-18 xl:h-[150vh] 2xl:h-[110vh] text-white justify-end bg-[url('/LandingPage.png')] bg-cover rounded-4xl m-3 pb-20 xl:px-24 2xl:px-32 space-y-8 pr-0 xl:pr-[45vw] 2xl:pr-[45vw]">
+      <section className="flex flex-col -translate-y-0 xl:h-[150vh] 2xl:h-[110vh] text-white justify-end bg-[url('/LandingPage.png')] bg-cover rounded-4xl pb-20 xl:px-24 2xl:px-32 space-y-8 pr-0 xl:pr-[45vw] 2xl:pr-[45vw]">
         <h1 className="xl:text-[4.125rem] 2xl:text-[5.125rem] xl:w-[43vw] 2xl:w-3xl text-left font-medium xl:leading-[4.5rem] 2xl:leading-24">
           Let's take your idea from concept to market
         </h1>
