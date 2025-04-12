@@ -8,6 +8,7 @@
   --background: #ededed;
   --foreground: #1a1a1a;
   --font-sans: 'Plus Jakarta Sans', Arial, sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans';
 }
 
 @theme inline {
@@ -23,4 +24,20 @@ body {
   font-family: var(--font-jakarta), sans-serif;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
-/* New deployment */
+
+.nav-items {
+  gap: 14px;
+  width: 30%;
+  button {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* height: 62px; */
+    height: 55px;
+    border-radius: 16px;
+    .nav-items__text {
+      font-family: var(--font-jakarta), sans-serif;
+      /* font-size: 30px; */
+      /* font-size: 30px; */
+      font-weight: 500;
+    }
+  }
+}
