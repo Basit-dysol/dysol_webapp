@@ -25,9 +25,10 @@ body {
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
-.nav-items {
+.nav-items-right {
   gap: 14px;
   width: 30%;
+  /* min-width: 487px; */
   button {
     border: 1px solid rgba(255, 255, 255, 0.2);
     /* height: 62px; */
@@ -39,5 +40,11 @@ body {
       /* font-size: 30px; */
       font-weight: 500;
     }
+  }
+}
+
+.nav-items-left {
+  img {
+    color: red;
   }
 }

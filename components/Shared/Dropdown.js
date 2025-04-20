@@ -11,7 +11,7 @@ export default function DropdownComponent() {
   return (
     <div className="relative inline-block text-left">
       <button
-        onClick={() => setOpen(!open)}
+        // onClick={() => setOpen(!open)}
         className=" h-11 px-[18px] py-3 rounded-[16px] bg-gray-950 text-white flex items-center justify-center gap-1"
       >
         EN
@@ -20,13 +20,13 @@ export default function DropdownComponent() {
       </button>
 
       {open && (
-        <div className="absolute mt-2 w-44 bg-white border rounded shadow-lg z-50">
-          <ul className="py-1 text-sm text-gray-700">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
+        // <div className="absolute mt-2 w-44 bg-white border rounded shadow-lg z-50">
+          // <ul className="py-1 text-sm text-gray-700">
+            {/* <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
             <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Settings</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
-          </ul>
-        </div>
+            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li> */}
+          // </ul>
+        // </div>
       )}
     </div>
   );

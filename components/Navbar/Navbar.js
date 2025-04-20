@@ -16,9 +16,8 @@ export default function Navbar() {
     <>
       {/* Navbar with split background when open */}
       <nav
-        className={`sticky top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${
-          isOpen ? 'sticky' : ''
-        }`}>
+        className={`sticky top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${isOpen ? 'sticky' : ''
+          }`}>
         {/* Split background overlay */}
         {isOpen && (
           <div className="absolute inset-0 z-[-1] flex">
@@ -53,9 +52,8 @@ export default function Navbar() {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`text-white p-3 rounded-full transition-all duration-300 ${
-              isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
-            }`}>
+            className={`text-white p-3 rounded-full transition-all duration-300 ${isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
+              }`}>
             {
               isOpen ?
                 <Image
@@ -65,7 +63,7 @@ export default function Navbar() {
                   height={24}
                 />
                 // <X size={25} />
-              : <Image src="/menu.svg" alt="Open Menu" width={24} height={24} />
+                : <Image src="/menu.svg" alt="Open Menu" width={24} height={24} />
             }
           </button>
         </div>
@@ -73,12 +71,12 @@ export default function Navbar() {
 
       {/* Full-screen Menu */}
       {isOpen && (
-        <div className="sticky inset-0 w-full h-screen text-white/60 z-40">
+        <div className="sticky inset-0 w-full h-screen text-white/60 z-40"> 
           <div className="w-full h-full flex">
             {/* Left Column */}
-            <div className="w-[70%] flex flex-col justify-center  md:justify-end  pb-12 bg-[#220A39] pl-10 md:pl-20">
+            <div className=" w-[70%] flex flex-col justify-center  md:justify-end  pb-12 bg-[#220A39] pl-10 md:pl-20">
               <h1 className=" mb-8 font-medium text-2xl">Navigation</h1>
-              <div className="space-y-9">
+              <div className=" space-y-5 md:space-y-8 lg:space-y-9">
                 {[
                   { name: 'Home', path: '/' },
                   { name: 'About us', path: '/about-us' },
@@ -90,15 +88,17 @@ export default function Navbar() {
                     key={name}
                     href={path}
                     onClick={() => setIsOpen(false)}
-                    className=" text-3xl md:text-6xl font-medium hover:text-white/80 transition-colors block">
+                    className="nav-items-left  group flex text-3xl md:text-5xl lg:text-6xl font-medium hover:text-white/80 transition-colors">
                     {name}
+                    <Image className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" src='/right-arrow.svg' width={50} height={50} alt='right-arrow' />
+
                   </Link>
                 ))}
               </div>
             </div>
 
             {/* Right Column */}
-            <div className="nav-items flex flex-col items-center align-middle justify-center  md:justify-end sm:pb-12 pb-0 bg-[#B93182] px-2 md:px-10">
+            <div className="nav-items-right w-[487px] lg:w-[30%] flex flex-col items-center align-middle justify-center  md:justify-end sm:pb-12 pb-0 bg-[#B93182] px-2 md:px-10">
               {[
                 { Icon: '/emailUs.svg', text: 'Email us' },
                 { Icon: '/linkedIn.svg', text: 'LinkedIn' },
