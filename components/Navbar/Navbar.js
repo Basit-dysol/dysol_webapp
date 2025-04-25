@@ -76,11 +76,11 @@ export default function Navbar() {
         <div className="sticky inset-0 w-full h-screen text-white/60 z-40">
           <div className="w-full h-full flex">
             {/* Left Column */}
-            <div className="w-[70%] flex flex-col justify-center  md:justify-end  pb-12 bg-[#220A39] pl-10 md:pl-20">
+            <div className="w-[70%] flex flex-col justify-center  md:justify-end  pb-12 bg-[#220A39] pl-12 md:pl-24">
               <h1 className=" mb-8 font-medium xl:text-xl 2xl:text-2xl">
                 Navigation
               </h1>
-              <div className="xl:space-y-6 2xl:space-y-9">
+              <div className="  xl:space-y-4 2xl:space-y-9">
                 {[
                   { name: 'Home', path: '/' },
                   { name: 'About us', path: '/about-us' },
@@ -92,15 +92,22 @@ export default function Navbar() {
                     key={name}
                     href={path}
                     onClick={() => setIsOpen(false)}
-                    className=" text-3xl xl:text-5xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
+                    className=" text-2xl xl:leading-0 xl:text-4xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
                     {name}
+                    <Image
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      src="/right-arrow.svg"
+                      width={50}
+                      height={50}
+                      alt="right-arrow"
+                    />
                   </Link>
                 ))}
               </div>
             </div>
 
             {/* Right Column */}
-            <div className="nav-items flex flex-col items-center align-middle justify-center  md:justify-end sm:pb-12 pb-0 bg-[#B93182] px-2 md:px-10">
+            <div className="nav-items-right w-[487px] lg:w-[30%] flex flex-col items-center align-middle justify-center  md:justify-end sm:pb-12 pb-0 bg-[#B93182]  px-2 md:px-10">
               {[
                 { Icon: '/emailUs.svg', text: 'Email us' },
                 { Icon: '/linkedIn.svg', text: 'LinkedIn' },
