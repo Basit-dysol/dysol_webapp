@@ -16,7 +16,7 @@ export default function Navbar() {
     <>
       {/* Navbar with split background when open */}
       <nav
-        className={`absolute max-w-[1728px] top-0  pt-6 w-full z-50 flex justify-self-center items-center justify-between }`}>
+        className={`absolute max-w-[1920px] xl:px-24 2xl:px-32 top-0  pt-6 w-full z-50 flex place-content-between  }`}>
         {/* Split background overlay */}
         {isOpen && (
           <div className="absolute inset-0 z-[-1] flex">
@@ -26,9 +26,7 @@ export default function Navbar() {
         )}
 
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex xl:px-24 2xl:px-32 items-center transition-colors">
+        <Link href="/" className="flex  transition-colors">
           <span>
             <img src="/dysollogo.svg" alt="" />
           </span>
@@ -36,7 +34,7 @@ export default function Navbar() {
         </Link>
 
         {/* Right Section */}
-        <div className="flex items-center px-16 gap-4">
+        <div className="flex items-center gap-4">
           {/* Become a Client Button */}
           <button
             className="md:w-[183px]  h-11 px-3 md:px-[18px]  py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2"

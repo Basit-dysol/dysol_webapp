@@ -8,9 +8,13 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="flex flex-col xl:h-[150vh] 2xl:h-[100vh] text-white justify-end bg-[url('/LandingPage.png')] bg-cover rounded-4xl pb-16 xl:px-24 2xl:px-32 space-y-6 pr-0 xl:pr-[45vw] 2xl:pr-[45vw]">
-        <h1 className="xl:text-[4.25rem] 2xl:text-[5.125rem]  xl:w-[45vw] 2xl:w-[43vw] text-left font-medium xl:leading-[5.25rem] 2xl:leading-24">
-          Let's take your idea from concept to market
+      <section className="flex flex-col h-[50vw] xl:h-[60vw] 2xl:h-[100vh] text-white justify-end bg-[url('/LandingPage.png')] bg-cover rounded-4xl pb-16 xl:px-24 2xl:px-32 space-y-6 pr-0 xl:pr-[40vw] 2xl:pr-[40vw]">
+        <h1 className="text-4xl xl:text-[4.25rem] 2xl:text-[5.125rem]  xl:w-[45vw] 2xl:w-[43vw] text-left font-medium xl:leading-[5.25rem] 2xl:leading-24">
+          Let's take your
+          <br className="hidden sm:block" />
+          idea from concept
+          <br className="hidden sm:block" />
+          to market
         </h1>
         <p className="xl:text-shadow-md 2xl:text-xl xl:w-[43vw] 2xl:w-3xl text-white/60 font-extralight text-left leading-relaxed">
           At Dysol, we bring your product idea to life with top-tier engineering
