@@ -53,7 +53,7 @@
 import Link from 'next/link';
 
 export default function ProductCardOurWork({
-  image, // Should be project.projectImages[0] from your data
+  image,
   description,
   subdescription,
   slug,
@@ -72,6 +72,8 @@ export default function ProductCardOurWork({
   };
 
   const imageUrl = image?.asset?._ref ? getImageUrl(image.asset._ref) : null;
+
+  console.log(imageUrl)
 
   return (
     <Link

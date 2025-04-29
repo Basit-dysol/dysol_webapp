@@ -1,4 +1,6 @@
 import ProductCardOurWork from '@/components/Ourworkpage-component/ProductCardOurWork';
+import Breadcrumbs from '@/components/Shared/Breadcrumbs';
+
 
 export default async function OurWorkPage() {
   try {
@@ -31,32 +33,30 @@ export default async function OurWorkPage() {
         {/* Page Header */}
 
         <div className="mb-12">
-          <h2 className="mt-12 text-white/50 items-start text-left ">
-            <a href="/">Home</a> / <span>Our Work</span>
-          </h2>
-          <h2 className="mt-8 text-5xl font-medium items-start text-left">
-            Our portfolio of innovations
-          </h2>
-          <p className="text-white/70 mt-4">
-            Dysol is proud to design the future, one innovative project at a
-            time.
-          </p>
-        </div>
+         <Breadcrumbs label="Our Selected Work"  />
+        <h2 className="mt-8 text-6xl font-bold items-start text-left font-jakarta">
+          Our portfolio of innovations
+        </h2>
+        <p className="text-white/70 mt-4">
+          Dysol is proud to design the future, one innovative project at a
+          time.
+        </p>
+      </div>
 
-        {/* Grid for Project Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
-          {projects.map((project) => (
-            <ProductCardOurWork
-              key={project._id}
-              image={projects[0]?.projectImages} // First image from array
-              description={project.title}
-              subdescription={project.projectIdea}
-              slug={project.slug.current}
-              tags={project.tags}
-            />
-          ))}
-        </div>
-      </main>
+        {/* Grid for Project Cards */ }
+    <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
+      {projects.map((project) => (
+        <ProductCardOurWork
+          key={project._id}
+          image={projects[0]?.projectImages} // First image from array
+          description={project.title}
+          subdescription={project.projectIdea}
+          slug={project.slug.current}
+          tags={project.tags}
+        />
+      ))}
+    </div>
+      </main >
     );
   } catch (error) {
     console.error('💥 Error in OurWorkPage:', error.message);
