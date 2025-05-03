@@ -8,7 +8,7 @@ export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
 
   return (
-    <footer className="bg-black text-white py-16 px-20 relative">
+    <footer style={{backgroundImage:`url('/footer-bg.png')`}} className="background-cover no-repeat text-white py-16 px-20 relative">
       <div className="max-w-7xl grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {/* Left Side - Call to Action */}
         <div className="flex flex-col justify-between">

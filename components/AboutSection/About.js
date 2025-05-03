@@ -11,7 +11,7 @@ export default function AboutSection() {
       {/* Content Section */}
       <div className="flex w-full flex-row gap-12">
         {/* Left Side - Clients */}
-        <div className="flex flex-col items-start justify-center">
+        <div className="flex flex-col items-start justify-center flex-1">
           <h2 className="mt-2 pb-12 text-[2.5rem] font-semibold text-left leading-tight">
             We don't just think outside the box; <br /> we explore new
             frontiers.
@@ -45,7 +45,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right Side - Description */}
-        <div className="flex flex-col w-[33vw] text-lg leading-relaxed">
+        <div className="flex flex-col w-[33vw] text-lg leading-relaxed flex-1">
           <p>
             With over{' '}
             <span className="text-white font-semibold">100+ happy clients</span>

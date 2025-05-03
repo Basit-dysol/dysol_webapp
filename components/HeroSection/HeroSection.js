@@ -8,6 +8,13 @@ export default function HeroSection() {
 
   return (
     <>
+     {/* <section className="flex flex-col min-h-screen text-white justify-end bg-[url('/LandingPage.png')] bg-cover rounded-4xl mt-0  m-3 pb-20 px-32 gap-[32px] pt-8">
+        <div className='flex flex-col space-y-8 lg:max-w-[55vw] mt-20'>
+
+        <h1 className="text-[3rem] lg:pt-4 xl:pt-4 xl:text-[4rem] xl:w-3xl text-left font-medium">
+          Let's take your idea from concept to market
+        </h1>
+        <p className="text-lg lg:text-xl text-white/60 font-light lg:w-3xl text-left leading-relaxed"></p> */}
       <section className="flex flex-col h-[50vw] m-2 xl:h-[60vw] 2xl:h-[65vw] text-white justify-end bg-[url('/LandingPage.png')] bg-cover bg-center  rounded-4xl pb-16 xl:px-24 2xl:px-32 space-y-6 pr-0 xl:pr-[40vw] 2xl:pr-[40vw]">
         <h1 className="text-4xl xl:text-[4.25rem] 2xl:text-[5.125rem]  xl:w-[45vw] 2xl:w-[43vw] text-left font-medium xl:leading-[5.25rem] 2xl:leading-24">
           Let's take your
@@ -25,6 +32,7 @@ export default function HeroSection() {
           to help your business make an impact. Are you ready to pioneer the
           future?
         </p>
+        {/* </div> */}
         <TellUsMoreButton />
       </section>
       {/* Contact Modal */}

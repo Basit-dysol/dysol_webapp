@@ -48,3 +48,18 @@ body {
     color: red;
   }
 }
+@keyframes slideIn{
+  0%{
+    transform: translateY(200px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.product-card-description{
+  display: none;
+}
+.product-card:hover .product-card-description{
+animation: slideIn 500ms;
+display: block;
+}
