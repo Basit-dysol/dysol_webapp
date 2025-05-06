@@ -6,42 +6,42 @@ const projects = [
     description: 'Wound VAC Device',
     subdescription:
       'Enhances wound treatment by speeding healing and improving outcomes',
-    slug: 'project-a',
+    slug: 'wound-vac-device',
   },
   {
     image: '/project-b.png',
     description: 'World’s First Solar Breast Pump',
     subdescription:
       'Enhances wound treatment by speeding healing and improving outcomes',
-    slug: 'project-b',
+    slug: 'world-s-first-solar-breast-pump',
   },
   {
     image: '/project-c.png',
     description: 'Iris Identifiction Device',
     subdescription:
       'Enhances wound treatment by speeding healing and improving outcomes',
-    slug: 'project-c',
+    slug: 'iris-identification-device',
   },
   {
     image: '/project-d.png',
     description: 'Baby Rocker',
     subdescription:
       'Enhances wound treatment by speeding healing and improving outcomes',
-    slug: 'project-d',
+    slug: 'baby-rocker',
   },
   {
     image: '/project-e.png',
     description: 'Smart Blood Pressure Monitor',
     subdescription:
       'Enhances wound treatment by speeding healing and improving outcomes',
-    slug: 'project-e',
+    slug: 'smart-blood-pressure-monitor',
   },
   {
     image: '/project-f.png',
     description: 'AI AC Control Device',
     subdescription:
       'Enhances wound treatment by speeding healing and improving outcomes',
-    slug: 'project-f',
+    slug: 'ai-ac-control-device',
   },
 ];
 
