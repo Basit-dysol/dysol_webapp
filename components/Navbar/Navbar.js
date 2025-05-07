@@ -16,7 +16,7 @@ export default function Navbar() {
     <>
       {/* Navbar with split background when open */}
       <nav
-        className={`absolute max-w-[1920px] pr-10 pl-32 top-0  pt-10 w-full z-50 flex place-content-between  }`}>
+        className={`absolute max-w-[1920px] pr-10 pl-25 top-0  pt-10 w-full z-50 flex place-content-between  }`}>
            {/* className={`fixed top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${isOpen ? 'sticky' : ''
           }` */}
         {/* Split background overlay */}
@@ -83,7 +83,7 @@ export default function Navbar() {
               <div className="  xl:space-y-4 2xl:space-y-9">
                 {[
                   { name: 'Home', path: '/' },
-                  { name: 'About us', path: '/about-us' },
+                  { name: 'About us', path: '/about' },
                   { name: 'Our Work', path: '/our-work' },
                   { name: 'Our Process', path: '/our-process' },
                   { name: 'Contact us', path: '/contact-us' },

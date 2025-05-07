@@ -9,6 +9,7 @@
   --foreground: #ededed;
   --font-sans: 'Plus Jakarta Sans', Arial, sans-serif;
   --font-jakarta: 'Plus Jakarta Sans';
+  --font-inter: 'Inter', Arial, sans-serif;
 }
 
 @theme inline {

@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google';
+import { Geist, Geist_Mono, Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import { Container } from '@/components/Container';
 import Navbar from '@/components/Navbar/Navbar';
 import './globals.css';
@@ -16,6 +16,11 @@ const jakarta = Plus_Jakarta_Sans({
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 });
 

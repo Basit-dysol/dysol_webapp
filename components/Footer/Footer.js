@@ -3,19 +3,43 @@
 import { useState } from 'react';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import TellUsMoreButton from '@/components/TellUsMoreButton/TellUsMoreButton';
+import Link from 'next/link';
+
 
 export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
 
+  const quickLinks = [
+    { label: 'Our Work', link: '' },
+    { label: 'Our Process', link: '' },
+    { label: 'About Us', link: '/about' },
+    { label: 'Blog', link: '' },
+  ];
+
+  const socialLinks = [
+    { label: 'Instagram', link: '' },
+    { label: 'X (Twitter)', link: '' },
+    { label: 'LinkedIn', link: '' },
+    { label: 'Facebook', link: '' },
+  ]
+
   return (
-    <footer style={{backgroundImage:`url('/footer-bg.png')`}} className="background-cover no-repeat text-white py-16 px-20 relative">
-      <div className="max-w-7xl grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
+    <footer style={{ backgroundImage: `url('/footer-bg.png')` }} className="background-cover bg-[#0D0D0D] no-repeat min-h-[calc(100vh-45px)] text-white pl-25 pr-15 py-30 relative">
+      {/* Logo */}
+      <Link href="/" className="flex transition-colors pb-5">
+        <span>
+          <img src="/dysollogo.svg" alt="" />
+        </span>
+        {/* <span className={isOpen ? 'text-white' : 'text-pink-300'}>▶</span> */}
+      </Link>
+
+      <div className="max-w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {/* Left Side - Call to Action */}
-        <div className="flex flex-col justify-between">
-          <h2 className="text-4xl font-bold">
+        <div className="flex flex-col justify-between gap-8">
+          <h2 className="text-[48px] font-medium font-[Plus_Jakarta_Sans]">
             Let’s discuss your brilliant idea!
           </h2>
-          <p className="text-gray-400 mt-2">
+          <p className="text-gray-400">
             Feel free to reach out if you want to collaborate with us, or simply
             have a chat.
           </p>
@@ -28,18 +52,18 @@ export default function Footer() {
           <div className='flex flex-col'>
             <h3 className="font-semibold text-lg pb-4">Contact us</h3>
             {/* <div className='flex flex-1 flex-col content-around flex-wrap'> */}
-              {/* <span > */}
-                <p className="text-gray-400">Email us</p>
-                <a
-                  href="mailto:info@dysol.com"
-                  className="text-gray-400 hover:underline">
-                  info@dysol.com
-                </a>
-              {/* </span>
+            {/* <span > */}
+            <p className="text-gray-400 pt-4">Email us</p>
+            <a
+              href="mailto:info@dysol.com"
+              className="text-gray-400 hover:underline">
+              info@dysol.com
+            </a>
+            {/* </span>
               <span> */}
-                <p className="text-gray-400 pt-2">Call us</p>
-                <p className="text-gray-400">+XXXX-XXXXXX</p>
-              {/* </span>
+            <p className="text-gray-400 pt-4">Call us</p>
+            <p className="text-gray-400">+XXXX-XXXXXX</p>
+            {/* </span>
             </div> */}
 
 
@@ -48,54 +72,29 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-lg  mb-5">Quick Links</h3>
-            <ul className="text-gray-400 space-y-2">
-              <li>
-                <a href="#" className="hover:underline">
-                  Our Work
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Our Process
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Blog
-                </a>
-              </li>
+            <ul className="text-gray-400 space-y-4">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.link} className="hover:underline">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+
             </ul>
           </div>
 
           {/* Socials */}
           <div>
-            <h3 className="font-semibold text-lg">Socials</h3>
-            <ul className="text-gray-400 space-y-2 mt-2">
-              <li>
-                <a href="#" className="hover:underline">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  X (Twitter)
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Facebook
-                </a>
-              </li>
+            <h3 className="font-semibold text-lg mb-5">Socials</h3>
+            <ul className="text-gray-400 space-y-4">
+              {socialLinks.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.link} className="hover:underline">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -104,13 +103,13 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center text-gray-400 text-sm">
-        <p>© Dysol, 2025</p>
+        <p className='font-[Inter] font-normal text-[20px]'>© Dysol, 2025</p>
         <div className="flex items-center gap-6">
-          <select className="bg-black text-white">
+          <select className="bg-black text-white font-[Plus_Jakarta_Sans] font-bold">
             <option>EN</option>
             <option>FR</option>
           </select>
-          <a href="#" className="hover:underline flex items-center gap-1">
+          <a href="#" className="hover:underline flex items-center gap-1 font-[Plus_Jakarta_Sans] font-bold">
             Back to the top ↑
           </a>
         </div>
