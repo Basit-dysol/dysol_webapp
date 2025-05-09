@@ -19,8 +19,8 @@ export default function Footer() {
   const socialLinks = [
     { label: 'Instagram', link: '' },
     { label: 'X (Twitter)', link: '' },
-    { label: 'LinkedIn', link: '' },
-    { label: 'Facebook', link: '' },
+    { label: 'LinkedIn', link: 'https://www.linkedin.com/company/dysol-pvt-ltd/' },
+    { label: 'Facebook', link: 'https://www.facebook.com/share/1Abqv41mXX/' },
   ]
 
   return (
@@ -62,7 +62,7 @@ export default function Footer() {
             {/* </span>
               <span> */}
             <p className="text-gray-400 pt-4">Call us</p>
-            <p className="text-gray-400">+XXXX-XXXXXX</p>
+            <p className="text-gray-400">+27637731006</p>
             {/* </span>
             </div> */}
 

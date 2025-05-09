@@ -17,7 +17,7 @@ export default function Navbar() {
       {/* Navbar with split background when open */}
       <nav
         className={`absolute max-w-[1920px] pr-10 pl-25 top-0  pt-10 w-full z-50 flex place-content-between  }`}>
-           {/* className={`fixed top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${isOpen ? 'sticky' : ''
+        {/* className={`fixed top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${isOpen ? 'sticky' : ''
           }` */}
         {/* Split background overlay */}
         {isOpen && (
@@ -53,9 +53,8 @@ export default function Navbar() {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`text-white p-3 rounded-full transition-all duration-300 ${
-              isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
-            }`}>
+            className={`text-white p-3 rounded-full transition-all duration-300 ${isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
+              }`}>
             {
               isOpen ?
                 <Image
@@ -65,7 +64,7 @@ export default function Navbar() {
                   height={24}
                 />
                 // <X size={25} />
-              : <Image src="/menu.svg" alt="Open Menu" width={24} height={24} />
+                : <Image src="/menu.svg" alt="Open Menu" width={24} height={24} />
             }
           </button>
         </div>
@@ -109,15 +108,16 @@ export default function Navbar() {
             {/* Right Column */}
             <div className="nav-items-right w-[487px] lg:w-[30%] flex flex-col items-center align-middle justify-center  md:justify-end sm:pb-12 pb-0 bg-[#B93182]  px-2 md:px-10">
               {[
-                { Icon: '/emailUs.svg', text: 'Email us' },
-                { Icon: '/linkedIn.svg', text: 'LinkedIn' },
+                { Icon: '/emailUs.svg', text: 'Email us', link: 'mailto:info@dysol.com'  },
+                { Icon: '/linkedIn.svg', text: 'LinkedIn', link: 'https://www.linkedin.com/company/dysol-pvt-ltd/' },
                 { Icon: '/instagram.svg', text: 'Instagram' },
                 { Icon: '/twitter.svg', text: 'X (Twitter)' },
-                { Icon: '/facebook.svg', text: 'Facebook' },
+                { Icon: '/facebook.svg', text: 'Facebook', link: 'https://www.facebook.com/share/1Abqv41mXX/' },
                 { Icon: '/telegram.svg', text: 'Telegram' },
-              ].map(({ Icon, text }) => (
+              ].map(({ Icon, text, link }) => (
                 <button
                   key={text}
+                  onClick={() => link && (window.location.href = link)}
                   className="w-full max-w-md h-12 px-5 py-3 flex items-center gap-5 rounded-xl border border-white/20 bg-white/20 hover:bg-white/10 transition-colors">
                   <Image src={Icon} alt={text} width={36} height={36} />
 
