@@ -29,7 +29,7 @@ const features = [
 
 export default function WhyUsSection() {
   return (
-    <div className="h-max py-20 2xl:py-36 px-20 text-white/90 overflow-hidden">
+    <div className="h-max py-20 2xl:py-36 px-24 text-white/90 overflow-hidden">
       {/* Section Title */}
       <h2 className="text-sm text-white/80 uppercase tracking-wide mb-2">
         Why Us?

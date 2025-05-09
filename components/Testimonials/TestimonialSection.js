@@ -47,7 +47,7 @@ export default function TestimonialSection() {
   const { quote, name, position, avatar } = testimonials[currentIndex];
 
   return (
-    <section className="h-max rounded-b-xl px-20 text-white/90 overflow-hidden">
+    <section className="h-max rounded-b-xl px-24 text-white/90 overflow-hidden">
       {/* Headings */}
       <h2 className="text-sm text-white/80 uppercase tracking-wide mb-2">
         Testimonials

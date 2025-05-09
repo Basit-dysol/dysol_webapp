@@ -47,7 +47,7 @@ const projects = [
 
 export default function OurWorkSection() {
   return (
-    <section className="py-16 px-20 flex flex-col text-white/90 items-baseline justify-center text-center">
+    <section className="py-16 px-24 flex flex-col text-white/90 items-baseline justify-center text-center">
       <h2 className="mt-12 items-start text-left ">OUR WORK</h2>
       <h2 className="mt-2 pb-12 text-[2.5rem] items-start text-left">
         We engineer ideas into impactful products.
