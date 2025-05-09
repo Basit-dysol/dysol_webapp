@@ -22,7 +22,10 @@ export default function Footer() {
       label: 'LinkedIn',
       link: 'https://www.linkedin.com/company/dysol-pvt-ltd/',
     },
-    { label: 'Facebook', link: 'https://www.facebook.com/share/1Abqv41mXX/' },
+    {
+      label: 'Facebook',
+      link: 'https://www.facebook.com/share/1Abqv41mXX/',
+    },
   ];
 
   return (
@@ -43,7 +46,7 @@ export default function Footer() {
           <h2 className="text-[48px] font-medium font-[Plus_Jakarta_Sans]">
             Let’s discuss your brilliant idea!
           </h2>
-          <p className="text-gray-400">
+          <p className="text-white/80">
             Feel free to reach out if you want to collaborate with us, or simply
             have a chat.
           </p>
@@ -55,16 +58,16 @@ export default function Footer() {
             <h3 className="font-semibold text-lg pb-4">Contact us</h3>
             {/* <div className='flex flex-1 flex-col content-around flex-wrap'> */}
             {/* <span > */}
-            <p className="text-gray-400 pt-4">Email us</p>
+            <p className="text-white/80 pt-4">Email us</p>
             <a
               href="mailto:info@dysol.com"
-              className="text-gray-400 hover:underline">
+              className="text-white/80 hover:underline">
               info@dysol.com
             </a>
             {/* </span>
               <span> */}
-            <p className="text-gray-400 pt-4">Call us</p>
-            <p className="text-gray-400">+27637731006</p>
+            <p className="text-white/80 pt-4">Call us</p>
+            <p className="text-white/80">+27637731006</p>
             {/* </span>
             </div> */}
           </div>
@@ -72,7 +75,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-lg  mb-5">Quick Links</h3>
-            <ul className="text-gray-400 space-y-4">
+            <ul className="text-white/80 space-y-4">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link href={link.link} className="hover:underline">
@@ -100,7 +103,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-10 space-y-[8vw] xl:space-y-[14vw] border-t border-gray-700 pt-6 flex justify-between items-center text-gray-400 text-sm">
+      <div className="mt-10 space-y-[6vw] xl:space-y-[14vw] border-t border-gray-700 pt-6 flex justify-between items-center text-gray-400 text-sm">
         <p className="font-[Inter] font-normal text-[20px]">© Dysol, 2025</p>
         <div className="flex items-center gap-6">
           <select className="bg-black text-white font-[Plus_Jakarta_Sans] font-bold">
