@@ -23,7 +23,7 @@ export default function HeroSection() {
           <br className="hidden sm:block" />
           to market
         </h1>
-        <p className="xl:text-shadow-md 2xl:text-xl xl:w-[42vw] 2xl:w-[40vw] text-white/60 font-extralight text-left leading-relaxed xl:leading-[24px]">
+        <p className="xl:text-shadow-md 2xl:text-xl xl:w-[42vw] 2xl:w-[40vw] text-white/60 font-light text-left leading-relaxed xl:leading-[24px]">
           At Dysol, we bring your product idea to life with top-tier engineering
           and design. From idea to manufacturing, we're your trusted partner in
           end-to-end product development.
