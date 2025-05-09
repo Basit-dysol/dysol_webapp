@@ -9,7 +9,7 @@ export default function ProductCard({
   return (
     <Link
       href={`/our-work/${slug}`}
-      className="block product-card group w-full rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-500">
+      className="block min-h-max h-[400px]  product-card group w-full rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-500">
       <div className="relative w-full h-full rounded-2xl overflow-hidden">
         <img
           src={image}

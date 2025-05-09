@@ -15,7 +15,7 @@ export default function HeroSection() {
           Let's take your idea from concept to market
         </h1>
         <p className="text-lg lg:text-xl text-white/60 font-light lg:w-3xl text-left leading-relaxed"></p> */}
-      <section className="flex flex-col w-full min-h-[calc(100vh-16px)] text-white justify-end bg-[url('/LandingPage.png')] bg-cover bg-center  rounded-4xl pb-16 xl:px-24 xl:aspect-[156/100] 2xl:px-32 space-y-6 pr-0 xl:pr-[40vw] 2xl:pr-[40vw]">
+      <section className="flex flex-col w-full min-h-[calc(100vh-16px)] text-white justify-end bg-[url('/LandingPage.png')] bg-cover bg-center  rounded-4xl pb-16 px-24 xl:aspect-[156/100] 2xl:px-32 space-y-6 pr-0 xl:pr-[40vw] 2xl:pr-[40vw]">
         <h1 className="text-4xl xl:text-[4.25rem] 2xl:text-[5.125rem]  xl:w-[45vw] 2xl:w-[43vw] text-left font-medium xl:leading-[5rem] 2xl:leading-24">
           Let's take your
           <br className="hidden sm:block" />

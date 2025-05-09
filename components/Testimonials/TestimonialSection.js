@@ -47,7 +47,7 @@ export default function TestimonialSection() {
   const { quote, name, position, avatar } = testimonials[currentIndex];
 
   return (
-    <section className="h-max rounded-b-xl px-24 text-white/90 overflow-hidden">
+    <section className="h-max rounded-b-xl px-24 2xl:px-32 text-white/90 overflow-hidden">
       {/* Headings */}
       <h2 className="text-sm text-white/80 uppercase tracking-wide mb-2">
         Testimonials
@@ -67,7 +67,9 @@ export default function TestimonialSection() {
         {/* Right Column: Testimonial Carousel */}
         <div className="flex flex-col items-start relative">
           <div className="relative pb-8 w-full">
-            <p className="text-4xl text-justify mb-6 h-72">{quote}</p>
+            <p className=" xl:text-3xl 2xl:text-4xl text-justify mb-6 h-72">
+              {quote}
+            </p>
             <div className="absolute bottom-0 left-0 right-0 border-t-2 border-dashed border-[#4D4D4D]"></div>
           </div>
 
