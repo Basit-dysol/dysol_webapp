@@ -24,10 +24,10 @@ export default async function OurWorkPage() {
     }
 
     const projects = await res.json();
-    console.log('✅ Projects received from API:', projects);
+    // console.log('✅ Projects received from API:', projects);
 
     return (
-      <main className="py-24 px-20 text-white">
+      <main className="py-24 px-24 text-white">
         {/* Page Header */}
 
         <div className="mb-12">

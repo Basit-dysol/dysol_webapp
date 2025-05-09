@@ -1,55 +1,3 @@
-// import Link from 'next/link';
-
-// export default function ProductCardOurWork({
-//   image,
-//   description,
-//   subdescription,
-//   slug,
-//   tags,
-// }) {
-//   return (
-//     <Link
-//       href={`/our-work/${slug}`}
-//       className="block group w-full rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-//       <div className="relative w-full h-full rounded-2xl">
-//         {/* Image with scale effect only */}
-//         <img
-//           src={image}
-//           alt=""
-//           className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-110"
-//         />
-
-//         {/* Content container - no overlays */}
-//         <div className="absolute inset-0 p-6 flex flex-col justify-end">
-//           {/* Text content */}
-//           <div>
-//             <h3 className="text-white text-2xl drop-shadow-md">
-//               {description}
-//             </h3>
-//             <p className="text-white/90 font-light mt-2 drop-shadow-md">
-//               {subdescription}
-//             </p>
-//           </div>
-
-//           {/* Tags section */}
-//           <div>
-//             <div className="border-t-2 border-dashed border-white/20 my-4"></div>
-//             <div className="flex flex-wrap gap-2">
-//               {tags.map((tag, index) => (
-//                 <span
-//                   key={index}
-//                   className="bg-white/20 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm">
-//                   {tag}
-//                 </span>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </Link>
-//   );
-// }
-
 import Link from 'next/link';
 
 export default function ProductCardOurWork({
@@ -77,14 +25,14 @@ export default function ProductCardOurWork({
   return (
     <Link
       href={`/our-work/${slug}`}
-      className="block group w-full h-[400px] rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+      className="block group w-full h-[650px] xl:h-[700px] 2xl:h-[800px] rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-500">
       <div className="relative w-full h-full rounded-2xl bg-gray-800/50">
         {/* Image with fallback */}
         {imageUrl ?
           <img
             src={imageUrl}
             alt={description || 'Project image'}
-            className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-110"
+            className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
           />
         : <div className="w-full h-full bg-gradient-to-br from-purple-900 to-pink-700 flex items-center justify-center">
             <span className="text-white/50">No image available</span>
@@ -92,13 +40,13 @@ export default function ProductCardOurWork({
         }
 
         {/* Content overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 flex flex-col justify-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent p-10 flex flex-col justify-end">
           <div>
-            <h3 className="text-white text-2xl font-medium drop-shadow-md">
+            <h3 className="text-white text-4xl font-normal drop-shadow-md">
               {description}
             </h3>
             {subdescription && (
-              <p className="text-white/80 font-light mt-2 drop-shadow-md line-clamp-2">
+              <p className="text-white/70 text-sm font-light mt-2 drop-shadow-md line-clamp-2">
                 {subdescription}
               </p>
             )}
@@ -106,12 +54,12 @@ export default function ProductCardOurWork({
 
           {tags?.length > 0 && (
             <div className="mt-4">
-              <div className="border-t-2 border-dashed border-white/20 my-3"></div>
+              <div className="border-t-2 border-dashed border-white/16 my-3"></div>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-white/20 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm">
+                    className="bg-white/20 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-xs">
                     {tag}
                   </span>
                 ))}
