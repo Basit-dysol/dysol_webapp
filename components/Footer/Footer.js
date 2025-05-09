@@ -5,7 +5,6 @@ import ContactUs from '@/components/ContactUs/ContactUs';
 import TellUsMoreButton from '@/components/TellUsMoreButton/TellUsMoreButton';
 import Link from 'next/link';
 
-
 export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
 
@@ -19,12 +18,17 @@ export default function Footer() {
   const socialLinks = [
     { label: 'Instagram', link: '' },
     { label: 'X (Twitter)', link: '' },
-    { label: 'LinkedIn', link: 'https://www.linkedin.com/company/dysol-pvt-ltd/' },
+    {
+      label: 'LinkedIn',
+      link: 'https://www.linkedin.com/company/dysol-pvt-ltd/',
+    },
     { label: 'Facebook', link: 'https://www.facebook.com/share/1Abqv41mXX/' },
-  ]
+  ];
 
   return (
-    <footer style={{ backgroundImage: `url('/footer-bg.png')` }} className="background-cover bg-[#0D0D0D] no-repeat min-h-[calc(100vh-45px)] text-white pl-25 pr-15 py-30 relative">
+    <footer
+      style={{ backgroundImage: `url('/footer-bg.png')` }}
+      className="background-cover bg-[#0D0D0D] no-repeat min-h-[calc(100vh-45px)] text-white pl-25 pr-15 py-30 relative">
       {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <span>
@@ -44,12 +48,10 @@ export default function Footer() {
             have a chat.
           </p>
           <TellUsMoreButton />
-
         </div>
         <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 sm:gap-20">
-
           {/* Contact Us */}
-          <div className='flex flex-col'>
+          <div className="flex flex-col">
             <h3 className="font-semibold text-lg pb-4">Contact us</h3>
             {/* <div className='flex flex-1 flex-col content-around flex-wrap'> */}
             {/* <span > */}
@@ -65,8 +67,6 @@ export default function Footer() {
             <p className="text-gray-400">+27637731006</p>
             {/* </span>
             </div> */}
-
-
           </div>
 
           {/* Quick Links */}
@@ -80,7 +80,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-
             </ul>
           </div>
 
@@ -98,25 +97,26 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center text-gray-400 text-sm">
-        <p className='font-[Inter] font-normal text-[20px]'>© Dysol, 2025</p>
+      <div className="mt-10 space-y-[8vw] xl:space-y-[14vw] border-t border-gray-700 pt-6 flex justify-between items-center text-gray-400 text-sm">
+        <p className="font-[Inter] font-normal text-[20px]">© Dysol, 2025</p>
         <div className="flex items-center gap-6">
           <select className="bg-black text-white font-[Plus_Jakarta_Sans] font-bold">
             <option>EN</option>
             <option>FR</option>
           </select>
-          <a href="#" className="hover:underline flex items-center gap-1 font-[Plus_Jakarta_Sans] font-bold">
+          <a
+            href="#"
+            className="hover:underline flex items-center gap-1 font-[Plus_Jakarta_Sans] font-bold">
             Back to the top ↑
           </a>
         </div>
-      </div>
 
-      <div>
-        <img src="/footer-bottom.svg" />
+        <div className="absolute bottom-0 left-0 ">
+          <img className="" src="/footer-bottom.svg" />
+        </div>
       </div>
 
       {/* Contact Form Overlay (Conditionally Rendered) */}
