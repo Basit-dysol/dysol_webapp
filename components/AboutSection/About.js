@@ -2,7 +2,7 @@ export default function AboutSection() {
   const logos = [1, 2, 3, 4, 5, 6]; // Array for logo numbers
 
   return (
-    <section className=" h-screen mb-12 px-20 flex flex-col text-white/90 items-start justify-center">
+    <section className=" h-max py-20 2xl:py-28 mb-12 px-20 flex flex-col text-white/90 items-start justify-center">
       {/* Section Title */}
       <h2 className="mt-12 text-left text-sm tracking-wide uppercase">
         About Us
