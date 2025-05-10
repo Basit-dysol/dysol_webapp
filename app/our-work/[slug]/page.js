@@ -170,7 +170,7 @@ export default async function ProjectDetail({ params }) {
       <section
         className="relative w-full flex flex-col justify-between 2xl:px-24 xl:px-24 px-12 xl:aspect-[156/100]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${imageUrl})`,
+          backgroundImage: `url(${imageUrl})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
