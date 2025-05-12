@@ -1,29 +1,29 @@
 import Breadcrumbs from '@/components/Shared/Breadcrumbs';
-import ProductCard from '@/components/ProductCard';
 import Image from 'next/image';
+import FeasibilityCard from '@/components/FeasibilityCard';
 
 export default function OurProcessPage() {
   const cultureObjs = [
     {
-      icon: '/bulb.svg',
+      icon: '/users.svg',
       heading: 'Deep Technical & Engineering Expertise',
       description:
         'Our team of engineers takes your concept and develops a blueprint that’s feasible and ready for manufacturing. We factor in everything—durability, efficiency, and scalability—so you can be assured your product succeeds.',
     },
     {
-      icon: '/customer.svg',
+      icon: '/pen.svg',
       heading: 'Design Excellence',
       description:
         'Our design process blends style and usability, creating innovations that work seamlessly to attract and engage your ideal users.',
     },
     {
-      icon: '/speed.svg',
+      icon: '/brain.svg',
       heading: 'IP Protection',
       description:
         'Safeguarding your unique innovations is at the core of our focus. Our approach ensures your intellectual property stays protected through every stage of development at Dysol.',
     },
     {
-      icon: '/medal.svg',
+      icon: '/robot.svg',
       heading: 'Leading-Edge Technologies',
       description:
         'We’re all about crafting solutions that are as innovative as they are practical. By using the latest in tech and engineering, we give your product a competitive edge. ',
@@ -138,8 +138,11 @@ export default function OurProcessPage() {
 
       <section className="bg-[#1A1A1A] px-25 py-15 flex flex-col gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-2">
-          {process.map((process) => (
-            <ProductCard key={process.slug} {...process} />
+          {process.map((process, index) => (
+            // <div key={index} className=' min-h-max h-[400px] rounded-2xl'>
+            // </div>
+            <FeasibilityCard key={index} {...process}/>
+            // <ProductCard key={index} {...process} />
           ))}
         </div>
       </section>

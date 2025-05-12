@@ -48,16 +48,15 @@ export default function AboutPage() {
           <div className='flex flex-col gap-5'>
             <h5 className='font-[Plus_Jakarta_Sans] font-medium text-[40px]'>Come say hi to us</h5>
             <div className='flex flex-col gap-5'>
-              <div className='flex gap-6
-               items-start'>
-                <Image alt="marker icon" src="/marker.svg" width={30} height={30} className='inline-block' />
+              <div className='flex gap-6 items-start'>
+                <Image alt="marker icon" src="/marker.svg" width={30} height={30} className='inline-block pt-1' />
                 <span>
                   <h5 className='font-medium text-[24px] font-[Plus_Jakarta_Sans] pb-2'>Dubai Office</h5>
                   <p className='font-[Inter] text-[18px]/[28px] text-white/78'>Prime Tower, Business Bay, Dubai, United Arab Emirates.</p>
                 </span>
               </div>
 
-              <div className='flex gap-8 items-start'>
+              <div className='flex gap-6 items-start'>
                 <Image alt="marker icon" src="/marker.svg" width={30} height={30} className='inline-block' />
                 <span>
                   <h5 className='font-medium text-[24px] font-[Plus_Jakarta_Sans] pb-2'>London Office</h5>
