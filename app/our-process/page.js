@@ -1,6 +1,6 @@
 import Breadcrumbs from '@/components/Shared/Breadcrumbs';
 import Image from 'next/image';
-import FeasibilityCard from '@/components/FeasibilityCard';
+import FeasibilityCard from '@/components/OurProcess/FeasibilityCard';
 
 export default function OurProcessPage() {
   const cultureObjs = [
@@ -141,7 +141,7 @@ export default function OurProcessPage() {
           {process.map((process, index) => (
             // <div key={index} className=' min-h-max h-[400px] rounded-2xl'>
             // </div>
-            <FeasibilityCard key={index} {...process}/>
+            <FeasibilityCard key={index} {...process} />
             // <ProductCard key={index} {...process} />
           ))}
         </div>
