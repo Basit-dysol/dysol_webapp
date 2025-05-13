@@ -53,8 +53,9 @@ export default function Navbar() {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`text-white p-3 rounded-full transition-all duration-300 ${isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
-              }`}>
+            className={`text-white p-3 rounded-full transition-all duration-300 ${
+              isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
+            }`}>
             {
               isOpen ?
                 <Image
@@ -64,7 +65,7 @@ export default function Navbar() {
                   height={24}
                 />
                 // <X size={25} />
-                : <Image src="/menu.svg" alt="Open Menu" width={24} height={24} />
+              : <Image src="/menu.svg" alt="Open Menu" width={24} height={24} />
             }
           </button>
         </div>
@@ -79,7 +80,7 @@ export default function Navbar() {
               <h1 className=" mb-8 font-medium xl:text-xl 2xl:text-2xl">
                 Navigation
               </h1>
-              <div className="  xl:space-y-4 2xl:space-y-9">
+              <div className="xl:space-y-4 2xl:space-y-9">
                 {[
                   { name: 'Home', path: '/' },
                   { name: 'About us', path: '/about' },
@@ -87,20 +88,38 @@ export default function Navbar() {
                   { name: 'Our Process', path: '/our-process' },
                   { name: 'Contact us', path: '/contact-us' },
                 ].map(({ name, path }) => (
-                  <Link
-                    key={name}
-                    href={path}
-                    onClick={() => setIsOpen(false)}
-                    className=" text-2xl xl:leading-0 xl:text-4xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
-                    {name}
-                    <Image
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      src="/right-arrow.svg"
-                      width={50}
-                      height={50}
-                      alt="right-arrow"
-                    />
-                  </Link>
+                  <div key={name}>
+                    {name === 'Contact us' ?
+                      <button
+                        onClick={() => {
+                          setIsOpen(false); // Close the navbar
+                          setContactVisible(true); // Show contact modal
+                        }}
+                        className="text-2xl xl:leading-0 xl:text-4xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
+                        {name}
+                        <Image
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          src="/right-arrow.svg"
+                          width={50}
+                          height={50}
+                          alt="right-arrow"
+                        />
+                      </button>
+                    : <Link
+                        href={path}
+                        onClick={() => setIsOpen(false)}
+                        className="text-2xl xl:leading-0 xl:text-4xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
+                        {name}
+                        <Image
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          src="/right-arrow.svg"
+                          width={50}
+                          height={50}
+                          alt="right-arrow"
+                        />
+                      </Link>
+                    }
+                  </div>
                 ))}
               </div>
             </div>
@@ -108,11 +127,23 @@ export default function Navbar() {
             {/* Right Column */}
             <div className="nav-items-right w-[487px] lg:w-[30%] flex flex-col items-center align-middle justify-center  md:justify-end sm:pb-12 pb-0 bg-[#B93182]  px-2 md:px-10">
               {[
-                { Icon: '/emailUs.svg', text: 'Email us', link: 'mailto:info@dysol.com'  },
-                { Icon: '/linkedIn.svg', text: 'LinkedIn', link: 'https://www.linkedin.com/company/dysol-pvt-ltd/' },
+                {
+                  Icon: '/emailUs.svg',
+                  text: 'Email us',
+                  link: 'mailto:info@dysol.com',
+                },
+                {
+                  Icon: '/linkedIn.svg',
+                  text: 'LinkedIn',
+                  link: 'https://www.linkedin.com/company/dysol-pvt-ltd/',
+                },
                 { Icon: '/instagram.svg', text: 'Instagram' },
                 { Icon: '/twitter.svg', text: 'X (Twitter)' },
-                { Icon: '/facebook.svg', text: 'Facebook', link: 'https://www.facebook.com/share/1Abqv41mXX/' },
+                {
+                  Icon: '/facebook.svg',
+                  text: 'Facebook',
+                  link: 'https://www.facebook.com/share/1Abqv41mXX/',
+                },
                 { Icon: '/telegram.svg', text: 'Telegram' },
               ].map(({ Icon, text, link }) => (
                 <button
