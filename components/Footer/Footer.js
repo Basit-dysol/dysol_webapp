@@ -103,7 +103,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-10 space-y-[4vw] xl:space-y-[14vw] 2xl:space-y-[12vw] border-t border-gray-700 pt-6 flex justify-between items-center text-gray-400 text-sm">
+      <div className="mt-10 space-y-[4vw] xl:space-y-[14vw] 2xl:space-y-[14vw] border-t border-gray-700 pt-6 flex justify-between items-center text-gray-400 text-sm">
         <p className="font-[Inter] font-normal text-[20px]">© Dysol, 2025</p>
         <div className="flex items-center gap-6">
           <select className="bg-black text-white font-[Plus_Jakarta_Sans] font-bold">
