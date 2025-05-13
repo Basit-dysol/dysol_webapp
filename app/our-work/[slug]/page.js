@@ -130,6 +130,7 @@
 // app/our-work/[slug]/page.jsx
 import { client } from '@/lib/sanity.client';
 import { projectQuery } from '@/lib/sanity.queries';
+import ProductCarousel  from '@/components/Shared/ProductCarousel';
 // import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -154,7 +155,35 @@ async function getProjectData(slug) {
 }
 
 export default async function ProjectDetail({ params }) {
-  const project = await getProjectData(params.slug);
+
+  const { slug } = params;
+  if (!slug) {
+    return notFound();
+  }
+
+  const project = await getProjectData(slug);
+
+   const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SITE_URL}/api/projects`,
+      {
+        next: { revalidate: 3600 },
+      }
+    );
+
+    console.log('📡 Response status:', res.status);
+
+    const contentType = res.headers.get('content-type');
+    console.log('📄 Content-Type:', contentType);
+
+    // Check if response is actually JSON
+    if (!res.ok || !contentType?.includes('application/json')) {
+      const text = await res.text();
+      console.error('❌ Not a valid JSON response. Raw response:', text);
+      throw new Error('Invalid JSON response from /api/projects');
+    }
+
+    const projects = await res.json();
+    // console.log('✅ Projects received from API:', projects);
 
   // Get main image URL (using your existing function)
   const getImageUrl = (imgRef) => {
@@ -302,6 +331,11 @@ export default async function ProjectDetail({ params }) {
             </div>
           )}
         </div>
+      </section>
+
+      <section className="w-full py-20 gap-8 md:gap-16 2xl:px-24 xl:px-24 px-12">
+        <h1 className='font-medium text-3xl py-8'>More case studies</h1>
+        <ProductCarousel projects={projects}/>
       </section>
     </main>
   );
