@@ -22,7 +22,7 @@ export default function ProductCard({
         <div className="transform transition-all duration-700 flex flex-col justify-end px-12 pb-12 w-full text-left absolute top-0 left-0 h-full overflow-hidden">
           <h2
             className="
-            text-white/90 text-4xl transform transition-all duration-700
+            text-white/90 text-4xl xl:text-3xl transform transition-all duration-700
           "
             dangerouslySetInnerHTML={{ __html: description }}
           />
