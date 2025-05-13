@@ -1,6 +1,6 @@
 import Breadcrumbs from '@/components/Shared/Breadcrumbs';
 import Image from 'next/image';
-import OurProcessCard from '@/components/OurProcessCard';
+import OurProcessCard from '@/components/OurProcess/OurProcessCard';
 
 export default function OurProcessPage() {
   const cultureObjs = [
