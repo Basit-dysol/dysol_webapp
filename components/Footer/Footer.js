@@ -12,7 +12,7 @@ export default function Footer() {
     { label: 'Our Work', link: 'our-work' },
     { label: 'Our Process', link: 'our-process' },
     { label: 'About Us', link: '/about' },
-    { label: 'Blog', link: '' },
+    { label: 'Blog', link: '/' },
   ];
 
   const socialLinks = [
@@ -50,7 +50,7 @@ export default function Footer() {
             Feel free to reach out if you want to collaborate with us, or simply
             have a chat.
           </p>
-          <TellUsMoreButton />
+          <TellUsMoreButton setContactVisible={setContactVisible} />
         </div>
         <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 sm:gap-20">
           {/* Contact Us */}
