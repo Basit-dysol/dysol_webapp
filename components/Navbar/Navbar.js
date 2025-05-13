@@ -16,7 +16,7 @@ export default function Navbar() {
     <>
       {/* Navbar with split background when open */}
       <nav
-        className={`absolute max-w-[1920px] pr-10 pl-25 top-0  pt-10 w-full z-50 flex place-content-between  }`}>
+        className={`absolute max-w-[1920px] pr-10 pl-24 2xl:pl-32 top-0  pt-10 w-full z-50 flex place-content-between  }`}>
         {/* className={`fixed top-0 left-0 pt-6 right-0 w-full z-50 flex items-center justify-between ${isOpen ? 'sticky' : ''
           }` */}
         {/* Split background overlay */}
