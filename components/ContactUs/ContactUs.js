@@ -16,7 +16,7 @@ export default function ContactUs({ onClose }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-200 text-2xl">
+          className="absolute top-4 right-4 text-white/80 hover:text-gray-200 text-2xl">
           ✖
         </button>
 
@@ -24,7 +24,7 @@ export default function ContactUs({ onClose }) {
         <h2 className="text-3xl font-semibold mb-2">
           Start your project with Dysol
         </h2>
-        <p className="text-gray-400 mb-6">
+        <p className="text-white/80 mb-6">
           Whether you have a question, need support, or want to bring your big
           idea to life, our team is here to help. Reach out to us by completing
           the form below and let’s talk about how we can design the future
@@ -91,7 +91,7 @@ function FloatingLabelInput({ label, placeholder, icon }) {
         className="w-full p-4 pl-10 bg-[#333] border border-[#444] rounded-lg placeholder-transparent text-white focus:outline-none focus:ring-2 focus:ring-gray-500 peer"
       />
       <label
-        className={`absolute left-10 top-4 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-gray-300`}>
+        className={`absolute left-10 top-4 text-white/60 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-white/60 peer-focus:top-2 peer-focus:text-sm peer-focus:text-gray-300`}>
         {label}
       </label>
       <span className="absolute left-3 top-4 text-gray-500">
@@ -114,10 +114,10 @@ function FloatingLabelTextarea({ label, placeholder, icon }) {
         rows="4"
       />
       <label
-        className={`absolute left-10 top-4 text-gray-400 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-gray-300`}>
+        className={`absolute left-10 top-4 text-white/60 transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-white/60 peer-focus:top-2 peer-focus:text-sm peer-focus:text-gray-300`}>
         {label}
       </label>
-      <span className="absolute left-3 top-4 text-gray-500">
+      <span className="absolute left-3 top-4 text-white/60">
         <i className={`material-icons`}>{icon}</i>
       </span>
     </div>
