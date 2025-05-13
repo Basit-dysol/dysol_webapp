@@ -52,7 +52,7 @@ export default function OurWorkSection() {
       <h2 className="mt-2 pb-12 text-[2.5rem] items-start text-left">
         We engineer ideas into impactful products.
       </h2>
-      <div className="grid grid-cols-1 items-center justify-center mx-auto sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-2 mt-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 w-full justify-items-center mt-2">
         {projects.map((project) => (
           <ProductCard key={project.slug} {...project} />
         ))}
