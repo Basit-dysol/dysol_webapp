@@ -9,8 +9,8 @@ export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
 
   const quickLinks = [
-    { label: 'Our Work', link: '' },
-    { label: 'Our Process', link: '' },
+    { label: 'Our Work', link: 'our-work' },
+    { label: 'Our Process', link: 'our-process' },
     { label: 'About Us', link: '/about' },
     { label: 'Blog', link: '' },
   ];

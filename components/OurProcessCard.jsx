@@ -1,8 +1,6 @@
-// components/FeasibilityCard.tsx
-
 import Image from 'next/image';
 
-export default function FeasibilityCard({
+export default function OurProcessCard({
     image,
     description,
     subdescription,

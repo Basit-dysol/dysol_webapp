@@ -1,29 +1,29 @@
 import Breadcrumbs from '@/components/Shared/Breadcrumbs';
 import Image from 'next/image';
-import FeasibilityCard from '@/components/FeasibilityCard';
+import OurProcessCard from '@/components/OurProcessCard';
 
 export default function OurProcessPage() {
   const cultureObjs = [
     {
-      icon: '/users.svg',
+      icon: '/ourprocess/users.svg',
       heading: 'Deep Technical & Engineering Expertise',
       description:
         'Our team of engineers takes your concept and develops a blueprint that’s feasible and ready for manufacturing. We factor in everything—durability, efficiency, and scalability—so you can be assured your product succeeds.',
     },
     {
-      icon: '/pen.svg',
+      icon: '/ourprocess/pen.svg',
       heading: 'Design Excellence',
       description:
         'Our design process blends style and usability, creating innovations that work seamlessly to attract and engage your ideal users.',
     },
     {
-      icon: '/brain.svg',
+      icon: '/ourprocess/brain.svg',
       heading: 'IP Protection',
       description:
         'Safeguarding your unique innovations is at the core of our focus. Our approach ensures your intellectual property stays protected through every stage of development at Dysol.',
     },
     {
-      icon: '/robot.svg',
+      icon: '/ourprocess/robot.svg',
       heading: 'Leading-Edge Technologies',
       description:
         'We’re all about crafting solutions that are as innovative as they are practical. By using the latest in tech and engineering, we give your product a competitive edge. ',
@@ -141,7 +141,7 @@ export default function OurProcessPage() {
           {process.map((process, index) => (
             // <div key={index} className=' min-h-max h-[400px] rounded-2xl'>
             // </div>
-            <FeasibilityCard key={index} {...process}/>
+            <OurProcessCard key={index} {...process}/>
             // <ProductCard key={index} {...process} />
           ))}
         </div>
