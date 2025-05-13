@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <>
       <section className="flex flex-col w-full min-h-[calc(100vh-16px)] text-white justify-end bg-[url('/LandingPage.png')] bg-cover bg-center rounded-4xl pb-16 px-24 xl:aspect-[156/100] 2xl:px-32 space-y-6 pr-0 xl:pr-[40vw] 2xl:pr-[40vw]">
-        <h1 className="text-4xl xl:text-[4.25rem] 2xl:text-[5rem] xl:w-[45vw] 2xl:w-[50vw] text-left font-medium xl:leading-[5rem] 2xl:leading-24">
+        <h1 className="text-4xl xl:text-[4.25rem] 2xl:text-[4.5rem] xl:w-[45vw] 2xl:w-[50vw] text-left font-medium xl:leading-[5rem] 2xl:leading-24">
           Let's take your
           <br className="hidden sm:block" />
           idea from concept
