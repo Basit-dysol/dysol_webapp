@@ -156,7 +156,6 @@ async function getProjectData(slug) {
 }
 
 export default async function ProjectDetail({ params }) {
-
   const { slug } = params;
   if (!slug) {
     return notFound();
@@ -164,12 +163,9 @@ export default async function ProjectDetail({ params }) {
 
   const project = await getProjectData(slug);
 
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/api/projects`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/projects`, {
+    next: { revalidate: 3600 },
+  });
 
   console.log('📡 Response status:', res.status);
 
@@ -198,21 +194,21 @@ export default async function ProjectDetail({ params }) {
   return (
     <main className="text-white">
       <section
-        className="relative w-full flex flex-col justify-between 2xl:px-24 xl:px-24 px-12 xl:aspect-[156/100]"
+        className="relative w-full flex flex-col justify-between 2xl:px-32 xl:px-24 2xl:py-20 xl:py-20  px-12 xl:aspect-[156/100]"
         style={{
           backgroundImage: `url(${imageUrl})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
         <div className="container mx-auto">
-          <div className="flex items-center mt-20 gap-2 opacity-80">
+          <div className="flex items-center mt-16 gap-2 opacity-80">
             <img
               src="/ourworkdetail/home.svg"
               alt="Home icon"
               className="w-4 h-4 inline-block"
             />
             <span>
-              Home / Selected Work /{' '}
+              Home / Selected Work /
               <span className="font-medium opacity-100">{project.title}</span>
             </span>
           </div>
@@ -220,12 +216,10 @@ export default async function ProjectDetail({ params }) {
 
         {/* Content positioned at bottom */}
         <div className="container mx-auto mt-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-medium mb-10">
             {project.title}
           </h1>
-
-          <div className="border-t-2 border-dashed border-white/30 my-6 w-24"></div>
-
+          <div className="border-t-1 border-dashed border-white/30 my-6 w-1/2"></div>
           {project.projectIdea && (
             <div className="pb-8">
               {/* Add bottom padding if needed */}
@@ -247,7 +241,7 @@ export default async function ProjectDetail({ params }) {
         </div>
       </section>
       {/* Content Section */}
-      <section className="w-full grid grid-cols-1 md:grid-cols-3 py-20 gap-8 md:gap-16 2xl:px-24 xl:px-24 px-12">
+      <section className="w-full grid grid-cols-1 md:grid-cols-3 py-20 gap-8 md:gap-16 2xl:px-32 xl:px-24 px-12">
         {/* Left Column */}
         <div className="md:col-span-1 space-y-8">
           {/* Project Image */}
@@ -262,7 +256,7 @@ export default async function ProjectDetail({ params }) {
           </div>
 
           {/* Project Title */}
-          <h2 className="text-3xl font-bold text-white">{project.title}</h2>
+          <h2 className="text-3xl font-medium text-white">{project.title}</h2>
 
           {/* Dotted Line Divider */}
           <div className="border-t-2 border-dashed border-white/20 my-4"></div>
@@ -335,13 +329,15 @@ export default async function ProjectDetail({ params }) {
       </section>
 
       <section className="w-full py-20 gap-8 md:gap-16 2xl:px-24 xl:px-24 px-12">
-        <p className='text-white/78 font-[Inter] text-xl uppercase'>Slideshow</p>
-        <h1 className='font-medium text-3xl pb-9 pt-4'>Product Images</h1>
+        <p className="text-white/78 font-[Inter] text-xl uppercase">
+          Slideshow
+        </p>
+        <h1 className="font-medium text-3xl pb-9 pt-4">Product Images</h1>
         <ProductCarousel projects={project.projectImages} />
       </section>
 
       <section className="w-full py-20 gap-8 md:gap-16 2xl:px-24 xl:px-24 px-12">
-        <h1 className='font-medium text-3xl py-8'>More case studies</h1>
+        <h1 className="font-medium text-3xl py-8">More case studies</h1>
         <CaseStudyCarousel projects={projects} />
       </section>
     </main>
@@ -352,8 +348,8 @@ export default async function ProjectDetail({ params }) {
 function Section({ title, content }) {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
-      <p className="opacity-90 leading-relaxed whitespace-pre-line">
+      <h2 className="text-3xl font-medium mb-4">{title}</h2>
+      <p className="opacity-60 leading-relaxed whitespace-pre-line">
         {content}
       </p>
     </div>
