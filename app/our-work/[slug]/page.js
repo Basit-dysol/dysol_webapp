@@ -200,7 +200,7 @@ export default async function ProjectDetail({ params }) {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
-        <div className="container mx-auto">
+        <div className="container">
           <div className="flex items-center mt-16 gap-2 opacity-80">
             <img
               src="/ourworkdetail/home.svg"
@@ -215,7 +215,7 @@ export default async function ProjectDetail({ params }) {
         </div>
 
         {/* Content positioned at bottom */}
-        <div className="container mx-auto mt-auto">
+        <div className="container mt-auto">
           <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-medium mb-10">
             {project.title}
           </h1>
