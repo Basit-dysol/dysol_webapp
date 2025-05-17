@@ -12,7 +12,7 @@ export default function ContactUs({ onClose }) {
       />
 
       {/* Contact Form Panel - Covers Right Half */}
-      <div className="fixed right-0 top-0 h-full w-1/2 bg-[#191919] text-white p-8 shadow-lg z-50 overflow-y-auto">
+      <div className="fixed right-0 top-0 h-full  w-full xl:w-1/2 bg-[#191919] text-white p-8 shadow-lg z-50 overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
