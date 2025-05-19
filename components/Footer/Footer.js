@@ -103,7 +103,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-8 md:mt-10 space-y-4 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+      <div className="mt-8 md:mt-10 space-y-4 lg:space-y-36  border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
         <p className="font-[Inter] font-normal text-base md:text-[20px]">
           © Dysol, 2025
         </p>

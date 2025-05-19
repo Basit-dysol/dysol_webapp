@@ -45,7 +45,7 @@ export default function AboutPage() {
       <section className="w-full h-64 md:h-[480px] 2xl:h-[580px] bg-[url('/CreativeContemplation.png')] bg-cover bg-center"></section>
 
       {/* About & Office Section */}
-      <section className="bg-[#1A1A1A] px-6 md:px-25 py-8 md:py-15 flex flex-col gap-6 md:gap-10">
+      <section className="bg-[#1A1A1A] px-6 md:px-24 py-8 md:py-16 flex flex-col gap-6 md:gap-10">
         <div className="flex flex-col md:grid md:grid-cols-2 md:gap-20 md:py-10">
           {/* Left Column */}
           <div className="flex flex-col gap-4 md:gap-5 mb-8 md:mb-0">
