@@ -54,7 +54,8 @@ export default function OurWorkSection() {
       </h2>
 
       {/* Section Title */}
-      <h2 className="mt-2 pb-6 md:pb-12 text-3xl md:text-[2.5rem] items-start text-left leading-tight font-semibold">
+      <h2 className="text-3xl md:text-[2.5rem] items-start text-left leading-tight mb-8 md:mb-12">
+        {/* <h2 className="mt-2 pb-6 md:pb-12 text-3xl md:text-[2.5rem]  leading-tight font-semibold"> */}
         We engineer ideas into impactful products.
       </h2>
 

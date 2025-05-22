@@ -12,9 +12,10 @@ export default function AboutSection() {
       <div className="flex w-full flex-col md:flex-row gap-12">
         {/* Left Side - Clients */}
         <div className="flex flex-col items-start justify-center flex-1">
-          <h2 className="mt-2 pb-6 md:pb-12 text-3xl md:text-[2.5rem] font-semibold text-left leading-tight">
-            We don't just think outside the box; <br /> we explore new
-            frontiers.
+          <h2 className="text-3xl md:text-[2.5rem] leading-tight mb-8 md:mb-12">
+            {/* <h2 className="mt-2 pb-6 md:pb-12 text-3xl md:text-[2.5rem] font-semibold text-left leading-tight"> */}
+            We don't just think outside the box;
+            <br className="" /> we explore new frontiers.
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mt-6 relative">
@@ -23,7 +24,7 @@ export default function AboutSection() {
             <div className="absolute top-0 bottom-0 left-2/3 w-0.5 border-[#4D4D4D]/80 border-l-2 border-dashed hidden md:block"></div>
 
             {/* Horizontal grid lines (only between rows) */}
-            <div className="absolute left-0 right-0 top-1/2 h-0.5 border-[#4D4D4D]/80 border-t-2 border-dashed"></div>
+            <div className="absolute left-0 right-0 top-1/2 h-0.5 border-[#4D4D4D]/80 border-t-2 border-dashed hidden md:block"></div>
 
             {logos.map((num) => (
               <div key={num} className="relative group">
@@ -45,9 +46,9 @@ export default function AboutSection() {
         </div>
 
         {/* Right Side - Description - Moves below on mobile */}
-        <div className="flex flex-col w-full md:w-[33vw] text-base md:text-lg leading-relaxed flex-1">
+        <div className="flex flex-col w-full md:max-w-[30vw] text-base md:text-lg leading-relaxed flex-1">
           <p>
-            With over{' '}
+            With over
             <span className="text-white font-semibold">100+ happy clients</span>
             , we blend engineering, consumer insights, and design to deliver
             world-class innovations that make an impact.

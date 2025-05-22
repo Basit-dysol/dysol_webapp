@@ -43,17 +43,22 @@ export default function WhyUsSection() {
       {/* Feature Grid with Borders */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full relative">
         {/* Top Full-Width Dashed Line */}
-        <div className="absolute left-0 right-0 top-0 -mx-6 md:-mx-20 border-t-2 border-dashed border-[#4D4D4D]"></div>
+        <div className="absolute left-0 right-0 top-0 -mx-6 md:-mx-20 border-t-2 border-dashed border-[#4D4D4D] hidden md:inline"></div>
 
         {features.map((feature, index) => (
           <div
             key={index}
-            className="p-4 md:p-6 border-b-2 md:border-b-0 md:border-r-2 border-dashed border-[#4D4D4D] text-left transition-all duration-300 hover:bg-[#333333]"
-            style={{
-              borderLeft: index === 0 ? '2px dashed #4D4D4D' : 'none',
-              borderRight:
-                index === features.length - 1 ? '2px dashed #4D4D4D' : 'none',
-            }}>
+            className={`
+              p-4 md:p-6 
+              border-b-2 md:border-b-0 
+              ${index === 0 ? 'md:border-l-2 md:border-dashed md:border-[#4D4D4D]' : ''}
+              ${index === features.length - 1 ? 'md:border-r-2 md:border-dashed md:border-[#4D4D4D]' : ''}
+              md:border-r-2 
+              border-dashed border-[#4D4D4D] 
+              text-left transition-all duration-300 
+              hover:bg-[#333333]
+              max-md:border-l-0 max-md:border-r-0
+            `}>
             {feature.icon}
             <h3 className="text-white/90 text-lg md:text-xl mb-2">
               {feature.title}
@@ -63,7 +68,7 @@ export default function WhyUsSection() {
         ))}
 
         {/* Bottom Full-Width Dashed Line */}
-        <div className="absolute left-0 right-0 bottom-0 -mx-6 md:-mx-20 border-t-2 border-dashed border-[#4D4D4D]"></div>
+        <div className="absolute left-0 right-0 bottom-0 -mx-6 md:-mx-20 border-t-2 border-dashed border-[#4D4D4D] hidden md:block"></div>
       </div>
     </div>
   );

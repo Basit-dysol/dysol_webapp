@@ -44,7 +44,7 @@ export default function TestimonialSection() {
   const { quote, name, position, avatar } = testimonials[currentIndex];
 
   return (
-    <section className="h-max rounded-b-xl px-6 md:px-24 2xl:px-32 text-white/90 overflow-hidden py-12 md:py-20">
+    <section className="h-max rounded-b-xl px-6 md:px-24 2xl:px-32 text-white/90 overflow-hidden py-12 md:py-0">
       {/* Headings */}
       <h2 className="text-sm text-white/80 uppercase tracking-wide mb-2">
         Testimonials
@@ -53,14 +53,14 @@ export default function TestimonialSection() {
       {/* Container: Stack on mobile, 2 columns on desktop */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 md:gap-12">
         {/* Left Column */}
-        <div className="flex flex-col items-start gap-12 md:gap-24">
+        <div className="flex flex-col items-start justify-between h-full gap-12 md:gap-24">
           <h3 className="text-3xl md:text-[2.5rem] leading-tight">
             What our clients say
           </h3>
           <img
             src="/funicongroup.svg"
             alt="Icon Collage"
-            className="max-w-full md:max-w-sm w-full h-auto"
+            className="mt-auto max-w-full md:max-w-sm w-full h-auto"
           />
         </div>
 
