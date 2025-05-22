@@ -1,25 +1,56 @@
 'use client';
-
 import { useState } from 'react';
 
 export default function ContactUs({ onClose }) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      name: e.target.elements.name.value,
+      company: e.target.elements.company.value,
+      email: e.target.elements.email.value,
+      phone: e.target.elements.phone.value,
+      message: e.target.elements.message.value,
+    };
+
+    try {
+      const response = await fetch('/api/email/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        e.target.reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
-      {/* Blurred Background - Keeps Previous Screen Visible */}
       <div
         className="fixed inset-0 backdrop-blur-md bg-black/30 z-50"
         onClick={onClose}
       />
 
-      {/* Contact Form Panel - Covers Right Half */}
-      <div className="fixed right-0 top-0 h-full  w-full xl:w-1/2 bg-[#191919] text-white p-8 shadow-lg z-50 overflow-y-auto">
+      <div className="fixed right-0 top-0 h-full w-full xl:w-1/2 bg-[#191919] text-white p-8 shadow-lg z-50 overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-white/80 hover:text-gray-200 text-2xl">
           ✖
         </button>
-
         {/* Heading */}
         <h2 className="text-3xl font-semibold mb-2">
           Start your project with Dysol
@@ -30,34 +61,39 @@ export default function ContactUs({ onClose }) {
           the form below and let’s talk about how we can design the future
           together.
         </p>
-
         {/* Contact Form */}
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* Two-Column Layout for Name, Company, Email, and Contact */}
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mb-4">
             <FloatingLabelInput
+              name="name" // Add this
               label="Your Name"
               placeholder="What is your name?"
-              icon=""
             />
             <FloatingLabelInput
+              name="company" // Add this
               label="Your Company Name"
               placeholder="What is your company name?"
-              icon=""
             />
             <FloatingLabelInput
+              name="email" // Add this
               label="Your Email Address"
               placeholder="Enter your email address"
-              icon=""
             />
             <FloatingLabelInput
+              name="phone" // Add this
               label="Your Contact Number"
               placeholder="Enter contact number"
-              icon=""
             />
           </div>
-
-          {/* Message Field - Full Width */}
+          <div className="mb-4">
+            <FloatingLabelTextarea
+              name="message" // Add this
+              label="Message Body"
+              placeholder="What do you want to talk about?"
+            />
+          </div>
+          ;{/* Message Field - Full Width */}
           <div className="mb-4">
             <FloatingLabelTextarea
               label="Message Body"
@@ -65,12 +101,22 @@ export default function ContactUs({ onClose }) {
               icon=""
             />
           </div>
-
-          {/* Submit Button */}
+          ;
+          {submitStatus === 'success' && (
+            <div className="mb-4 p-4 bg-green-900/30 text-green-400 rounded-lg">
+              Message sent successfully!
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="mb-4 p-4 bg-red-900/30 text-red-400 rounded-lg">
+              Error sending message. Please try again.
+            </div>
+          )}
           <button
             type="submit"
-            className="w-full bg-white text-gray-950 p-3 rounded-full font-medium hover:bg-gray-200 transition">
-            Contact us ✈️
+            disabled={isSubmitting}
+            className="w-full bg-white text-gray-950 p-3 rounded-full font-medium hover:bg-gray-200 transition disabled:opacity-50">
+            {isSubmitting ? 'Sending...' : 'Contact us ✈️'}
           </button>
         </form>
       </div>
@@ -78,13 +124,95 @@ export default function ContactUs({ onClose }) {
   );
 }
 
+// 'use client';
+
+// import { useState } from 'react';
+
+// export default function ContactUs({ onClose }) {
+//   return (
+//     <>
+//       {/* Blurred Background - Keeps Previous Screen Visible */}
+//       <div
+//         className="fixed inset-0 backdrop-blur-md bg-black/30 z-50"
+//         onClick={onClose}
+//       />
+
+//       {/* Contact Form Panel - Covers Right Half */}
+//       <div className="fixed right-0 top-0 h-full  w-full xl:w-1/2 bg-[#191919] text-white p-8 shadow-lg z-50 overflow-y-auto">
+//         {/* Close Button */}
+//         <button
+//           onClick={onClose}
+//           className="absolute top-4 right-4 text-white/80 hover:text-gray-200 text-2xl">
+//           ✖
+//         </button>
+
+//         {/* Heading */}
+//         <h2 className="text-3xl font-semibold mb-2">
+//           Start your project with Dysol
+//         </h2>
+//         <p className="text-white/80 mb-6">
+//           Whether you have a question, need support, or want to bring your big
+//           idea to life, our team is here to help. Reach out to us by completing
+//           the form below and let’s talk about how we can design the future
+//           together.
+//         </p>
+
+//         {/* Contact Form */}
+//         <form>
+//           {/* Two-Column Layout for Name, Company, Email, and Contact */}
+//           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mb-4">
+//             <FloatingLabelInput
+//               label="Your Name"
+//               placeholder="What is your name?"
+//               icon=""
+//             />
+//             <FloatingLabelInput
+//               label="Your Company Name"
+//               placeholder="What is your company name?"
+//               icon=""
+//             />
+//             <FloatingLabelInput
+//               label="Your Email Address"
+//               placeholder="Enter your email address"
+//               icon=""
+//             />
+//             <FloatingLabelInput
+//               label="Your Contact Number"
+//               placeholder="Enter contact number"
+//               icon=""
+//             />
+//           </div>
+
+//           {/* Message Field - Full Width */}
+//           <div className="mb-4">
+//             <FloatingLabelTextarea
+//               label="Message Body"
+//               placeholder="What do you want to talk about?"
+//               icon=""
+//             />
+//           </div>
+
+//           {/* Submit Button */}
+//           <button
+//             type="submit"
+//             className="w-full bg-white text-gray-950 p-3 rounded-full font-medium hover:bg-gray-200 transition">
+//             Contact us ✈️
+//           </button>
+//         </form>
+//       </div>
+//     </>
+//   );
+// }
+
 /* Floating Label Input Component */
-function FloatingLabelInput({ label, placeholder, icon }) {
+function FloatingLabelInput({ label, placeholder, icon, name }) {
+  // Add name prop
   const [isFocused, setIsFocused] = useState(false);
   return (
     <div className="relative">
       <input
         type="text"
+        name={name}
         placeholder={isFocused ? '' : placeholder}
         onFocus={() => setIsFocused(true)}
         onBlur={(e) => setIsFocused(e.target.value !== '')}
@@ -102,11 +230,13 @@ function FloatingLabelInput({ label, placeholder, icon }) {
 }
 
 /* Floating Label Textarea Component */
-function FloatingLabelTextarea({ label, placeholder, icon }) {
+function FloatingLabelTextarea({ label, placeholder, icon, name }) {
+  // Add name prop
   const [isFocused, setIsFocused] = useState(false);
   return (
     <div className="relative">
       <textarea
+        name={name}
         placeholder={isFocused ? '' : placeholder}
         onFocus={() => setIsFocused(true)}
         onBlur={(e) => setIsFocused(e.target.value !== '')}
