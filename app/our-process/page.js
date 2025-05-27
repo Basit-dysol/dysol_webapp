@@ -118,7 +118,7 @@ export default function OurProcessPage() {
   ];
 
   return (
-    <main className="bg-black">
+    <main className="">
       {/* Hero Section */}
       <section className="w-full h-auto md:h-[500px] 2xl:px-32 text-white bg-[#1A1A1A] mt-[-20px] flex flex-col justify-center px-6 md:px-24 pt-12 md:pt-24 pb-8">
         <Breadcrumbs label="Our Process" />
