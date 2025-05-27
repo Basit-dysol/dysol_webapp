@@ -27,7 +27,7 @@ export default async function OurWorkPage() {
     // console.log('✅ Projects received from API:', projects);
 
     return (
-      <main className="py-12 md:py-24 px-6 md:px-24 text-white">
+      <main className="py-12 md:py-24 px-6 2xl:px-32 md:px-24 text-white ">
         {/* Page Header */}
         <div className="mb-8 md:mb-12">
           <h2 className="mt-8 md:mt-12 text-sm md:text-base text-white/50 text-left">
