@@ -10,7 +10,7 @@ export default function HeroSection() {
     <>
       <div className="m-2">
         <section className="flex flex-col w-full min-h-[80vh] md:min-h-[calc(100vh-16px)] text-white justify-end bg-[url('/LandingPage.png')] bg-cover bg-center rounded-4xl pb-8 md:pb-16 px-6 md:px-24 xl:aspect-[156/100] 2xl:px-32 space-y-4 md:space-y-6 pr-0 xl:pr-[40vw] 2xl:pr-[40vw]">
-          <h1 className="text-3xl md:text-4xl xl:text-[4.25rem] 2xl:text-[4.5rem] md:w-[45vw] xl:w-[45vw] 2xl:w-[50vw] text-left font-medium md:leading-[3rem] xl:leading-[5rem] 2xl:leading-24">
+          <h1 className="text-3xl md:text-4xl xl:text-[4.14rem] 2xl:text-[4.5rem] md:w-[45vw] xl:w-[45vw] 2xl:w-[50vw] text-left font-medium md:leading-[3rem] xl:leading-[5rem] 2xl:leading-24">
             Let's take your
             <br className="md:hidden" />
             <span className="hidden md:inline"> </span>idea
@@ -21,7 +21,7 @@ export default function HeroSection() {
             <br className="hidden md:block" />
             market
           </h1>
-          <p className="text-sm md:text-base 2xl:text-xl md:w-[42vw] 2xl:w-[40vw] text-white/60 font-light text-left leading-relaxed md:leading-6 xl:leading-8 max-w-[90vw] md:max-w-none">
+          <p className="text-sm md:text-base 2xl:text-xl md:w-[42vw] 2xl:w-[40vw] text-white/60 font-light text-left leading-relaxed md:leading-6 xl:leading-6 max-w-[90vw] md:max-w-none">
             At Dysol, we bring your product idea to life with top-tier
             engineering and design. From idea to manufacturing, we're your
             trusted partner in end-to-end product development.

@@ -12,7 +12,7 @@ export default function AboutSection() {
       <div className="flex w-full flex-col md:flex-row gap-16">
         {/* Left Side - Clients */}
         <div className="flex flex-col items-start justify-center flex-1">
-          <h2 className="text-3xl md:text-[2.5rem] text-white leading-tight mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-[2.5rem] xl:text-[2.3rem] text-white leading-tight mb-8 md:mb-12">
             {/* <h2 className="mt-2 pb-6 md:pb-12 text-3xl md:text-[2.5rem] font-semibold text-left leading-tight"> */}
             We don't just think outside the box;
             <br className="" /> we explore new frontiers.
