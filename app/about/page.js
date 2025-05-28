@@ -30,16 +30,18 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="bg-black">
+    <main className="">
       {/* Hero Section */}
-      <section className="w-full h-auto md:h-[500px] text-white bg-[#1A1A1A] rounded-b-[40px] md:rounded-b-[80px] mt-[-20px] flex flex-col justify-center px-6 md:px-25 pt-12 md:pt-25 pb-8">
-        <Breadcrumbs label="Selected Work" />
-        <h1 className="font-medium text-4xl md:text-6xl leading-[1.2] md:leading-[5rem] pt-4 md:pt-8">
-          We're a team of creative problem solvers{' '}
-          <br className="hidden md:block" />
-          ready to bring your big ideas to life.
-        </h1>
-      </section>
+      <div className="bg-black">
+        <section className="w-full h-auto md:h-[500px] text-white bg-[#1A1A1A] rounded-b-[40px] md:rounded-b-[80px] mt-[-20px] flex flex-col justify-center px-6 md:px-25 pt-12 md:pt-25 pb-8">
+          <Breadcrumbs label="Selected Work" />
+          <h1 className="font-medium text-4xl md:text-[3.375rem] leading-1 md:leading-[4.5rem] pt-4 md:pt-8">
+            We're a team of creative problem solvers{' '}
+            <br className="hidden md:block" />
+            ready to bring your big ideas to life.
+          </h1>
+        </section>
+      </div>
 
       {/* Image Section */}
       <section className="w-full h-64 md:h-[480px] 2xl:h-[580px] bg-[url('/CreativeContemplation.png')] bg-cover bg-center"></section>

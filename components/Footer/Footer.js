@@ -29,8 +29,10 @@ export default function Footer() {
 
   return (
     <footer
-      style={{ backgroundImage: `url('/footer-bg.png')` }}
-      className="bg-[#0D0D0D] min-h-[calc(100vh-45px)] text-white px-6 md:px-24 2xl:px-32 py-12 md:py-30 relative">
+      style={{
+        backgroundImage: `url('/footer-bg.png')`,
+      }}
+      className="bg-[#0D0D0D] -translate-y-16  pt-24 -z-10 w-full max-w-[1920px] mx-auto min-h-[calc(100vh-45px)] text-white px-6 md:px-24 2xl:px-32 py-12 md:py-30 relative">
       {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <img src="/dysollogo.svg" alt="Dysol Logo" className="w-32 md:w-auto" />
@@ -103,7 +105,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-8 md:mt-10 space-y-4 lg:space-y-36  border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+      <div className="mt-8 md:mt-10 space-y-4 lg:space-y-24  border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
         <p className="font-[Inter] font-normal text-base md:text-[20px]">
           © Dysol, 2025
         </p>
@@ -120,7 +122,11 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full">
+        <div
+          style={{
+            backgroundImage: `url('/footer-bg.png')`,
+          }}
+          className="absolute bg-[#0D0D0D] translate-y-16 bottom-0 left-0 w-full">
           <img
             className="w-full"
             src="/footer-bottom.svg"

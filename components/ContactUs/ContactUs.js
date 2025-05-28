@@ -1,19 +1,51 @@
 'use client';
-
 import { useState } from 'react';
 import Image from 'next/image';
 
 export default function ContactUs({ onClose }) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      name: e.target.elements.name.value,
+      company: e.target.elements.company.value,
+      email: e.target.elements.email.value,
+      phone: e.target.elements.phone.value,
+      message: e.target.elements.message.value,
+    };
+
+    try {
+      const response = await fetch('/api/email/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        e.target.reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
-      {/* Blurred Background - Keeps Previous Screen Visible */}
       <div
         className="fixed inset-0 backdrop-blur-md bg-black/30 z-50"
         onClick={onClose}
       />
 
-      {/* Contact Form Panel - Covers Right Half */}
-      <div className="fixed right-0 top-0 h-full  w-full xl:w-1/2 bg-[#191919] text-white p-8 shadow-lg z-50 overflow-y-auto">
+      <div className="fixed right-0 top-0 h-full w-full xl:w-1/2 bg-[#191919] text-white p-8 shadow-lg z-50 overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -25,7 +57,6 @@ export default function ContactUs({ onClose }) {
             height={20}
           />
         </button>
-
         {/* Heading */}
         <h2 className="text-4xl font-semibold mb-4 mt-6">
           Start your project with Dysol
@@ -36,9 +67,8 @@ export default function ContactUs({ onClose }) {
           the form below and let’s talk about how we can design the future
           together.
         </p>
-
         {/* Contact Form */}
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* Two-Column Layout for Name, Company, Email, and Contact */}
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mb-4">
 
@@ -68,8 +98,14 @@ export default function ContactUs({ onClose }) {
               icon="/contactUs/phone.svg"
             />
           </div>
-
-          {/* Message Field - Full Width */}
+          <div className="mb-4">
+            <FloatingLabelTextarea
+              name="message" // Add this
+              label="Message Body"
+              placeholder="What do you want to talk about?"
+            />
+          </div>
+          ;{/* Message Field - Full Width */}
           <div className="mb-4">
             <FloatingLabelTextarea
               label="Message Body"
@@ -77,18 +113,28 @@ export default function ContactUs({ onClose }) {
               icon=""
             />
           </div>
-
-          {/* Submit Button */}
+          ;
+          {submitStatus === 'success' && (
+            <div className="mb-4 p-4 bg-green-900/30 text-green-400 rounded-lg">
+              Message sent successfully!
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="mb-4 p-4 bg-red-900/30 text-red-400 rounded-lg">
+              Error sending message. Please try again.
+            </div>
+          )}
           <button
             type="submit"
-            className="w-full flex justify-center mt-10 bg-white text-gray-950 p-3 font-[Plus_Jakarta_Sans] rounded-full font-medium hover:bg-gray-200 transition">
-            Contact us <Image
+            className="disabled:opacity-50 w-full flex justify-center mt-10 bg-white text-gray-950 p-3 font-[Plus_Jakarta_Sans] rounded-full font-medium hover:bg-gray-200 transition"
+            disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : `'Contact us' ${<Image
               src="/contactUs/send.svg"
               alt="Arrow"
               width={18}
               height={18}
               className="inline-block ml-2"
-            />
+            />}`}
           </button>
         </form>
       </div>
@@ -128,7 +174,7 @@ const InsetLabelInput = ({ label, id, icon, onChange, placeholder }) => {
 
 
 // /* Floating Label Input Component */
-// function FloatingLabelInput({ label, id, placeholder, icon }) {
+// function FloatingLabelInput({label, id, placeholder, icon}) {
 //   const [isFocused, setIsFocused] = useState(false);
 //   return (
 //     <div className="relative">
@@ -161,7 +207,8 @@ const InsetLabelInput = ({ label, id, icon, onChange, placeholder }) => {
 // }
 
 /* Floating Label Textarea Component */
-function FloatingLabelTextarea({ label, placeholder, icon }) {
+function FloatingLabelTextarea({ label, placeholder, icon, name }) {
+  // Add name prop
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -172,7 +219,8 @@ function FloatingLabelTextarea({ label, placeholder, icon }) {
 
       <textarea
         id="message"
-        placeholder={placeholder}
+        name={name}
+        placeholder={isFocused ? '' : placeholder}
         onFocus={() => setIsFocused(true)}
         onBlur={(e) => setIsFocused(e.target.value !== '')}
         className="w-full p-4 pl-0 pt-1"

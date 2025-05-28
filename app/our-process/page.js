@@ -118,9 +118,9 @@ export default function OurProcessPage() {
   ];
 
   return (
-    <main className="bg-black">
+    <main className="">
       {/* Hero Section */}
-      <section className="w-full h-auto md:h-[500px] text-white bg-[#1A1A1A] mt-[-20px] flex flex-col justify-center px-6 md:px-25 pt-12 md:pt-25 pb-8">
+      <section className="w-full h-auto md:h-[500px] 2xl:px-32 text-white bg-[#1A1A1A] mt-[-20px] flex flex-col justify-center px-6 md:px-24 pt-12 md:pt-24 pb-8">
         <Breadcrumbs label="Our Process" />
         <h2 className="mt-6 md:mt-8 text-3xl md:text-5xl font-medium text-left">
           The Dysol way of working
@@ -134,7 +134,7 @@ export default function OurProcessPage() {
       </section>
 
       {/* Process Grid */}
-      <section className="bg-[#1A1A1A] px-6 md:px-25 py-8 md:py-15 flex flex-col gap-6 md:gap-10">
+      <section className="bg-[#1A1A1A] px-6 md:px-24 py-8 md:py-14 2xl:px-32 flex flex-col gap-6 md:gap-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-2 mt-2">
           {process.map((process, index) => (
             <OurProcessCard key={index} {...process} />
@@ -143,7 +143,7 @@ export default function OurProcessPage() {
       </section>
 
       {/* Innovation Section */}
-      <section className="bg-[#1A1A1A] px-6 md:pl-30 md:pr-40 py-12 md:py-35 rounded-b-[40px] md:rounded-b-[80px]">
+      <section className="bg-[#1A1A1A] px-6 2xl:px-32 md:pl-32 md:pr-40 py-12 md:py-36 rounded-b-[40px] md:rounded-b-[80px]">
         <div className="flex flex-col md:grid md:grid-cols-2 md:gap-20">
           {/* Left Column */}
           <div className="flex flex-col gap-4 md:gap-8 mb-8 md:mb-0">
