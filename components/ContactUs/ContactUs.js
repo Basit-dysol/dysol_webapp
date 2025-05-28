@@ -1,10 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Image from 'next/image';
 
 export default function ContactUs({ onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  const contactUsBtnText = useMemo(() => isSubmitting ? 'Sending...' : <>Contact us <Image
+    src="/contactUs/send.svg"
+    alt="Arrow"
+    width={18}
+    height={18}
+    className="inline-block ml-2"
+  /></>, [isSubmitting]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -92,7 +100,7 @@ export default function ContactUs({ onClose }) {
               icon="/contactUs/email.svg"
             />
             <InsetLabelInput
-              id="contact"
+              id="phone"
               label="Your Contact Number"
               placeholder="Enter contact number"
               icon="/contactUs/phone.svg"
@@ -105,15 +113,6 @@ export default function ContactUs({ onClose }) {
               placeholder="What do you want to talk about?"
             />
           </div>
-          ;{/* Message Field - Full Width */}
-          <div className="mb-4">
-            <FloatingLabelTextarea
-              label="Message Body"
-              placeholder="What do you want to talk about?"
-              icon=""
-            />
-          </div>
-          ;
           {submitStatus === 'success' && (
             <div className="mb-4 p-4 bg-green-900/30 text-green-400 rounded-lg">
               Message sent successfully!
@@ -126,15 +125,9 @@ export default function ContactUs({ onClose }) {
           )}
           <button
             type="submit"
-            className="disabled:opacity-50 w-full flex justify-center mt-10 bg-white text-gray-950 p-3 font-[Plus_Jakarta_Sans] rounded-full font-medium hover:bg-gray-200 transition"
+            className="pointer-events-auto disabled:opacity-50 w-full flex justify-center mt-10 bg-white text-gray-950 p-3 font-[Plus_Jakarta_Sans] rounded-full font-medium hover:bg-gray-200 transition"
             disabled={isSubmitting}>
-            {isSubmitting ? 'Sending...' : `'Contact us' ${<Image
-              src="/contactUs/send.svg"
-              alt="Arrow"
-              width={18}
-              height={18}
-              className="inline-block ml-2"
-            />}`}
+            {contactUsBtnText}
           </button>
         </form>
       </div>
