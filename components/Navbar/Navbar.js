@@ -25,9 +25,20 @@ export default function Navbar() {
         {/* Right Section - Hidden on mobile */}
         <div className="hidden md:flex items-center gap-4">
           <button
-            className="md:w-[183px] h-11 px-3 md:px-[18px] py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2"
-            onClick={() => setContactVisible(true)}>
-            <img src="/becomeclient.svg" alt="" />
+            className="md:w-[183px] h-11 px-3 md:px-[18px] py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2
+    transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] 
+    hover:bg-white/60 hover:border-2 hover:border-white/60
+    border-2 border-transparent"
+            onClick={() => setContactVisible(true)}
+            style={{
+              animationDelay: '1ms',
+              transitionProperty: 'background, transform, border-color',
+            }}>
+            <img
+              src="/becomeclient.svg"
+              alt=""
+              className="transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] hover:translate-x-0.5"
+            />
             Become a client
           </button>
 

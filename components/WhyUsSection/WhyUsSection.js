@@ -36,7 +36,7 @@ export default function WhyUsSection() {
       </h2>
 
       {/* Main Heading */}
-      <h2 className="text-3xl md:text-[2.5rem] leading-tight mb-8 md:mb-12">
+      <h2 className="text-3xl md:text-[2.5rem] text-white leading-tight mb-8 md:mb-12">
         Why choose to partner with us?
       </h2>
 
@@ -60,10 +60,12 @@ export default function WhyUsSection() {
               max-md:border-l-0 max-md:border-r-0
             `}>
             {feature.icon}
-            <h3 className="text-white/90 text-lg md:text-xl mb-2">
+            <h3 className="text-white text-lg md:text-xl 2xl:text-2xl mb-2">
               {feature.title}
             </h3>
-            <p className="text-white/70 text-sm">{feature.description}</p>
+            <p className="text-white/80 text-sm 2xl:text-xl">
+              {feature.description}
+            </p>
           </div>
         ))}
 
