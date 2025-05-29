@@ -13,13 +13,13 @@ export default function HeroSection() {
           <h1 className="text-3xl md:text-4xl xl:text-[4.14rem] 2xl:text-[4.5rem] md:w-[45vw] xl:w-[45vw] 2xl:w-[50vw] text-left font-medium md:leading-[3rem] xl:leading-[5rem] 2xl:leading-24">
             Let's take your
             <br className="md:hidden" />
-            <span className="hidden md:inline"> </span>idea
+            <span className="hidden md:inline"> </span>
             <br className="hidden md:block" />
-            from concept
+            idea from concept
             <br className="md:hidden" />
-            <span className="hidden md:inline"> </span>to
+            <span className="hidden md:inline"> </span>
             <br className="hidden md:block" />
-            market
+            to market
           </h1>
           <p className="text-sm md:text-base 2xl:text-xl md:w-[42vw] 2xl:w-[40vw] text-white/60 font-light text-left leading-relaxed md:leading-6 xl:leading-6 max-w-[90vw] md:max-w-none">
             At Dysol, we bring your product idea to life with top-tier
