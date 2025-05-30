@@ -25,10 +25,7 @@ export default function Navbar() {
         {/* Right Section - Hidden on mobile */}
         <div className="hidden md:flex items-center gap-4">
           <button
-            className="md:w-[183px] h-11 px-3 md:px-[18px] py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2
-    transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] 
-    hover:bg-white/60 hover:border-2 hover:border-white/60
-    border-2 border-transparent"
+            className="md:w-[183px] h-11 px-3 md:px-[18px] py-3 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2 transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]  hover:bg-white/60 hover:border-2 hover:border-white/60 border-2 border-transparent"
             onClick={() => setContactVisible(true)}
             style={{
               animationDelay: '1ms',
@@ -164,11 +161,11 @@ export default function Navbar() {
             <div className="hidden md:block sticky inset-0 w-full h-screen text-white/60 z-40">
               <div className="w-full h-full flex">
                 {/* Left Column */}
-                <div className="w-[70%] flex flex-col justify-center md:justify-end pb-12 bg-[#220A39] pl-12 md:pl-24">
-                  <h1 className="mb-8 font-medium xl:text-xl 2xl:text-2xl">
+                <div className="w-[70%] 2xl:w-[72%] flex flex-col justify-center md:justify-end pb-12 bg-[#220A39] pl-12 md:pl-24 2xl:pl-32">
+                  <h1 className="mb-8 font-normal xl:text-xl 2xl:text-3xl">
                     Navigation
                   </h1>
-                  <div className="xl:space-y-4 2xl:space-y-9">
+                  <div className="xl:space-y-4 2xl:space-y-7">
                     {[
                       { name: 'Home', path: '/' },
                       { name: 'About us', path: '/about' },
@@ -183,7 +180,7 @@ export default function Navbar() {
                               setIsOpen(false);
                               setContactVisible(true);
                             }}
-                            className="text-2xl xl:leading-0 xl:text-4xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
+                            className="text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white/80 transition-colors block">
                             {name}
                             <Image
                               className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -196,7 +193,7 @@ export default function Navbar() {
                         : <Link
                             href={path}
                             onClick={() => setIsOpen(false)}
-                            className="text-2xl xl:leading-0 xl:text-4xl 2xl:text-6xl font-medium hover:text-white/80 transition-colors block">
+                            className="text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white/80 transition-colors block">
                             {name}
                             <Image
                               className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -213,7 +210,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Right Column */}
-                <div className="nav-items-right w-[487px] lg:w-[30%] flex flex-col items-center align-middle justify-center md:justify-end sm:pb-12 pb-0 bg-[#B93182] px-2 md:px-10">
+                <div className="nav-items-right xl:gap-2 2xl:gap-5 w-[487px] lg:w-[30%] 2xl:w-[28%] flex flex-col items-center align-middle justify-center md:justify-end sm:pb-16 pb-0 bg-[#B93182] px-2 md:px-10">
                   {[
                     {
                       Icon: '/emailUs.svg',
@@ -237,10 +234,12 @@ export default function Navbar() {
                     <button
                       key={text}
                       onClick={() => link && (window.location.href = link)}
-                      className="w-full max-w-md h-12 px-5 py-3 flex items-center gap-5 rounded-xl border border-white/20 bg-white/20 hover:bg-white/10 transition-colors">
+                      className="w-full max-w-md h-12 2xl:h-16 px-5 py-3 flex items-center gap-5 rounded-xl border border-white/20 bg-white/20 hover:bg-white/10 transition-colors">
                       <Image src={Icon} alt={text} width={36} height={36} />
                       <div className="h-[24px] min-h-[1em] w-[1px] bg-[rgba(255,255,255,0.2)] dark:bg-white/10"></div>
-                      <span className="nav-items__text text-2xl">{text}</span>
+                      <span className="nav-items__text text-2xl 2xl:text-3xl">
+                        {text}
+                      </span>
                     </button>
                   ))}
                 </div>
