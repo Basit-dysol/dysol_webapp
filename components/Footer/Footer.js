@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer
       style={{ backgroundImage: `url('/footer-bg.png')` }}
-      className="bg-[#0D0D0D] min-h-[calc(100vh-45px)] text-white px-6 md:px-24 2xl:px-32 py-12 md:py-30 relative">
+      className="bg-[#0D0D0D] 2xl:min-h-fit text-white px-6 md:px-24 2xl:px-32 py-12 md:py-30 relative">
       {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <img src="/dysollogo.svg" alt="Dysol Logo" className="w-32 md:w-auto" />
@@ -89,7 +89,7 @@ export default function Footer() {
           {/* Socials */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Socials</h3>
-            <ul className="text-gray-400 space-y-3">
+            <ul className="text-white/80 space-y-3">
               {socialLinks.map((link, index) => (
                 <li key={index}>
                   <Link href={link.link} className="hover:underline text-sm">
@@ -103,13 +103,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-8 md:mt-10 space-y-4 lg:space-y-36 2xl:space-y-20 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+      <div className="mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D] pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
         <p className="font-[Inter] font-normal text-base md:text-[20px]">
           © Dysol, 2025
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-          <select className="bg-black text-white font-[Plus_Jakarta_Sans] font-bold text-sm">
+          <select className="bg-[#0D0D0D] text-white font-[Plus_Jakarta_Sans] font-bold text-sm">
             <option>EN</option>
             <option>FR</option>
           </select>

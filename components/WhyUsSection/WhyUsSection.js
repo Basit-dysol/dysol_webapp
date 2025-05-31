@@ -43,7 +43,7 @@ export default function WhyUsSection() {
       {/* Feature Grid with Borders */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full relative">
         {/* Top Full-Width Dashed Line */}
-        <div className="absolute left-0 right-0 top-0 -mx-6 md:-mx-20 border-t-[1px] border-dashed border-[#4D4D4D] hidden md:inline"></div>
+        <div className="absolute left-0 right-0 top-0 -mx-6 md:-mx-32 border-t-[1px] border-dashed border-[#4D4D4D] hidden md:inline"></div>
 
         {features.map((feature, index) => (
           <div
@@ -70,7 +70,7 @@ export default function WhyUsSection() {
         ))}
 
         {/* Bottom Full-Width Dashed Line */}
-        <div className="absolute left-0 right-0 bottom-0 -mx-6 md:-mx-20 border-t-[1px] border-dashed border-[#4D4D4D] hidden md:block"></div>
+        <div className="absolute left-0 right-0 bottom-0 -mx-6 md:-mx-32 border-t-[1px] border-dashed border-[#4D4D4D] hidden md:block"></div>
       </div>
     </div>
   );
