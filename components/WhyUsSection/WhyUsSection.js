@@ -2,25 +2,25 @@ import { FaRobot, FaBuilding, FaClock, FaRocket } from 'react-icons/fa';
 
 const features = [
   {
-    icon: <FaRobot className="text-[#FAA7E0] text-4xl mb-4" />,
+    icon: '/whyussection/leading.svg',
     title: 'Leading with Technology',
     description:
       'We leverage cutting-edge technology tools, integrating the latest innovations into your product to give your business a market-leading solution.',
   },
   {
-    icon: <FaBuilding className="text-[#FAA7E0] text-4xl mb-4" />,
+    icon: '/whyussection/industry.svg',
     title: 'Industry Expertise',
     description:
       'Our diverse team brings extensive experience across various industries, allowing us to tailor solutions that address the unique challenges of your business.',
   },
   {
-    icon: <FaClock className="text-[#FAA7E0] text-4xl mb-4" />,
+    icon: '/whyussection/ontime.svg',
     title: 'On-Time, On-Budget',
     description:
       'From start to finish, we keep your project’s timeline and budget in focus, balancing innovation with resource management to deliver exceptional results.',
   },
   {
-    icon: <FaRocket className="text-[#FAA7E0] text-4xl mb-4" />,
+    icon: '/whyussection/endtoend.svg',
     title: 'End-to-End Development',
     description:
       'Our expert team guarantees a seamless transition from concept to prototyping and manufacturing, saving you time and resources by managing each step with precision.',
@@ -43,7 +43,7 @@ export default function WhyUsSection() {
       {/* Feature Grid with Borders */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full relative">
         {/* Top Full-Width Dashed Line */}
-        <div className="absolute left-0 right-0 top-0 -mx-6 md:-mx-20 border-t-2 border-dashed border-[#4D4D4D] hidden md:inline"></div>
+        <div className="absolute left-0 right-0 top-0 -mx-6 md:-mx-20 border-t-[1px] border-dashed border-[#4D4D4D] hidden md:inline"></div>
 
         {features.map((feature, index) => (
           <div
@@ -51,15 +51,15 @@ export default function WhyUsSection() {
             className={`
               p-4 md:p-6 
               border-b-2 md:border-b-0 
-              ${index === 0 ? 'md:border-l-2 md:border-dashed md:border-[#4D4D4D]' : ''}
-              ${index === features.length - 1 ? 'md:border-r-2 md:border-dashed md:border-[#4D4D4D]' : ''}
-              md:border-r-2 
+              ${index === 0 ? 'md:border-l-[1px] md:border-dashed md:border-[#4D4D4D]' : ''}
+              ${index === features.length - 1 ? 'md:border-r-[1px] md:border-dashed md:border-[#4D4D4D]' : ''}
+              md:border-r-[1px]
               border-dashed border-[#4D4D4D] 
               text-left transition-all duration-300 
               hover:bg-[#333333]
               max-md:border-l-0 max-md:border-r-0
             `}>
-            {feature.icon}
+            <img src={feature.icon} alt="" className="mb-8" />
             <h3 className="text-white text-lg md:text-xl 2xl:text-2xl mb-2">
               {feature.title}
             </h3>
@@ -70,7 +70,7 @@ export default function WhyUsSection() {
         ))}
 
         {/* Bottom Full-Width Dashed Line */}
-        <div className="absolute left-0 right-0 bottom-0 -mx-6 md:-mx-20 border-t-2 border-dashed border-[#4D4D4D] hidden md:block"></div>
+        <div className="absolute left-0 right-0 bottom-0 -mx-6 md:-mx-20 border-t-[1px] border-dashed border-[#4D4D4D] hidden md:block"></div>
       </div>
     </div>
   );
