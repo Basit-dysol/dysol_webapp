@@ -31,12 +31,12 @@ export default function WhyUsSection() {
   return (
     <div className="h-max py-12 md:py-20 2xl:py-36 px-6 md:px-24 2xl:px-32 text-white/90 overflow-hidden">
       {/* Section Title */}
-      <h2 className="text-sm text-white/80 uppercase tracking-wide mb-2">
+      <h2 className="text-left 2xl:text-xl text-sm text-white/90 uppercase tracking-wide my-6">
         Why Us?
       </h2>
 
       {/* Main Heading */}
-      <h2 className="text-3xl md:text-[2.5rem] text-white leading-tight mb-8 md:mb-12">
+      <h2 className="text-3xl md:text-[2.5rem] xl:text-[2.3rem] 2xl:text-[3rem] text-white/90 leading-tight mb-8 md:mb-12">
         Why choose to partner with us?
       </h2>
 

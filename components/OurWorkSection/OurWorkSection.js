@@ -49,13 +49,12 @@ export default function OurWorkSection() {
   return (
     <section className="py-12 md:py-16 px-6 md:px-24 2xl:px-32 flex flex-col text-white/90 items-baseline justify-center text-center">
       {/* Section Header */}
-      <h2 className="mt-6 md:mt-12 items-start text-left text-sm md:text-base uppercase tracking-wide">
+      <h2 className="my-6 text-left 2xl:text-xl md:mt-12 items-start text-sm md:text-base uppercase tracking-wide">
         OUR WORK
       </h2>
 
       {/* Section Title */}
-      <h2 className="text-3xl md:text-[2.5rem] items-start text-left leading-tight mb-8 md:mb-12">
-        {/* <h2 className="mt-2 pb-6 md:pb-12 text-3xl md:text-[2.5rem]  leading-tight font-semibold"> */}
+      <h2 className="text-3xl md:text-[2.5rem] xl:text-[2.3rem] 2xl:text-[3rem] items-start text-left leading-tight mb-8 md:mb-12">
         We engineer ideas into impactful products.
       </h2>
 
