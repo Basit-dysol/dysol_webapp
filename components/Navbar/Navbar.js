@@ -180,7 +180,7 @@ export default function Navbar() {
                               setIsOpen(false);
                               setContactVisible(true);
                             }}
-                            className="text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white/80 transition-colors block">
+                            className="cursor-pointer text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white/80 transition-colors block">
                             {name}
 
                           </button>

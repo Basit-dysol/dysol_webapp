@@ -30,13 +30,13 @@ export default function Footer() {
   return (
     <footer
       style={{ backgroundImage: `url('/footer-bg.png')` }}
-      className="bg-[#0D0D0D] 2xl:min-h-fit text-white px-6 md:px-24 2xl:px-32 py-12 md:py-30 relative">
+      className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4  2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative">
       {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <img src="/dysollogo.svg" alt="Dysol Logo" className="w-32 md:w-auto" />
       </Link>
 
-      <div className="max-w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-full grid grid-cols-1 gap-10 sm:grid-cols-2">
         {/* Left Side - Call to Action */}
         <div className="flex flex-col justify-between gap-6 md:gap-8">
           <h2 className="text-3xl md:text-[48px] font-medium font-[Plus_Jakarta_Sans] leading-tight">
@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         {/* Right Side Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3  justify-items-center  ">
           {/* Contact Us */}
           <div className="flex flex-col mb-6 sm:mb-0">
             <h3 className="font-semibold text-lg pb-4">Contact us</h3>
