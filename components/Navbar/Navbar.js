@@ -47,10 +47,10 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className={`text-white p-3 rounded-full transition-all duration-300 ${
               isOpen ? 'bg-[#D583B4]' : 'bg-[#FFFFFF]/40'
-            }`}>
+              }`}>
             {isOpen ?
               <Image src="/cross.svg" alt="Close" width={24} height={24} />
-            : <Image src="/menu.svg" alt="Menu" width={24} height={24} />}
+              : <Image src="/menu.svg" alt="Menu" width={24} height={24} />}
           </button>
         </div>
 
@@ -91,7 +91,7 @@ export default function Navbar() {
                         className="text-xl font-medium hover:text-white/80 block w-full text-center">
                         {name}
                       </button>
-                    : <Link
+                      : <Link
                         href={path}
                         onClick={() => setIsOpen(false)}
                         className="text-xl font-medium hover:text-white/80 block w-full text-center">
@@ -173,7 +173,7 @@ export default function Navbar() {
                       { name: 'Our Process', path: '/our-process' },
                       { name: 'Contact us', path: '/contact-us' },
                     ].map(({ name, path }) => (
-                      <div key={name}>
+                      <div key={name} className='flex items-center gap-2 group'>
                         {name === 'Contact us' ?
                           <button
                             onClick={() => {
@@ -182,28 +182,24 @@ export default function Navbar() {
                             }}
                             className="text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white/80 transition-colors block">
                             {name}
-                            <Image
-                              className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                              src="/right-arrow.svg"
-                              width={50}
-                              height={50}
-                              alt="right-arrow"
-                            />
+
                           </button>
-                        : <Link
+                          : <Link
                             href={path}
                             onClick={() => setIsOpen(false)}
-                            className="text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white/80 transition-colors block">
+                            className="text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white transition-colors block">
                             {name}
-                            <Image
-                              className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+
+                          </Link>}
+
+                        <Image
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                               src="/right-arrow.svg"
                               width={50}
                               height={50}
-                              alt="right-arrow"
-                            />
-                          </Link>
-                        }
+                          alt="right-arrow"
+                        />
+
                       </div>
                     ))}
                   </div>
