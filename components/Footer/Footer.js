@@ -3,6 +3,8 @@ import { useState } from 'react';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import TellUsMoreButton from '@/components/TellUsMoreButton/TellUsMoreButton';
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
@@ -55,32 +57,55 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3  justify-items-center  ">
           {/* Contact Us */}
           <div className="flex flex-col mb-6 sm:mb-0">
-            <h3 className="font-semibold text-lg pb-4">Contact us</h3>
-            <div className="space-y-4">
+            <h3 className="font-semibold text-lg pb-4 font-[Plus_Jakarta_Sans]">Contact us</h3>
+            <div className="space-y-4 text-white/60">
               <div>
-                <p className="text-white/80">Email us</p>
+                <p className="font-[Inter] text-sm">Email us</p>
                 <a
                   href="mailto:info@dysol.com"
-                  className="text-white/80 hover:underline text-sm">
+                  className="font-[Inter] underline decoration-dotted text-sm group flex hover:text-white transition-colors ">
                   info@dysol.com
+                  <Image
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-1"
+                    src="/openArrow.svg"
+                    width={15}
+                    height={15}
+                    alt="right-arrow"
+                  />
                 </a>
+
               </div>
               <div>
-                <p className="text-white/80">Call us</p>
-                <p className="text-white/80 text-sm">+27637731006</p>
+                <p className='font-[Inter] text-sm'>Call us</p>
+                <p className="font-[Inter] text-sm underline decoration-dotted group flex hover:text-white transition-colors">+27637731006
+                  <Image
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-1"
+                    src="/openArrow.svg"
+                    width={15}
+                    height={15}
+                    alt="right-arrow"
+                  />
+                </p>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="mb-6 sm:mb-0">
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="text-white/80 space-y-3">
+            <h3 className="font-semibold text-lg mb-4 font-[Plus_Jakarta_Sans]">Quick Links</h3>
+            <ul className="text-white/60 space-y-3 font-[Inter]">
               {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.link} className="hover:underline text-sm">
+                <li key={index} className='flex gap-2 items-center group'>
+                  <Link href={link.link} className="text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
+                  <Image
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    src="/openArrow.svg"
+                    width={15}
+                    height={15}
+                    alt="right-arrow"
+                  />
                 </li>
               ))}
             </ul>
@@ -88,13 +113,20 @@ export default function Footer() {
 
           {/* Socials */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Socials</h3>
-            <ul className="text-white/80 space-y-3">
+            <h3 className="font-semibold text-lg mb-4 font-[Plus_Jakarta_Sans]">Socials</h3>
+            <ul className="text-white/60 space-y-3 font-[Inter]">
               {socialLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.link} className="hover:underline text-sm">
+                <li key={index} className='flex gap-2 items-center group'>
+                  <Link href={link.link} className="text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
+                  <Image
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    src="/openArrow.svg"
+                    width={15}
+                    height={15}
+                    alt="right-arrow"
+                  />
                 </li>
               ))}
             </ul>
