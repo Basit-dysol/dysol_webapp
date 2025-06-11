@@ -25,7 +25,7 @@ export default function ContactUs({ onClose }) {
     };
 
     try {
-      const response = await fetch('/api/email/send-email', {
+      const response = await fetch('/api/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
