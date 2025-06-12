@@ -23,7 +23,9 @@ export default function HeroSection() {
           </h1>
           <p className="text-sm md:text-base 2xl:text-xl md:w-[42vw] 2xl:w-[40vw] text-white/60 font-light text-left leading-relaxed md:leading-6 xl:leading-6 max-w-[90vw] md:max-w-none">
             At Dysol, we bring your product idea to life with top-tier
-            engineering and design. From idea to manufacturing, we're your
+            engineering and
+            <br className="hidden md:block" />
+            design. From idea to manufacturing, we're your
             trusted partner in end-to-end product development.
             <br className="hidden md:block" />
             <span className="md:hidden"> </span>

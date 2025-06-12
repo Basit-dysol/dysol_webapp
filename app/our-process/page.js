@@ -125,11 +125,12 @@ export default function OurProcessPage() {
         <h2 className="mt-6 md:mt-8 text-3xl md:text-5xl font-medium text-left">
           The Dysol way of working
         </h2>
-        <p className="text-white/50 mt-4 md:mt-4 w-full md:w-[65vw] text-base md:text-inherit">
-          At Dysol, we're your global end-to-end product development partner
-          from idea to market launch. We walk with you every step of the way,
-          combining our hands-on expertise and approach so that your vision is
-          brought to life efficiently and effectively...
+        <p className=" mt-4 md:mt-4 w-full md:w-[65vw] text-base md:text-inherit text-white/80">
+          At Dysol, we’re your global end-to-end product development partner from idea to market launch. We walk with you
+          every step of the way, combining our hands-on expertise and approach so that your vision is brought to life efficiently
+          and effectively. Our team of experts work closely with you to refine concepts, manage market research, develop
+          designs, and conduct rigorous testing. Working with Dysol means working with a partner invested in creating your
+          impactful solution and positioning your product for success in the marketplace.
         </p>
       </section>
 

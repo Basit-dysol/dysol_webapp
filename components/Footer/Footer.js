@@ -64,7 +64,7 @@ export default function Footer() {
                 <a
                   href="mailto:info@dysol.com"
                   className="font-[Inter] underline decoration-dotted text-sm group flex hover:text-white transition-colors ">
-                  info@dysol.com
+                  info@dysol.ae
                   <Image
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-1"
                     src="/openArrow.svg"
@@ -77,7 +77,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className='font-[Inter] text-sm'>Call us</p>
-                <p className="font-[Inter] text-sm underline decoration-dotted group flex hover:text-white transition-colors">+27637731006
+                <p className="font-[Inter] text-sm underline decoration-dotted group flex hover:text-white transition-colors">+971525755451
                   <Image
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-1"
                     src="/openArrow.svg"
@@ -133,11 +133,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
       {/* Bottom Section */}
       <div className="mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D] pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-        <p className="font-[Inter] font-normal text-base md:text-[20px]">
-          © Dysol, 2025
+        <p className="text-white font-[Inter] font-normal text-base md:text-[20px]">
+          © Dysol, 2025 
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
@@ -147,12 +146,12 @@ export default function Footer() {
           </select>
           <a
             href="#"
-            className="hover:underline flex items-center gap-1 font-[Plus_Jakarta_Sans] font-bold text-sm">
+            className="text-white hover:underline flex items-center gap-1 font-[Plus_Jakarta_Sans] font-bold text-sm">
             Back to the top ↑
           </a>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full">
+        <div className="absolute bottom-3 left-0 w-full">
           <img
             className="w-full"
             src="/footer-bottom.svg"

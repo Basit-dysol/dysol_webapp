@@ -7,8 +7,8 @@ export default function TestimonialSection() {
     {
       quote:
         'We had an ambitious vision but weren’t sure how to bring it to life. Their team didn’t just build what we asked for—they helped us refine the concept, improve the design, and ensure it was actually manufacturable. What could have been a frustrating process became an exciting collaboration.',
-      name: 'Johnson Doe',
-      position: 'State Bank of Pakistan',
+      name: 'Faduma Gure',
+      position: 'Liss-Technologies',
       avatar: '/jhonsondoe.png', // Replace with an actual avatar image if you like
     },
     {
@@ -67,10 +67,10 @@ export default function TestimonialSection() {
         {/* Right Column: Testimonial Carousel */}
         <div className="flex flex-col items-start relative">
           <div className="relative pb-8 w-full">
-            <p className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl text-justify mb-6 min-h-48 md:h-72">
+            <p className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl text-justify mb-6 min-h-48 md:h-68">
               {quote}
             </p>
-            <div className="absolute bottom-0 left-0 right-0 border-t-2 border-dashed border-[#4D4D4D] -mx-6 md:-mx-24"></div>
+            <div className="absolute bottom-0 left-26 right-26 border-t-[1px] border-dashed border-[#4D4D4D] -mx-6 md:-mx-24"></div>
           </div>
 
           {/* Author info and controls */}
