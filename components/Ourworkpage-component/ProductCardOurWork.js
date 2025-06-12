@@ -22,6 +22,10 @@ export default function ProductCardOurWork({
   const imageUrl =
     image[0]?.asset?._ref ? getImageUrl(image[0].asset._ref) : null;
 
+
+ const visibleTags = tags?.slice(0, 3);
+ const remainingTags = (tags?.length - visibleTags.length) || 0;
+
   return (
     <Link
       href={`/our-work/${slug}`}
@@ -57,13 +61,18 @@ export default function ProductCardOurWork({
             <div className="hidden md:block mt-4">
               <div className="border-t-2 border-dashed border-white/16 my-3"></div>
               <div className="flex flex-wrap gap-2">
-                {tags.map((tag) => (
+                {visibleTags?.map((tag) => (
                   <span
                     key={tag}
                     className="bg-white/20 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-xs">
                     {tag}
                   </span>
                 ))}
+                {remainingTags > 0 && (
+                  <span className="bg-white/10 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-xs">
+                    +{remainingTags}
+                  </span>
+                )}
               </div>
             </div>
           )}
