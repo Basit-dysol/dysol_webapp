@@ -55,7 +55,11 @@ export default function AboutPage() {
               About us
             </h5>
             <p className="font-[Inter] text-base md:text-[14px] 2xl:text-[18px] text-white/60">
-              We're a team of world-class engineers, AI and ML specialists...
+              We’re a team of world-class engineers, AI and ML specialists, and UI/UX experts based
+              out of Dubai, UAE, united by a vision of developing impactful products. Our forward-thinking 
+              brand team complements our technical expertise, meaning that every project meets 
+              high quality standards and engages its users. Collaboration is at the heart of everything 
+              we do, combining our diverse skills and perspectives to transform your idea into a market-ready solution that makes a difference. 
             </p>
           </div>
 
