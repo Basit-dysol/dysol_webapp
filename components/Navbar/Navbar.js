@@ -173,7 +173,7 @@ export default function Navbar() {
                       { name: 'Our Process', path: '/our-process' },
                       { name: 'Contact us', path: '/contact-us' },
                     ].map(({ name, path }) => (
-                      <div key={name} className='flex items-center gap-2 py-4 group'>
+                      <div key={name} className='flex items-center gap-2 xl:py-2 2xl:py-4 group'>
                         {name === 'Contact us' ?
                           <button
                             onClick={() => {
