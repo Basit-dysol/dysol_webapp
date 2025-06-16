@@ -153,6 +153,7 @@ export default function Navbar() {
         </div>
       )}
 
+
       {/* Desktop Menu - Original untouched */}
       {isOpen && (
         <div className="hidden md:block sticky inset-0 w-full h-screen text-white/60 z-40">
