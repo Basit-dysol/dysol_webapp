@@ -173,21 +173,21 @@ export default function Navbar() {
                       { name: 'Our Process', path: '/our-process' },
                       { name: 'Contact us', path: '/contact-us' },
                     ].map(({ name, path }) => (
-                      <div key={name} className='flex items-center gap-2 xl:py-2 2xl:py-4 group'>
+                      <div key={name} className='flex items-center gap-2 group'>
                         {name === 'Contact us' ?
                           <button
                             onClick={() => {
                               setIsOpen(false);
                               setContactVisible(true);
                             }}
-                            className="cursor-pointer text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white/80 transition-colors block">
+                            className="cursor-pointer text-xl xl:text-5xl xl:leading-0 2xl:leading-tight 2xl:text-7xl font-medium hover:text-white/90 transition-colors block">
                             {name}
 
                           </button>
                           : <Link
                             href={path}
                             onClick={() => setIsOpen(false)}
-                            className="text-xl xl:text-5xl xl:leading-0 2xl:leading-none 2xl:text-7xl font-medium hover:text-white transition-colors block">
+                            className="cursor-pointer text-xl xl:text-5xl xl:leading-0 2xl:leading-tight 2xl:text-7xl font-medium hover:text-white/90 transition-colors block">
                             {name}
 
                           </Link>}
