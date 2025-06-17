@@ -190,21 +190,21 @@ export default async function ProjectDetail({ params }) {
   //   return `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${refParts[0]}-${refParts[1]}.${refParts[2]}`;
   // };
 
-const getImageUrl = (imgRef) => {
-  if (!imgRef || typeof imgRef !== 'string') {
-    console.warn('⚠️ Invalid image ref:', imgRef);
-    return '';
-  }
+  const getImageUrl = (imgRef) => {
+    if (!imgRef || typeof imgRef !== 'string') {
+      console.warn('⚠️ Invalid image ref:', imgRef);
+      return '';
+    }
 
-  const refParts = imgRef.replace('image-', '').split('-');
+    const refParts = imgRef.replace('image-', '').split('-');
 
-  if (refParts.length < 3) {
-    console.warn('⚠️ Unexpected Sanity image format:', imgRef);
-    return '';
-  }
+    if (refParts.length < 3) {
+      console.warn('⚠️ Unexpected Sanity image format:', imgRef);
+      return '';
+    }
 
-  return `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${refParts[0]}-${refParts[1]}.${refParts[2]}`;
-};
+    return `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${refParts[0]}-${refParts[1]}.${refParts[2]}`;
+  };
 
   const mainImage = project.projectImages[project.landingImageIndex || 0];
   const imageUrl = getImageUrl(mainImage?.asset?._ref);
