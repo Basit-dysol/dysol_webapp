@@ -272,9 +272,9 @@ export default async function ProjectDetail({ params }) {
             <img
               src={secondImageUrl}
               alt={project.title}
-              width={600}
-              height={400}
-              className="w-full h-64 object-cover"
+              width={640}
+              height={480}
+              className="w-full h-72 object-cover"
             />
           </div>
 
