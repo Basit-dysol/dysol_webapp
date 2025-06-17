@@ -156,7 +156,7 @@ async function getProjectData(slug) {
 }
 
 export default async function ProjectDetail({ params }) {
-  const { slug } = params;
+  const {slug } = params;
   if (!slug) {
     return notFound();
   }
@@ -192,7 +192,7 @@ export default async function ProjectDetail({ params }) {
   const imageUrl = getImageUrl(mainImage?.asset?._ref);
   
   // Get second image URL (for content section)  
-  const secondImage = project.projectImages[1];
+  const secondImage = project.projectImages[project.landingImageIndex+1 || 0]; // Fallback to first image if second doesn't exist
   const secondImageUrl = getImageUrl(secondImage?.asset?._ref);
 
 
