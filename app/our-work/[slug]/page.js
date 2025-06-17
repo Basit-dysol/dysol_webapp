@@ -190,6 +190,11 @@ export default async function ProjectDetail({ params }) {
 
   const mainImage = project.projectImages[project.landingImageIndex || 0];
   const imageUrl = getImageUrl(mainImage?.asset?._ref);
+  
+  // Get second image URL (for content section)  
+  const secondImage = project.projectImages[1];
+  const secondImageUrl = getImageUrl(secondImage?.asset?._ref);
+
 
   return (
     <main className="text-white">
@@ -247,7 +252,7 @@ export default async function ProjectDetail({ params }) {
           {/* Project Image */}
           <div className="rounded-xl overflow-hidden">
             <img
-              src={imageUrl}
+              src={secondImageUrl}
               alt={project.title}
               width={600}
               height={400}
