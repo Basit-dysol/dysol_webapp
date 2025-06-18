@@ -152,7 +152,7 @@ export default function ContactOverlay({ isOpen, onClose }) {
 
               <button
                 type="submit"
-                className="mt-4 w-full px-6 py-3 bg-pink-500 text-white font-semibold rounded hover:bg-pink-600 transition"
+                className="mt-4 w-full px-6 py-3 bg-pink-500 text-white font-semibold rounded-[16px] hover:bg-pink-600 transition"
                 disabled={!formik.isValid}>
                 Contact us <span className="ml-2">🚀</span>
               </button>

@@ -57,7 +57,7 @@ const CaseStudyCarousel = ({ projects = [] }) => {
                         slidesPerView: 3,
                     },
                     1440: {
-                        slidesPerView: 4,
+                        slidesPerView: 3.5,
                     },
                 }}
             >
