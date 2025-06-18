@@ -151,7 +151,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="absolute bottom-3 left-0 w-full">
+        <div className="absolute bottom-0 left-0 w-full">
           <img
             className="w-full"
             src="/footer-bottom.svg"

@@ -33,7 +33,7 @@ export default function AboutPage() {
     <main className="">
       {/* Hero Section */}
       <div className="bg-black">
-        <section className="w-full h-auto md:h-[500px] text-white bg-[#1A1A1A] rounded-b-[40px] md:rounded-b-[80px] mt-[-20px] flex flex-col justify-center px-6 md:px-25 pt-12 md:pt-25 pb-8">
+        <section className="w-full h-auto md:h-[500px] 2xl:px-32 text-white bg-[#1A1A1A] mt-[-20px] flex flex-col justify-center px-6 md:px-24 pt-12 md:pt-24 pb-8">
           <Breadcrumbs label="Selected Work" />
           <h1 className="font-medium text-4xl md:text-[3.375rem] leading-1 md:leading-[4.5rem] pt-4 md:pt-8">
             We're a team of creative problem solvers{' '}
