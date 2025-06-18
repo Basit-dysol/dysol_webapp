@@ -359,7 +359,7 @@ export default async function ProjectDetail({ params }) {
         <ProductCarousel projects={project.projectImages} />
       </section>
 
-      <section className="w-full py-20 gap-8 md:gap-16 2xl:px-24 xl:px-24 px-12">
+      <section className="w-full py-20 gap-8 md:gap-16 2xl:px-24 2xl:pr-0 xl:px-24 xl:pr-0 px-12 pr-0">
         <h1 className="font-medium text-3xl py-8">More case studies</h1>
         <CaseStudyCarousel projects={projects} />
       </section>
