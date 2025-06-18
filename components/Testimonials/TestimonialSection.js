@@ -9,14 +9,14 @@ export default function TestimonialSection() {
         'We had an ambitious vision but weren’t sure how to bring it to life. Their team didn’t just build what we asked for—they helped us refine the concept, improve the design, and ensure it was actually manufacturable. What could have been a frustrating process became an exciting collaboration.',
       name: 'Faduma Gure',
       position: 'Liss-Technologies',
-      avatar: '/jhonsondoe.png', // Replace with an actual avatar image if you like
+      avatar: '/Faduma.png', // Replace with an actual avatar image if you like
     },
     {
       quote:
         'They took our idea from concept to prototype in record time. Their attention to detail and constant communication made us feel confident every step of the way.',
-      name: 'Jane Smith',
-      position: 'Tech Ventures Inc.',
-      avatar: '/jhonsondoe.png',
+      name: 'Wasim Ahmad',
+      position: 'HoboeTech',
+      avatar: '/Wasim.png',
     },
     {
       quote:
