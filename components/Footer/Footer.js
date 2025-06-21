@@ -4,17 +4,24 @@ import ContactUs from '@/components/ContactUs/ContactUs';
 import TellUsMoreButton from '@/components/TellUsMoreButton/TellUsMoreButton';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'; // 
+
+
+
 
 
 export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
+  const pathname = usePathname();
+  const isProductPage = pathname.startsWith('/our-work/');
 
   const quickLinks = [
-    { label: 'Our Work', link: 'our-work' },
-    { label: 'Our Process', link: 'our-process' },
-    { label: 'About Us', link: '/about' },
-    { label: 'Blog', link: '/' },
-  ];
+  { label: 'Our Work', link: '/our-work' },
+  { label: 'Our Process', link: '/our-process' },
+  { label: 'About Us', link: '/about' },
+  { label: 'Blog', link: '/' },
+];
+
 
   const socialLinks = [
     { label: 'Instagram', link: '' },
@@ -32,7 +39,10 @@ export default function Footer() {
   return (
     <footer
       style={{ backgroundImage: `url('/footer-bg.png')` }}
-      className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4  2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative">
+      className={`bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4 2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative ${
+        isProductPage ? 'pb-80' : ''
+      }`} // ← Conditional padding-bottom for product pages
+      >
       {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <img src="/dysollogo.svg" alt="Dysol Logo" className="w-32 md:w-auto" />
@@ -46,7 +56,7 @@ export default function Footer() {
           </h2>
           <p className="text-white/80 text-sm md:text-base">
             Feel free to reach out if you want to collaborate with us, or simply
-            have a chat.
+            have a chat. 
           </p>
           <div className="mt-4 md:mt-0">
             <TellUsMoreButton setContactVisible={setContactVisible} />
@@ -134,7 +144,38 @@ export default function Footer() {
         </div>
       </div>
       {/* Bottom Section */}
-      <div className="mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D] pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+      {/* <div className="w-full max-w-screen-2xl mx-auto px-4 md:px-24 2xl:px-32">
+  <div className="mt-8 md:mt-10 border-t-[1px] border-dashed border-[#4D4D4D] pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm relative ">
+    <p className="text-white font-[Inter] font-normal text-base md:text-[20px]">
+      © Dysol, 2025 
+    </p>
+
+    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+      <select className="bg-[#0D0D0D] text-white font-[Plus_Jakarta_Sans] font-bold text-sm">
+        <option>EN</option>
+        <option>FR</option>
+      </select>
+      <a
+        href="#"
+        className="text-white hover:underline flex items-center gap-1 font-[Plus_Jakarta_Sans] font-bold text-sm">
+        Back to the top ↑
+      </a>
+    </div>
+  </div>
+</div>
+<div className="w-full mt-8 md:mt-4 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72  pt-0 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm pr-26">
+  <div className="absolute bottom-0 mt-8 md:mt-10 left-0 w-full">
+          <img
+            className="w-full"
+            src="/footer-bottom.svg"
+            alt="Footer decoration"
+          />
+        </div>
+</div> */}
+
+
+      
+      <div className="w-full mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D]  pt-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm pr-26">
         <p className="text-white font-[Inter] font-normal text-base md:text-[20px]">
           © Dysol, 2025 
         </p>
@@ -151,7 +192,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full">
+        <div className="absolute bottom-0 mt-8 md:mt-10 left-0 w-full">
           <img
             className="w-full"
             src="/footer-bottom.svg"
@@ -159,6 +200,8 @@ export default function Footer() {
           />
         </div>
       </div>
+
+    
 
       {/* Contact Form Overlay */}
       {isContactVisible && (
