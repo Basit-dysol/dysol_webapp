@@ -128,6 +128,7 @@
 // }
 
 // app/our-work/[slug]/page.jsx
+import Breadcrumbs from '@/components/Shared/Breadcrumbs';
 import { client } from '@/lib/sanity.client';
 import { projectQuery } from '@/lib/sanity.queries';
 // import Image from 'next/image';
@@ -216,6 +217,7 @@ export default async function ProjectDetail({ params }) {
 
   return (
     <main className="text-white">
+      
       <section
         className="relative w-full flex flex-col justify-between 2xl:px-32 xl:px-24 2xl:py-20 xl:py-20  px-12 xl:aspect-[156/100]"
         style={{
@@ -224,7 +226,7 @@ export default async function ProjectDetail({ params }) {
           backgroundPosition: 'center',
         }}>
         <div className="container">
-          <div className="flex items-center mt-16 gap-2 opacity-80">
+          {/* <div className="flex items-center mt-16 gap-2 opacity-80">
             <img
               src="/ourworkdetail/home.svg"
               alt="Home icon"
@@ -234,7 +236,11 @@ export default async function ProjectDetail({ params }) {
               Home / Selected Work /
               <span className="font-medium opacity-100">{project.title}</span>
             </span>
-          </div>
+          </div> */}
+          <div className="flex items-center mt-16 gap-2 opacity-80">
+  <Breadcrumbs label={`Selected Work / ${project.title}`} />
+</div>
+
         </div>
 
         {/* Content positioned at bottom */}
