@@ -21,16 +21,17 @@ export default function HeroSection() {
             <br className="hidden md:block" />
             to market
           </h1>
-          <p className="text-sm md:text-base 2xl:text-xl md:w-[42vw] 2xl:w-[40vw] text-white/60 font-light text-left leading-relaxed md:leading-6 xl:leading-6 max-w-[90vw] md:max-w-none">
+          <p className="text-sm md:text-base 2xl:text-xl md:w-[48vw] 2xl:w-[46vw] text-white/60 font-light text-left leading-relaxed md:leading-6 xl:leading-6 max-w-[90vw] md:max-w-none">
             At Dysol, we bring your product idea to life with top-tier
             engineering and
             <br className="hidden md:block" />
-            design. From idea to manufacturing, we're your
-            trusted partner in end-to-end product development.
+            design. From idea to manufacturing, we're your  trusted partner in end-to-
             <br className="hidden md:block" />
-            <span className="md:hidden"> </span>
-            With an expert team of engineers, technologists, and programmers
-            ready to help your business make an impact. Are you ready to pioneer
+            end product development.
+            <br className="hidden md:block" />
+            With an expert team of engineers, technologists, and programmers ready to
+            <br className="hidden md:block" />
+             help your business make an impact. Are you ready to pioneer
             the future?
           </p>
           <div className="mt-4 md:mt-0">
