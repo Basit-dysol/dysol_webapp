@@ -13,7 +13,8 @@ import { usePathname } from 'next/navigation'; //
 export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
   const pathname = usePathname();
-  const isProductPage = pathname.startsWith('/our-work/');
+  const isProjectPage = pathname?.startsWith('/our-work/') && pathname.split('/').length === 3;
+  // const isProductPage = pathname?.startsWith('/product/') || isProjectDetailPage;
 
   const quickLinks = [
   { label: 'Our Work', link: '/our-work' },
@@ -37,13 +38,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer
-      style={{ backgroundImage: `url('/footer-bg.png')` }}
-      className={`bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4 2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative ${
-        isProductPage ? 'pb-80' : ''
-      }`} // ← Conditional padding-bottom for product pages
-      >
-      {/* Logo */}
+   <footer
+  style={{
+    backgroundImage: `url('/footer-bg.png')`,
+    paddingBottom: isProjectPage ? '14rem' : '10rem', // 14rem ≈ 224px, adjust as needed
+  }}
+  className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4 2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative"
+>
+ 
+  {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <img src="/dysollogo.svg" alt="Dysol Logo" className="w-32 md:w-auto" />
       </Link>
@@ -175,7 +178,7 @@ export default function Footer() {
 
 
       
-      <div className="w-full mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D]  pt-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm pr-26">
+      <div className="w-full mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D] pt-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm pr-6 md:pr-24 2xl:pr-32">
         <p className="text-white font-[Inter] font-normal text-base md:text-[20px]">
           © Dysol, 2025 
         </p>
@@ -191,8 +194,9 @@ export default function Footer() {
             Back to the top ↑
           </a>
         </div>
+        
 
-        <div className="absolute bottom-0 mt-8 md:mt-10 left-0 w-full">
+        <div className={`absolute left-0 w-full ${isProjectPage ? 'bottom-10' : 'bottom-0'}`}>
           <img
             className="w-full"
             src="/footer-bottom.svg"
