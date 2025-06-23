@@ -21,8 +21,8 @@ export default function TestimonialSection() {
     {
       quote:
         'The team truly goes above and beyond. We’ve worked with multiple agencies, but none have matched their innovation and speed.',
-      name: 'Michael Chen',
-      position: 'Innovation Labs',
+      name: 'Joseph Dolcine',
+      position: 'Dolcinetech',
       avatar: '/jhonsondoe.png',
     },
   ];
