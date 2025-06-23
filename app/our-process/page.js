@@ -127,9 +127,21 @@ export default function OurProcessPage() {
         </h2>
         <p className=" mt-4 md:mt-4 w-full md:w-[65vw] text-base md:text-inherit text-white/80">
           At Dysol, we’re your global end-to-end product development partner from idea to market launch. We walk with you
+          <br className="md:hidden" />
+          <span className="hidden md:inline"> </span>
+          <br className="hidden md:block" />
           every step of the way, combining our hands-on expertise and approach so that your vision is brought to life efficiently
+          <br className="md:hidden" />
+          <span className="hidden md:inline"> </span>
+          <br className="hidden md:block" />
           and effectively. Our team of experts work closely with you to refine concepts, manage market research, develop
+          <br className="md:hidden" />
+          <span className="hidden md:inline"> </span>
+          <br className="hidden md:block" />
           designs, and conduct rigorous testing. Working with Dysol means working with a partner invested in creating your
+          <br className="md:hidden" />
+          <span className="hidden md:inline"> </span>
+          <br className="hidden md:block" />
           impactful solution and positioning your product for success in the marketplace.
         </p>
       </section>
