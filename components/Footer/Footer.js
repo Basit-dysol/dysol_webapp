@@ -14,7 +14,7 @@ export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
   const pathname = usePathname();
   const isProjectPage = pathname?.startsWith('/our-work/') && pathname.split('/').length === 3;
-  // const isProductPage = pathname?.startsWith('/product/') || isProjectDetailPage;
+  const isourworkPage = pathname?.startsWith('/our-work') && pathname.split('/').length === 2;
 
   const quickLinks = [
   { label: 'Our Work', link: '/our-work' },
@@ -41,7 +41,12 @@ export default function Footer() {
    <footer
   style={{
     backgroundImage: `url('/footer-bg.png')`,
-    paddingBottom: isProjectPage ? '14rem' : '10rem', // 14rem ≈ 224px, adjust as needed
+    paddingBottom:
+      isProjectPage
+        ? '14rem'
+        : isourworkPage
+        ? '14rem'
+        : '10rem',
   }}
   className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4 2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative"
 >
@@ -196,7 +201,7 @@ export default function Footer() {
         </div>
         
 
-        <div className={`absolute left-0 w-full ${isProjectPage ? 'bottom-10' : 'bottom-0'}`}>
+        <div className={`absolute left-0 w-full ${isourworkPage ? 'bottom-6' : isProjectPage ? 'bottom-10' : 'bottom-0'}`}>
           <img
             className="w-full"
             src="/footer-bottom.svg"
