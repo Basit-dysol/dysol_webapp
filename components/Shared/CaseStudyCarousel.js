@@ -68,16 +68,19 @@ const CaseStudyCarousel = ({ projects = [] }) => {
                     return (
                         <SwiperSlide key={item._id}>
                             <Link
-                                className='text-medium tracking-tighter'
-                                href={`/our-work/${item.slug.current}`}
-                            >
-                                <div   className="rounded-2xl aspect-[49/40] w-full bg-cover bg-center p-10 text-[30px] text-left flex items-end transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
-                                    style={{ backgroundImage: `url('${imageUrl}')` }}
-                                >
-
-                                    {item.title}
-                                </div>
-                            </Link>
+  className="group text-medium tracking-tighter"
+  href={`/our-work/${item.slug.current}`}
+>
+  <div className="relative w-full">
+    <div
+      className="rounded-2xl aspect-[49/40] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+      style={{ backgroundImage: `url('${imageUrl}')` }}
+    />
+    <div className="absolute inset-0 p-10 text-[30px] text-left flex items-end pointer-events-none">
+      {item.title}
+    </div>
+  </div>
+</Link>
                         </SwiperSlide>
                     );
                 })}
