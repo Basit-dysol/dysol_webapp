@@ -71,7 +71,7 @@ const CaseStudyCarousel = ({ projects = [] }) => {
                                 className='text-medium tracking-tighter'
                                 href={`/our-work/${item.slug.current}`}
                             >
-                                <div className="rounded-2xl aspect-[49/40] w-full bg-cover bg-center p-10 text-[30px] text-left flex items-end"
+                                <div   className="rounded-2xl aspect-[49/40] w-full bg-cover bg-center p-10 text-[30px] text-left flex items-end transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
                                     style={{ backgroundImage: `url('${imageUrl}')` }}
                                 >
 
