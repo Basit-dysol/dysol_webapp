@@ -12,7 +12,7 @@ export default function OurProcessCard({
    // ...existing code...
     return (
         <div
-            className="w-[489px] h-[400px] rounded-xl overflow-hidden shadow-md p-6 relative border-[1px] border-white/10"
+            className="w-full max-w-sm  rounded-xl overflow-hidden shadow-md p-6 relative border-[1px] border-white/10"
             style={{
                 background: 'linear-gradient(180deg, #0D0D0D 0%,rgba(13, 13, 13, 0.47) 45%,rgba(26, 26, 26, 0.6) 100%)'
             }}
@@ -27,7 +27,7 @@ export default function OurProcessCard({
                     background: 'linear-gradient(180deg, #FFFFFF00 15%, #FFFFFF0D 90%)'
                 }}
             ></div>
-            <div className="absolute left-0 right-0 bottom-0 p-6 text-gray-200 w-full z-10">
+             <div className="absolute left-0 right-0 bottom-0 p-6 text-gray-200 w-full z-10">
                 <h3 className="text-xl font-medium mb-2 text-white font-[Plus Jakarta]">{description}</h3>
                 <p className="text-md text-white/78 font-[Inter] font-normal">
                     {subdescription}
