@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 export default function OurProcessCard({
-    image,
-    description,
-    subdescription,
-    slug,
+  image,
+  description,
+  subdescription,
+  slug,
 }) {
 
     console.log('FeasibilityCard props:', image, description, subdescription, slug); // Debugging line
