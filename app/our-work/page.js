@@ -1,5 +1,4 @@
 import ProductCardOurWork from '@/components/Ourworkpage-component/ProductCardOurWork';
-import Breadcrumbs from '@/components/Shared/Breadcrumbs';
 
 export default async function OurWorkPage() {
   try {
@@ -30,28 +29,30 @@ export default async function OurWorkPage() {
     return (
       <main className="py-12 md:py-24 px-6 2xl:px-32 md:px-24 text-white ">
         {/* Page Header */}
-
-        <div className="mb-12">
-          <Breadcrumbs label="Our Selected Work" />
-          <h2 className="mt-8 text-6xl font-bold items-start text-left font-jakarta">
+        <div className="mb-8 md:mb-12">
+          <h2 className="mt-8 md:mt-12 text-sm md:text-base text-white/50 text-left">
+            <a href="/">Home</a> / <span>Our Work</span>
+          </h2>
+          <h2 className="mt-4 md:mt-8 text-3xl md:text-5xl font-medium text-left">
             Our portfolio of innovations
           </h2>
-          <p className="text-white/70 mt-4">
+          <p className="text-white/70 mt-2 md:mt-4 text-base md:text-inherit">
             Dysol is proud to design the future, one innovative project at a
             time.
           </p>
         </div>
 
         {/* Grid for Project Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-2">
           {projects.map((project) => (
             <ProductCardOurWork
               key={project._id}
-              image={projects[0]?.projectImages} // First image from array
+              image={project?.projectImages}
               description={project.title}
               subdescription={project.projectIdea}
               slug={project.slug.current}
               tags={project.tags}
+              className="w-full" // Ensure cards take full width on mobile
             />
           ))}
         </div>
