@@ -26,6 +26,8 @@ export default function ProductCardOurWork({
  const visibleTags = tags?.slice(0, 3);
  const remainingTags = (tags?.length - visibleTags.length) || 0;
 
+  console.log(imageUrl)
+
   return (
     <Link
       href={`/our-work/${slug}`}

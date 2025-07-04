@@ -58,6 +58,9 @@ main{
   }
 }
 
+.font-jakarta {
+  font-family: var(--font-jakarta), sans-serif;
+}
 .nav-items-left {
   img {
     color: red;
