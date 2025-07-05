@@ -1,14 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Breadcrumbs = ({ label }) => {
   return (
-    <h2 className="text-white/78 flex gap-1 pt-8 lg:pt-2 font-normal text-[18px] font-[Inter]">
+    <h2 className="mt-12 text-white/50 items-start text-left flex gap-1 ">
       <a href="/">
         {' '}
         <span className="flex gap-1">
           {' '}
-          <Image alt="home icon" src="/home.svg" width={13} height={13} />
+          <Image alt="home icon" src="/home.svg" width={20} height={20} />
           Home
         </span>{' '}
       </a>
