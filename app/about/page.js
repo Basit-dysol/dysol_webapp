@@ -35,7 +35,7 @@ export default function AboutPage() {
       <div className="bg-black">
         <section className="w-full h-auto md:h-[500px] 2xl:px-32 text-white bg-[#1A1A1A] mt-[-20px] flex flex-col justify-center px-6 md:px-24 pt-12 md:pt-24 pb-8">
           <Breadcrumbs label="Selected Work" />
-          <h1 className="font-medium text-4xl md:text-[3.375rem] leading-1 md:leading-[4.5rem] pt-4 md:pt-8">
+          <h1 className="font-medium text-4xl md:text-[3.375rem] leading-relaxed md:leading-[4.5rem] pt-4 md:pt-8">
             We're a team of creative problem solvers{' '}
             <br className="hidden md:block" />
             ready to bring your big ideas to life.
@@ -55,11 +55,14 @@ export default function AboutPage() {
               About us
             </h5>
             <p className="font-[Inter] text-base md:text-[14px] 2xl:text-[18px] text-white/60">
-              We’re a team of world-class engineers, AI and ML specialists, and UI/UX experts based
-              out of Dubai, UAE, united by a vision of developing impactful products. Our forward-thinking 
-              brand team complements our technical expertise, meaning that every project meets 
-              high quality standards and engages its users. Collaboration is at the heart of everything 
-              we do, combining our diverse skills and perspectives to transform your idea into a market-ready solution that makes a difference. 
+              We’re a team of world-class engineers, AI and ML specialists, and
+              UI/UX experts based out of Dubai, UAE, united by a vision of
+              developing impactful products. Our forward-thinking brand team
+              complements our technical expertise, meaning that every project
+              meets high quality standards and engages its users. Collaboration
+              is at the heart of everything we do, combining our diverse skills
+              and perspectives to transform your idea into a market-ready
+              solution that makes a difference.
             </p>
           </div>
 
