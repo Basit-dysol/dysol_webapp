@@ -43,7 +43,7 @@ export default function Footer() {
           : isourworkPage ? '14rem'
           : '10rem',
       }}
-      className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4 2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative">
+      className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-6 md:pl-24 md:pr-32 2xl:pl-32 2xl:pr-32 py-12 md:py-30 relative">
       {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <img src="/dysollogo.svg" alt="Dysol Logo" className="w-32 md:w-auto" />
@@ -65,7 +65,8 @@ export default function Footer() {
         </div>
 
         {/* Right Side Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3  justify-items-center  ">
+
+        <div className="grid grid-cols-3 sm:grid-cols-3  justify-items-center  ">
           {/* Contact Us */}
           <div className="flex flex-col mb-6 sm:mb-0">
             <h3 className="font-semibold text-lg pb-4 font-[Plus_Jakarta_Sans]">
@@ -184,7 +185,7 @@ export default function Footer() {
         </div>
 </div> */}
 
-      <div className="w-full mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D] pt-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm pr-6 md:pr-24 2xl:pr-32">
+      <div className="w-full mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D] pt-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm ">
         <p className="text-white font-[Inter] font-normal text-base md:text-[20px]">
           © Dysol, 2025
         </p>
