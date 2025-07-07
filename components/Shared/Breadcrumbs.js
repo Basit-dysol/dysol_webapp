@@ -9,7 +9,7 @@ const Breadcrumbs = ({ label }) => {
         {' '}
         <span className="flex gap-1">
           {' '}
-          <Image alt="home icon" src="/home.svg" width={20} height={20} />
+          <Image alt="home icon" src="/home.svg" width={13} height={13} />
           Home
         </span>{' '}
       </a>
