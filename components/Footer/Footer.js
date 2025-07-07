@@ -4,25 +4,22 @@ import ContactUs from '@/components/ContactUs/ContactUs';
 import TellUsMoreButton from '@/components/TellUsMoreButton/TellUsMoreButton';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation'; // 
-
-
-
-
+import { usePathname } from 'next/navigation'; //
 
 export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
   const pathname = usePathname();
-  const isProjectPage = pathname?.startsWith('/our-work/') && pathname.split('/').length === 3;
-  const isourworkPage = pathname?.startsWith('/our-work') && pathname.split('/').length === 2;
+  const isProjectPage =
+    pathname?.startsWith('/our-work/') && pathname.split('/').length === 3;
+  const isourworkPage =
+    pathname?.startsWith('/our-work') && pathname.split('/').length === 2;
 
   const quickLinks = [
-  { label: 'Our Work', link: '/our-work' },
-  { label: 'Our Process', link: '/our-process' },
-  { label: 'About Us', link: '/about' },
-  { label: 'Blog', link: '/' },
-];
-
+    { label: 'Our Work', link: '/our-work' },
+    { label: 'Our Process', link: '/our-process' },
+    { label: 'About Us', link: '/about' },
+    { label: 'Blog', link: '/blog' },
+  ];
 
   const socialLinks = [
     { label: 'Instagram', link: '' },
@@ -38,20 +35,16 @@ export default function Footer() {
   ];
 
   return (
-   <footer
-  style={{
-    backgroundImage: `url('/footer-bg.png')`,
-    paddingBottom:
-      isProjectPage
-        ? '14rem'
-        : isourworkPage
-        ? '14rem'
-        : '10rem',
-  }}
-  className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4 2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative"
->
- 
-  {/* Logo */}
+    <footer
+      style={{
+        backgroundImage: `url('/footer-bg.png')`,
+        paddingBottom:
+          isProjectPage ? '14rem'
+          : isourworkPage ? '14rem'
+          : '10rem',
+      }}
+      className="bg-[#0D0D0D] 2xl:min-h-fit text-white pl-6 pr-4 md:pl-24 md:pr-4 2xl:pl-32 2xl:pr-4 py-12 md:py-30 relative">
+      {/* Logo */}
       <Link href="/" className="flex transition-colors pb-5">
         <img src="/dysollogo.svg" alt="Dysol Logo" className="w-32 md:w-auto" />
       </Link>
@@ -64,7 +57,7 @@ export default function Footer() {
           </h2>
           <p className="text-white/80 text-sm md:text-base">
             Feel free to reach out if you want to collaborate with us, or simply
-            have a chat. 
+            have a chat.
           </p>
           <div className="mt-4 md:mt-0">
             <TellUsMoreButton setContactVisible={setContactVisible} />
@@ -75,7 +68,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3  justify-items-center  ">
           {/* Contact Us */}
           <div className="flex flex-col mb-6 sm:mb-0">
-            <h3 className="font-semibold text-lg pb-4 font-[Plus_Jakarta_Sans]">Contact us</h3>
+            <h3 className="font-semibold text-lg pb-4 font-[Plus_Jakarta_Sans]">
+              Contact us
+            </h3>
             <div className="space-y-4 text-white/60">
               <div>
                 <p className="font-[Inter] text-sm">Email us</p>
@@ -91,11 +86,11 @@ export default function Footer() {
                     alt="right-arrow"
                   />
                 </a>
-
               </div>
               <div>
-                <p className='font-[Inter] text-sm'>Call us</p>
-                <p className="font-[Inter] text-sm underline decoration-dotted group flex hover:text-white transition-colors">+971525755451
+                <p className="font-[Inter] text-sm">Call us</p>
+                <p className="font-[Inter] text-sm underline decoration-dotted group flex hover:text-white transition-colors">
+                  +971525755451
                   <Image
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-1"
                     src="/openArrow.svg"
@@ -110,11 +105,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="mb-6 sm:mb-0">
-            <h3 className="font-semibold text-lg mb-4 font-[Plus_Jakarta_Sans]">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4 font-[Plus_Jakarta_Sans]">
+              Quick Links
+            </h3>
             <ul className="text-white/60 space-y-3 font-[Inter]">
               {quickLinks.map((link, index) => (
-                <li key={index} className='flex gap-2 items-center group'>
-                  <Link href={link.link} className="text-sm hover:text-white transition-colors">
+                <li key={index} className="flex gap-2 items-center group">
+                  <Link
+                    href={link.link}
+                    className="text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
                   <Image
@@ -131,11 +130,15 @@ export default function Footer() {
 
           {/* Socials */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 font-[Plus_Jakarta_Sans]">Socials</h3>
+            <h3 className="font-semibold text-lg mb-4 font-[Plus_Jakarta_Sans]">
+              Socials
+            </h3>
             <ul className="text-white/60 space-y-3 font-[Inter]">
               {socialLinks.map((link, index) => (
-                <li key={index} className='flex gap-2 items-center group'>
-                  <Link href={link.link} className="text-sm hover:text-white transition-colors">
+                <li key={index} className="flex gap-2 items-center group">
+                  <Link
+                    href={link.link}
+                    className="text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
                   <Image
@@ -181,11 +184,9 @@ export default function Footer() {
         </div>
 </div> */}
 
-
-      
       <div className="w-full mt-8 md:mt-10 space-y-4 lg:space-y-36 xl:space-y-44 2xl:space-y-72 border-t-[1px] border-dashed border-[#4D4D4D] pt-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm pr-6 md:pr-24 2xl:pr-32">
         <p className="text-white font-[Inter] font-normal text-base md:text-[20px]">
-          © Dysol, 2025 
+          © Dysol, 2025
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
@@ -199,9 +200,13 @@ export default function Footer() {
             Back to the top ↑
           </a>
         </div>
-        
 
-        <div className={`absolute left-0 w-full ${isourworkPage ? 'bottom-6' : isProjectPage ? 'bottom-10' : 'bottom-0'}`}>
+        <div
+          className={`absolute left-0 w-full ${
+            isourworkPage ? 'bottom-6'
+            : isProjectPage ? 'bottom-10'
+            : 'bottom-0'
+          }`}>
           <img
             className="w-full"
             src="/footer-bottom.svg"
@@ -209,8 +214,6 @@ export default function Footer() {
           />
         </div>
       </div>
-
-    
 
       {/* Contact Form Overlay */}
       {isContactVisible && (

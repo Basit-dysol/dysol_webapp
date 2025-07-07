@@ -47,7 +47,7 @@ export default async function BlogPage() {
               description={blog.title}
               subdescription={blog.subtitle}
               slug={blog.slug.current}
-              tags={blog.tags}
+              // tags={blog.tags}
               className={`w-full ${index === 0 ? 'lg:col-span-2' : ''}`}
             />
           ))}
