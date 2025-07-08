@@ -157,7 +157,7 @@ async function getProjectData(slug) {
 }
 
 export default async function ProjectDetail({ params }) {
-  const {slug } = params;
+  const { slug } = params;
   if (!slug) {
     return notFound();
   }
@@ -209,17 +209,15 @@ export default async function ProjectDetail({ params }) {
 
   const mainImage = project.projectImages[project.landingImageIndex || 0];
   const imageUrl = getImageUrl(mainImage?.asset?._ref);
-  
-  // Get second image URL (for content section)  
-  const secondImage = project.projectImages[project.landingImageIndex+1 || 0]; // Fallback to first image if second doesn't exist
-  const secondImageUrl = getImageUrl(secondImage?.asset?._ref);
 
+  // Get second image URL (for content section)
+  const secondImage = project.projectImages[project.landingImageIndex + 1 || 0]; // Fallback to first image if second doesn't exist
+  const secondImageUrl = getImageUrl(secondImage?.asset?._ref);
 
   return (
     <main className="text-white">
-      
       <section
-        className="relative w-full flex flex-col justify-between 2xl:px-32 xl:px-24 2xl:py-20 xl:py-20  px-12 xl:aspect-[156/100]"
+        className="relative w-full flex flex-col justify-between  2xl:px-32 xl:px-24 2xl:py-20 xl:py-20  px-6  lg:px-12 xl:aspect-[156/100]"
         style={{
           backgroundImage: `url(${imageUrl})`,
           backgroundSize: 'cover',
@@ -237,18 +235,17 @@ export default async function ProjectDetail({ params }) {
               <span className="font-medium opacity-100">{project.title}</span>
             </span>
           </div> */}
-          <div className="flex items-center mt-16 gap-2 opacity-80">
-  <Breadcrumbs label={`Selected Work / ${project.title}`} />
-</div>
-
+          <div className="flex items-center mt-4 lg:mt-16 gap-2 opacity-80">
+            <Breadcrumbs label={`Selected Work / ${project.title}`} />
+          </div>
         </div>
 
         {/* Content positioned at bottom */}
         <div className="container mt-auto">
-          <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-medium mb-10">
+          <h1 className="text-2xl lg:text-4xl pt-[50vh] lg:pt-0 xl:text-5xl 2xl:text-6xl font-medium lg:mb-10">
             {project.title}
           </h1>
-          <div className="border-t-1 border-dashed border-white/30 my-6 w-1/2"></div>
+          <div className="border-t-1 border-dashed border-white/30 my-2 lg:my-6 w-1/2"></div>
           {project.projectIdea && (
             <div className="pb-8">
               {/* Add bottom padding if needed */}
@@ -256,13 +253,13 @@ export default async function ProjectDetail({ params }) {
                 <img
                   src="/ourworkdetail/idea.svg"
                   alt="Lightbulb icon"
-                  className="w-8 h-8 inline-block"
+                  className="w-6 h-6 lg:w-8 lg:h-8 inline-block"
                 />
-                <h2 className="text-2xl m-0 inline-block">
+                <h2 className="text-xl lg:text-2xl m-0 inline-block">
                   It started with an idea
                 </h2>
               </div>
-              <p className="text-lg md:text-xl max-w-2xl opacity-90">
+              <p className=" text-sm lg:text-lg md:text-xl max-w-2xl opacity-90">
                 {project.projectIdea}
               </p>
             </div>
