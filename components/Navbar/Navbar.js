@@ -78,6 +78,7 @@ export default function Navbar() {
                   { name: 'Home', path: '/' },
                   { name: 'About us', path: '/about' },
                   { name: 'Our Work', path: '/our-work' },
+                  { name: 'Computer Vision', path: '/computer-vision' },
                   { name: 'Our Process', path: '/our-process' },
                   { name: 'Contact us', path: '/contact-us' },
                 ].map(({ name, path }) => (
@@ -171,6 +172,7 @@ export default function Navbar() {
                       { name: 'Home', path: '/' },
                       { name: 'About us', path: '/about' },
                       { name: 'Our Work', path: '/our-work' },
+                      { name: 'Computer Vision', path: '/computer-vision' },
                       { name: 'Our Process', path: '/our-process' },
                       { name: 'Contact us', path: '/contact-us' },
                     ].map(({ name, path }) => (

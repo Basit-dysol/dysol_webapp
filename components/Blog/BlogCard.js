@@ -28,7 +28,7 @@ export default function BlogCard({
 
   return (
     <Link
-      href={`/blog`}
+      href={`/blog/${slug}`}
       className={`block group ${className} h-[400px] md:h-[650px] xl:h-[700px] 2xl:h-[800px] rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-500`}>
       <div className="relative w-full h-full rounded-2xl bg-gray-800/50">
         {imageUrl ?
