@@ -14,7 +14,6 @@ export default async function OurWorkPage() {
     console.log('📡 Response status:', res.status);
 
     const contentType = res.headers.get('content-type');
-    console.log('📄 Content-Type:', contentType);
 
     // Check if response is actually JSON
     if (!res.ok || !contentType?.includes('application/json')) {
@@ -24,7 +23,6 @@ export default async function OurWorkPage() {
     }
 
     const projects = await res.json();
-    // console.log('✅ Projects received from API:', projects);
 
     return (
       <main className="py-12 md:py-24 px-6 2xl:px-32 md:px-24 text-white ">

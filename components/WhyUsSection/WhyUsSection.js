@@ -31,7 +31,7 @@ export default function WhyUsSection() {
   return (
     <div className="h-max py-12 md:py-20 2xl:py-36 px-6 md:px-24 2xl:px-32 text-white/90 overflow-hidden">
       {/* Section Title */}
-      <h2 className="text-left 2xl:text-xl text-sm text-white/90 uppercase tracking-wide my-6">
+      <h2 className=" text-gray-400 text-left 2xl:text-xl text-sm md:text-base uppercase tracking-wide my-6">
         Why Us?
       </h2>
 

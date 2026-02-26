@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from 'react';
 import ProductCard from '../ProductCard';
+import ContactUs from "../ContactUs/ContactUs";
 
 const projects = [
   {
@@ -46,17 +50,34 @@ const projects = [
 ];
 
 export default function OurWorkSection() {
-  return (
-    <section className="py-12 md:py-16 px-6 md:px-24 2xl:px-32 flex flex-col text-white/90 items-baseline justify-center text-center">
-      {/* Section Header */}
-      <h2 className="my-6 text-left 2xl:text-xl md:mt-12 items-start text-sm md:text-base uppercase tracking-wide">
-        OUR WORK
-      </h2>
+    const [isContactVisible, setContactVisible] = useState(false);
 
-      {/* Section Title */}
-      <h2 className="text-3xl md:text-[2.5rem] xl:text-[2.3rem] 2xl:text-[3rem] items-start text-left leading-tight mb-8 md:mb-12">
-        We engineer ideas into impactful products.
-      </h2>
+  return (
+    <>
+    <section className="py-12 md:py-16 px-6 md:px-24 2xl:px-32 flex flex-col text-white/90">
+     {/* Section Header */}
+        <h2 className="text-gray-400 text-left 2xl:text-xl text-sm md:text-base uppercase tracking-wide">our work</h2>
+
+        {/* Title and Button Row */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4">
+          <h2 className="text-2xl md:text-[2rem] xl:text-[2.3rem] 2xl:text-[3rem] text-left leading-tight">We engineer ideas into impactful products.</h2>
+          
+            <button
+              className="cursor-pointer   h-11 lg:h-14 p-4 rounded-[16px] bg-white text-gray-950 font-medium text-base flex items-center justify-center gap-2 font-[Plus_Jakarta_Sans] text-[18px]
+        transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] hover:bg-white/60 hover:border-2 hover:border-white/60"
+              onClick={() => setContactVisible(true)}
+
+              style={{
+                border: "2px solid transparent",
+                animationDelay: "1ms",
+                transitionProperty: "background, transform, border-color",
+              }}
+            >
+              Get Started
+              <img src="blackarrow.png" alt="arrow" className="transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] hover:translate-x-0.5" />
+            </button>
+        
+        </div>
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 w-full justify-items-center mt-2">
@@ -69,6 +90,9 @@ export default function OurWorkSection() {
         ))}
       </div>
     </section>
+    {/* Contact Modal */}
+    {isContactVisible && <ContactUs onClose={() => setContactVisible(false)} />}
+    </>
   );
 }
 

@@ -157,7 +157,7 @@ async function getProjectData(slug) {
 }
 
 export default async function ProjectDetail({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   if (!slug) {
     return notFound();
   }

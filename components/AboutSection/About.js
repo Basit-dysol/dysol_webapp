@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section className="h-max py-20 2xl:py-28 mb-6 px-6 md:px-24 2xl:px-32 flex flex-col text-white/90 items-start justify-center">
       {/* Section Title */}
-      <h2 className="my-6 text-left 2xl:text-xl text-sm tracking-wide uppercase">
+      <h2 className="text-gray-400 my-6 text-left 2xl:text-xl text-sm tracking-wide uppercase">
         About Us
       </h2>
 

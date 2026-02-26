@@ -46,7 +46,7 @@ export default function TestimonialSection() {
   return (
     <section className="h-max rounded-b-xl px-6 md:px-24 2xl:px-32 text-white/90 overflow-hidden py-12 md:py-0">
       {/* Headings */}
-      <h2 className="text-left 2xl:text-xl text-sm text-white/90 uppercase tracking-wide my-6">
+      <h2 className="text-gray-400 text-left 2xl:text-xl text-sm md:text-base uppercase tracking-wide my-6">
         Testimonials
       </h2>
 

@@ -20,8 +20,6 @@ export async function GET() {
 
     const projects = await client.fetch(query);
 
-    console.log('✅ Projects received from Sanity:', projects);
-
     return Response.json(projects, {
       headers: {
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=300',
