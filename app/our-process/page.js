@@ -1,118 +1,109 @@
-import Breadcrumbs from '@/components/Shared/Breadcrumbs';
-import Image from 'next/image';
-import OurProcessCard from '@/components/OurProcess/OurProcessCard';
+import Breadcrumbs from "@/components/Shared/Breadcrumbs";
+import Image from "next/image";
+import OurProcessCard from "@/components/OurProcess/OurProcessCard";
 
 export default function OurProcessPage() {
   const cultureObjs = [
     {
-      icon: '/ourprocess/users.svg',
-      heading: 'Deep Technical & Engineering Expertise',
+      icon: "/ourprocess/users.svg",
+      heading: "Deep Technical & Engineering Expertise",
       description:
-        'Our team of engineers takes your concept and develops a blueprint that’s feasible and ready for manufacturing. We factor in everything—durability, efficiency, and scalability—so you can be assured your product succeeds.',
+        "Our team of engineers takes your concept and develops a blueprint that’s feasible and ready for manufacturing. We factor in everything—durability, efficiency, and scalability—so you can be assured your product succeeds.",
     },
     {
-      icon: '/ourprocess/pen.svg',
-      heading: 'Design Excellence',
-      description:
-        'Our design process blends style and usability, creating innovations that work seamlessly to attract and engage your ideal users.',
+      icon: "/ourprocess/pen.svg",
+      heading: "Design Excellence",
+      description: "Our design process blends style and usability, creating innovations that work seamlessly to attract and engage your ideal users.",
     },
     {
-      icon: '/ourprocess/brain.svg',
-      heading: 'IP Protection',
+      icon: "/ourprocess/brain.svg",
+      heading: "IP Protection",
       description:
-        'Safeguarding your unique innovations is at the core of our focus. Our approach ensures your intellectual property stays protected through every stage of development at Dysol.',
+        "Safeguarding your unique innovations is at the core of our focus. Our approach ensures your intellectual property stays protected through every stage of development at Dysol.",
     },
     {
-      icon: '/ourprocess/robot.svg',
-      heading: 'Leading-Edge Technologies',
+      icon: "/ourprocess/robot.svg",
+      heading: "Leading-Edge Technologies",
       description:
-        'We’re all about crafting solutions that are as innovative as they are practical. By using the latest in tech and engineering, we give your product a competitive edge. ',
+        "We’re all about crafting solutions that are as innovative as they are practical. By using the latest in tech and engineering, we give your product a competitive edge. ",
     },
   ];
 
   const process = [
     {
-      image: '/ourprocess/feasibility.svg',
-      description: 'Feasibility Study',
-      subdescription:
-        'Our team analyses every angle to make sure your idea is both possible, practical, and successful from the start.',
+      image: "/ourprocess/feasibility.svg",
+      description: "Feasibility Study",
+      subdescription: "Our team analyses every angle to make sure your idea is both possible, practical, and successful from the start.",
       // slug: 'feasibility',
     },
     {
-      image: '/ourprocess/research.svg',
-      description: 'Research & Development',
+      image: "/ourprocess/research.svg",
+      description: "Research & Development",
       subdescription:
-        'With our curiosity and tech insights, we’re not afraid to dive deep and turn complex challenges into simple, effective solutions.',
+        "With our curiosity and tech insights, we’re not afraid to dive deep and turn complex challenges into simple, effective solutions.",
       // slug: 'world-s-first-solar-breast-pump',
     },
     {
-      image: '/ourprocess/industrial.svg',
-      description: 'Industrial & Mechanical Design',
-      subdescription:
-        'We create designs that not only look good but are built to work in real life, making your product stand out.',
+      image: "/ourprocess/industrial.svg",
+      description: "Industrial & Mechanical Design",
+      subdescription: "We create designs that not only look good but are built to work in real life, making your product stand out.",
       // slug: 'iris-identification-device',
     },
     {
-      image: '/ourprocess/electrical.svg',
-      description: 'Electrical Engineering',
-      subdescription:
-        'Our team powers up your vision with precision-engineered electrical systems that enhance durability and efficiency.',
+      image: "/ourprocess/electrical.svg",
+      description: "Electrical Engineering",
+      subdescription: "Our team powers up your vision with precision-engineered electrical systems that enhance durability and efficiency.",
       // slug: 'baby-rocker',
     },
     {
-      image: '/ourprocess/aiml.svg',
-      description: 'AI & ML',
-      subdescription:
-        'We design adaptable solutions that grow smarter over time, keeping you ahead of the curve.',
+      image: "/ourprocess/aiml.svg",
+      description: "AI & ML",
+      subdescription: "We design adaptable solutions that grow smarter over time, keeping you ahead of the curve.",
       // slug: 'ai-ac-control-device',
     },
     {
-      image: '/ourprocess/computer.svg',
-      description: 'Computer Vision',
+      image: "/ourprocess/computer.svg",
+      description: "Computer Vision",
       subdescription:
-        'We’re experts in building software that amplifies your product’s impact, designed to integrate seamlessly and scale effortlessly.',
+        "We’re experts in building software that amplifies your product’s impact, designed to integrate seamlessly and scale effortlessly.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
-      image: '/ourprocess/software.svg',
-      description: 'Software Development',
-      subdescription:
-        'We build software that amplifies your product’s impact, designed to integrate seamlessly and scale effortlessly.',
+      image: "/ourprocess/software.svg",
+      description: "Software Development",
+      subdescription: "We build software that amplifies your product’s impact, designed to integrate seamlessly and scale effortlessly.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
-      image: '/ourprocess/mobile.svg',
-      description: 'Mobile App Development',
-      subdescription:
-        'With user-centric design at our core, we create mobile apps that connect, engage, and enhance the user journey.',
+      image: "/ourprocess/mobile.svg",
+      description: "Mobile App Development",
+      subdescription: "With user-centric design at our core, we create mobile apps that connect, engage, and enhance the user journey.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
-      image: '/ourprocess/semi.svg',
-      description: 'Semiconductor Design',
+      image: "/ourprocess/semi.svg",
+      description: "Semiconductor Design",
       subdescription:
-        'We design custom semiconductors tailored to maximise functionality and efficiency, pushing your product’s potential to new heights.',
+        "We design custom semiconductors tailored to maximise functionality and efficiency, pushing your product’s potential to new heights.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
-      image: '/ourprocess/manufacture.svg',
-      description: 'Manufacturing',
-      subdescription:
-        'Our full-spectrum manufacturing ensures that your product makes it to market with top-class quality.',
+      image: "/ourprocess/manufacture.svg",
+      description: "Manufacturing",
+      subdescription: "Our full-spectrum manufacturing ensures that your product makes it to market with top-class quality.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
-      image: '/ourprocess/brand.svg',
-      description: 'Brand Development',
-      subdescription:
-        'We shape brands that resonate, building trust and customer loyalty through purposeful design and a focus on authenticity.',
+      image: "/ourprocess/brand.svg",
+      description: "Brand Development",
+      subdescription: "We shape brands that resonate, building trust and customer loyalty through purposeful design and a focus on authenticity.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
-      image: '/ourprocess/uiux.svg',
-      description: 'UI/UX',
+      image: "/ourprocess/uiux.svg",
+      description: "UI/UX",
       subdescription:
-        'Our approach combines form and function, creating intuitive interfaces that enhance the user experience across every touchpoint.',
+        "Our approach combines form and function, creating intuitive interfaces that enhance the user experience across every touchpoint.",
       // slug: 'smart-blood-pressure-monitor',
     },
   ];
@@ -121,10 +112,8 @@ export default function OurProcessPage() {
     <main className="">
       {/* Hero Section */}
       <section className="w-full h-auto md:h-[500px] 2xl:px-32 text-white bg-[#1A1A1A] mt-[-20px] flex flex-col justify-center px-6 md:px-24 pt-12 md:pt-24 pb-8">
-        <Breadcrumbs label="Our Process" />
-        <h2 className="mt-6 md:mt-8 text-3xl md:text-5xl font-medium text-left">
-          The Dysol way of working
-        </h2>
+        <Breadcrumbs label="Product Development" />
+        <h2 className="mt-6 md:mt-8 text-3xl md:text-5xl font-medium text-left">The Dysol way of working</h2>
         <p className=" mt-4 md:mt-4 w-full md:w-[65vw] text-base md:text-inherit text-white/80">
           At Dysol, we’re your global end-to-end product development partner from idea to market launch. We walk with you
           <br className="md:hidden" />
@@ -160,12 +149,8 @@ export default function OurProcessPage() {
         <div className="flex flex-col md:grid md:grid-cols-2 md:gap-20">
           {/* Left Column */}
           <div className="flex flex-col gap-4 md:gap-8 mb-8 md:mb-0">
-            <p className="text-base md:text-[18px] font-[Inter] text-white/78">
-              OUR APPROACH TO INNOVATION
-            </p>
-            <h5 className="text-3xl md:text-[48px] font-medium font-[Plus_Jakarta_Sans]">
-              To develop world-class winning products, we combine:
-            </h5>
+            <p className="text-base md:text-[18px] font-[Inter] text-white/78">OUR APPROACH TO INNOVATION</p>
+            <h5 className="text-3xl md:text-[48px] font-medium font-[Plus_Jakarta_Sans]">To develop world-class winning products, we combine:</h5>
           </div>
 
           {/* Right Column */}
@@ -173,20 +158,10 @@ export default function OurProcessPage() {
             <div className="flex flex-col gap-8 md:gap-14">
               {cultureObjs.map((item, index) => (
                 <div className="flex gap-4 md:gap-8 items-start" key={index}>
-                  <Image
-                    alt="marker icon"
-                    src={item.icon}
-                    width={20}
-                    height={20}
-                    className="w-5 h-5 md:w-6 md:h-6 mt-1"
-                  />
+                  <Image alt="marker icon" src={item.icon} width={20} height={20} className="w-5 h-5 md:w-6 md:h-6 mt-1" />
                   <div>
-                    <h5 className="text-lg md:text-[24px] font-medium font-[Plus_Jakarta_Sans] pb-2">
-                      {item.heading}
-                    </h5>
-                    <p className="text-sm md:text-[18px] text-white/78">
-                      {item.description}
-                    </p>
+                    <h5 className="text-lg md:text-[24px] font-medium font-[Plus_Jakarta_Sans] pb-2">{item.heading}</h5>
+                    <p className="text-sm md:text-[18px] text-white/78">{item.description}</p>
                   </div>
                 </div>
               ))}

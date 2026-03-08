@@ -66,7 +66,7 @@ export default function Footer() {
 
         {/* Right Side Grid */}
 
-        <div className="grid grid-cols-3 sm:grid-cols-3  justify-items-center  ">
+        <div className="grid grid-cols-3 sm:grid-cols-3  justify-items-end align-top gap-10 sm:gap-20 ">
           {/* Contact Us */}
           <div className="flex flex-col mb-6 sm:mb-0">
             <h3 className="font-semibold text-lg pb-4 font-[Plus_Jakarta_Sans]">
@@ -130,7 +130,7 @@ export default function Footer() {
           </div>
 
           {/* Socials */}
-          <div>
+          <div >
             <h3 className="font-semibold text-lg mb-4 font-[Plus_Jakarta_Sans]">
               Socials
             </h3>
