@@ -1,6 +1,6 @@
 import { client } from "@/lib/sanity.client";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 export const revalidate = 3600;
 
 export async function GET() {
@@ -25,8 +25,8 @@ export async function GET() {
 
     return Response.json(projects, {
       headers: {
-        "Cache-Control": "public, s-maxage=0, stale-while-revalidate=300",
-        "CDN-Cache-Control": "public, max-age=0",
+        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+        "CDN-Cache-Control": "public, max-age=86400",
       },
     });
   } catch (err) {
