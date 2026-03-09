@@ -25,8 +25,8 @@ export async function GET() {
 
     return Response.json(projects, {
       headers: {
-        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
-        "CDN-Cache-Control": "public, max-age=86400",
+        "Cache-Control": "public, s-maxage=0, stale-while-revalidate=300",
+        "CDN-Cache-Control": "public, max-age=0",
       },
     });
   } catch (err) {
