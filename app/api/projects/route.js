@@ -1,6 +1,6 @@
 import { client } from "@/lib/sanity.client";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export async function GET() {
