@@ -14,7 +14,7 @@ export default function Footer() {
 
   const quickLinks = [
     { label: "Our Work", link: "/our-work" },
-    { label: "Product Development", link: "/our-process" },
+    { label: "Our Process", link: "/our-process" },
     { label: "About Us", link: "/about" },
     { label: "Blog", link: "/blog" },
   ];
@@ -56,7 +56,7 @@ export default function Footer() {
 
         {/* Right Side Grid */}
 
-        <div className="grid grid-cols-3 sm:grid-cols-3  justify-items-end align-top gap-10 sm:gap-20 ">
+        <div className="flex justify-end items-start w-full gap-10 sm:gap-[20%]">
           {/* Contact Us */}
           <div className="flex flex-col mb-6 sm:mb-0">
             <h3 className="font-semibold text-lg pb-4 font-[Plus_Jakarta_Sans]">Contact us</h3>

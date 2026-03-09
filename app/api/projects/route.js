@@ -8,7 +8,7 @@ export async function GET() {
     console.log("🔁 Starting fetch from Sanity");
 
     const query = `
-    *[_type == "project"] {
+    *[_type == "project"] | order(_updatedAt desc) {
     _id,
     title,
     slug,
