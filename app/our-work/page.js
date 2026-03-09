@@ -1,29 +1,30 @@
-import ProductCardOurWork from '@/components/Ourworkpage-component/ProductCardOurWork';
+import ProductCardOurWork from "@/components/Ourworkpage-component/ProductCardOurWork";
 
 export default async function OurWorkPage() {
   try {
-    console.log('🔁 Starting fetch from /api/projects');
+    console.log("🔁 Starting fetch from /api/projects");
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_SITE_URL}/api/projects`,
-      {
-        next: { revalidate: 3600 },
-      }
-    );
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/projects`, {
+      next: { revalidate: 3600 },
+    });
 
-    console.log('📡 Response status:', res.status);
+    console.log("📡 Response status:", res.status);
 
-    const contentType = res.headers.get('content-type');
+    const contentType = res.headers.get("content-type");
 
     // Check if response is actually JSON
-    if (!res.ok || !contentType?.includes('application/json')) {
+    if (!res.ok || !contentType?.includes("application/json")) {
       const text = await res.text();
-      console.error('❌ Not a valid JSON response. Raw response:', text);
-      throw new Error('Invalid JSON response from /api/projects');
+      console.error("❌ Not a valid JSON response. Raw response:", text);
+      throw new Error("Invalid JSON response from /api/projects");
     }
 
     const projects = await res.json();
-
+    projects.sort((a, b) => a.sortOrder - b.sortOrder); //comes sorted from backend but just in case, we sort it here as well
+    console.log(
+      "✅ Projects in this order:",
+      projects.map((p) => p.title),
+    );
     return (
       <main className="py-12 md:py-24 px-6 2xl:px-32 md:px-24 text-white ">
         {/* Page Header */}
@@ -31,12 +32,9 @@ export default async function OurWorkPage() {
           <h2 className="mt-8 md:mt-12 text-sm md:text-base text-white/50 text-left">
             <a href="/">Home</a> / <span>Our Work</span>
           </h2>
-          <h2 className="mt-4 md:mt-8 text-3xl md:text-5xl font-medium text-left">
-            Our portfolio of innovations
-          </h2>
+          <h2 className="mt-4 md:mt-8 text-3xl md:text-5xl font-medium text-left">Our portfolio of innovations</h2>
           <p className="text-white/70 mt-2 md:mt-4 text-base md:text-inherit">
-            Dysol is proud to design the future, one innovative project at a
-            time.
+            Dysol is proud to design the future, one innovative project at a time.
           </p>
         </div>
 
@@ -57,12 +55,10 @@ export default async function OurWorkPage() {
       </main>
     );
   } catch (error) {
-    console.error('💥 Error in OurWorkPage:', error.message);
+    console.error("💥 Error in OurWorkPage:", error.message);
     return (
       <main className="py-12 md:py-24 px-6 md:px-20 text-white">
-        <h2 className="text-red-500 text-sm md:text-base">
-          Error loading projects: {error.message}
-        </h2>
+        <h2 className="text-red-500 text-sm md:text-base">Error loading projects: {error.message}</h2>
       </main>
     );
   }
