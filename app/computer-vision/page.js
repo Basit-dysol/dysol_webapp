@@ -2,7 +2,7 @@ import Breadcrumbs from "@/components/Shared/Breadcrumbs";
 import Image from "next/image";
 import OurComputerVisionCard from "@/components/ComputerVision/OurComputerVisionCard";
 import Testimonials from "@/components/ComputerVision/Testimonials";
-// import TestimonialSection from "@/components/Testimonials/TestimonialSection";
+import TalkToUsButton from "@/components/TalkToUsButton/TalkToUsButton";
 
 export default function ComputerVisionPage() {
   const process = [
@@ -86,13 +86,7 @@ export default function ComputerVisionPage() {
           scale.
         </p>
         <div className="mt-6">
-          <button className="bg-white  px-8 py-4 rounded-[16px]  flex flex-row gap-2">
-            <div className="rounded-full flex items-center justify-center">
-              <Image src="/computervision/computer-vision1.png" alt="phone icon" width={22} height={22} />
-            </div>
-           
-            <p className="text-[20px] text-black">Talk to us about your use case</p>
-          </button>
+          <TalkToUsButton />
         </div>
       </section>
 
@@ -117,7 +111,9 @@ export default function ComputerVisionPage() {
         <div className="w-[60%] ">
           <p className="text-white/90 text-[1.3rem] uppercase mb-6">Why Dysol?</p>
           <h3 className="text-3xl md:text-5xl font-medium leading-tight">
-            Many teams can train models.<br />Few can deploy vision systems that perform reliably in the real world.
+            Many teams can train models.
+            <br />
+            Few can deploy vision systems that perform reliably in the real world.
           </h3>
         </div>
 

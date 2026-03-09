@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import ContactUs from "../ContactUs/ContactUs";
@@ -10,6 +10,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactVisible, setContactVisible] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handler = () => setContactVisible(true);
+    window.addEventListener("openContactUs", handler);
+    return () => window.removeEventListener("openContactUs", handler);
+  }, []);
 
   return (
     <>
@@ -124,13 +130,6 @@ export default function Navbar() {
                     link: "https://www.linkedin.com/company/dysol-pvt-ltd/",
                   },
                   { Icon: "/instagram.svg", text: "Instagram" },
-                  { Icon: "/twitter.svg", text: "Twitter" },
-                  {
-                    Icon: "/facebook.svg",
-                    text: "Facebook",
-                    link: "https://www.facebook.com/share/1Abqv41mXX/",
-                  },
-                  { Icon: "/telegram.svg", text: "Telegram" },
                 ].map(({ Icon, text, link }) => (
                   <button
                     key={text}
@@ -222,18 +221,18 @@ export default function Navbar() {
                       text: "LinkedIn",
                       link: "https://www.linkedin.com/company/dysol-pvt-ltd/",
                     },
-                    { Icon: "/instagram.svg", text: "Instagram" },
-                    { Icon: "/twitter.svg", text: "X (Twitter)" },
-                    {
-                      Icon: "/facebook.svg",
-                      text: "Facebook",
-                      link: "https://www.facebook.com/share/1Abqv41mXX/",
-                    },
-                    { Icon: "/telegram.svg", text: "Telegram" },
+                    { Icon: "/instagram.svg", text: "Instagram", link: "https://www.instagram.com/dysolglobal" },
+                    // { Icon: "/twitter.svg", text: "X (Twitter)" },
+                    // {
+                    //   Icon: "/facebook.svg",
+                    //   text: "Facebook",
+                    //   link: "https://www.facebook.com/share/1Abqv41mXX/",
+                    // },
+                    // { Icon: "/telegram.svg", text: "Telegram" },
                   ].map(({ Icon, text, link }) => (
                     <button
                       key={text}
-                      onClick={() => link && (window.location.href = link)}
+                      onClick={() => link && window.open(link, "_blank")}
                       className="w-full max-w-md h-12 2xl:h-16 px-5 py-3 flex items-center gap-5 rounded-xl border border-white/20 bg-white/20 hover:bg-white/10 transition-colors">
                       <Image src={Icon} alt={text} width={36} height={36} />
                       <div className="h-[24px] min-h-[1em] w-[1px] bg-[rgba(255,255,255,0.2)] dark:bg-white/10"></div>

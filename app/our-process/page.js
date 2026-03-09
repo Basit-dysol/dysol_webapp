@@ -63,9 +63,9 @@ export default function OurProcessPage() {
     },
     {
       image: "/ourprocess/computer.svg",
-      description: "Computer Vision",
+      description: "IoT",
       subdescription:
-        "We’re experts in building software that amplifies your product’s impact, designed to integrate seamlessly and scale effortlessly.",
+        "We design and engineer connected systems that extend your product’s capabilities, built to operate reliably, integrate seamlessly, and scale with confidence.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
