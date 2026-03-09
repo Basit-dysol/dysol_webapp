@@ -22,8 +22,8 @@ export default async function OurWorkPage() {
     const projects = await res.json();
     projects.sort((a, b) => a.sortOrder - b.sortOrder); //comes sorted from backend but just in case, we sort it here as well
     console.log(
-      "✅ Projects in this order:",
-      projects.map((p) => p.title),
+      "✅ Projects in this order with the sortOrder value:",
+      projects.map((p) => `${p.title} (${p.sortOrder})`),
     );
     return (
       <main className="py-12 md:py-24 px-6 2xl:px-32 md:px-24 text-white ">

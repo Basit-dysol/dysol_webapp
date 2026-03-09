@@ -15,7 +15,8 @@ export async function GET() {
     projectImages,
     overview,
     tags,
-    projectIdea
+    projectIdea,
+    sortOrder
     }`;
 
     const projects = await client.fetch(query);
