@@ -20,7 +20,7 @@ export async function GET() {
 
     const projects = await client.fetch(query);
 
-    console.log("✅✅ Projects received from Sanity:", projects.length);
+    console.log("✅✅✅ Projects received from Sanity:", projects.length);
 
     return Response.json(projects, {
       headers: {
