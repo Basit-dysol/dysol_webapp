@@ -28,7 +28,7 @@ export default function Footer() {
     },
     {
       label: "Facebook",
-      link: "https://www.facebook.com/share/1Abqv41mXX/",
+      link: "https://www.facebook.com/profile.php?id=61577351275889",
     },
   ];
 

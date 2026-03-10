@@ -113,7 +113,7 @@ export default function OurProcessPage() {
       {/* Hero Section */}
       <section className="w-full h-auto md:h-[500px] 2xl:px-32 text-white bg-[#1A1A1A] mt-[-20px] flex flex-col justify-center px-6 md:px-24 pt-12 md:pt-24 pb-8">
         <Breadcrumbs label="Product Development" />
-        <h2 className="mt-6 md:mt-8 text-3xl md:text-5xl font-medium text-left">The Dysol way of working</h2>
+        <h2 className="mt-6 md:mt-8 text-4xl md:text-5xl font-medium text-left">The Dysol way of working</h2>
         <p className=" mt-4 md:mt-4 w-full md:w-[65vw] text-base md:text-inherit text-white/80">
           At Dysol, we’re your global end-to-end product development partner from idea to market launch. We walk with you
           <br className="md:hidden" />

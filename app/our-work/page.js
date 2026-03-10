@@ -20,10 +20,7 @@ export default async function OurWorkPage() {
     }
 
     const projects = await res.json();
-    console.log(
-      "✅ Projects in this order with the sortOrder value:",
-      projects.map((p) => `${p.title} (${p.sortOrder})`),
-    );
+    console.log("✅ Projects in this order with the sortOrder value:", projects);
     return (
       <main className="py-12 md:py-24 px-6 2xl:px-32 md:px-24 text-white ">
         {/* Page Header */}

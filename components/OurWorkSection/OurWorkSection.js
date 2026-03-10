@@ -14,7 +14,7 @@ const projects = [
   {
     image: "/project-b.png",
     description: "World’s First Solar <br/>  Breast Pump",
-    subdescription: "Innovative healthcare solution for emerging markets, addressing challenges.",
+    subdescription: "Innovative healthcare solution for emerging markets, addressing real-world challenges.",
     slug: "world-s-first-solar-breast-pump",
   },
   {
