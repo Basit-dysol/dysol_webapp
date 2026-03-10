@@ -20,7 +20,32 @@ export default async function OurWorkPage() {
     }
 
     const projects = await res.json();
-    console.log("✅ Projects in this order with the sortOrder value:", projects);
+
+    const customOrder = [
+      "Computer Vision Quality Control System",
+      "Iris Identification Device",
+      "Breast Pump",
+      "Agricultural Computer Vision Drone Platform",
+      "Baby Rocker",
+      "Wound VAC Device",
+      "Smart Blood Pressure Monitor",
+      "AI AC Control Device",
+    ];
+
+    projects.sort((a, b) => {
+      const indexA = customOrder.findIndex((orderTitle) => a.title.includes(orderTitle));
+      const indexB = customOrder.findIndex((orderTitle) => b.title.includes(orderTitle));
+
+      if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+      if (indexA !== -1) return -1;
+      if (indexB !== -1) return 1;
+      return 0;
+    });
+
+    console.log(
+      "✅ Projects in this order with the sortOrder value:",
+      projects.map((p) => ({ title: p.title, sortOrder: p.sortOrder })),
+    );
     return (
       <main className="py-12 md:py-24 px-6 2xl:px-32 md:px-24 text-white ">
         {/* Page Header */}
