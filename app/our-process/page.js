@@ -65,7 +65,7 @@ export default function OurProcessPage() {
       image: "/ourprocess/computer.svg",
       description: "IoT",
       subdescription:
-        "We design and engineer connected systems that extend your product’s capabilities, built to operate reliably, integrate seamlessly, and scale with confidence.",
+        "We design and engineer connected systems that extend your product’s capabilities, built to operate reliably and scale with confidence.",
       // slug: 'smart-blood-pressure-monitor',
     },
     {
