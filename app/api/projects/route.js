@@ -1,39 +1,40 @@
-import { client } from '@/lib/sanity.client';
+import { client } from "@/lib/sanity.client";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 export const revalidate = 3600;
 
 export async function GET() {
   try {
-    console.log('🔁 Starting fetch from Sanity');
+    console.log("🔁 Starting fetch from Sanity");
 
     const query = `
-    *[_type == "project"] {
+    *[_type == "project"] | order(sortOrder asc) {
     _id,
     title,
     slug,
     projectImages,
     overview,
     tags,
-    projectIdea
+    projectIdea,
+    sortOrder
     }`;
 
     const projects = await client.fetch(query);
 
-    console.log('✅ Projects received from Sanity:', projects);
+    console.log("✅✅✅ Projects received from Sanity:", projects.length);
 
     return Response.json(projects, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=300',
-        'CDN-Cache-Control': 'public, max-age=86400',
+        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+        "CDN-Cache-Control": "public, max-age=86400",
       },
     });
   } catch (err) {
-    console.error('❌ Error fetching projects:', err);
-    return new Response(JSON.stringify({ error: 'Failed to fetch projects' }), {
+    console.error("❌ Error fetching projects:", err);
+    return new Response(JSON.stringify({ error: "Failed to fetch projects" }), {
       status: 500,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
   }

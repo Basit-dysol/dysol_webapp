@@ -1,11 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-export default function ProductCard({
-  image,
-  description,
-  subdescription,
-  slug,
-}) {
+export default function ProductCard({ image, description, subdescription, slug }) {
   return (
     <Link
       href={`/our-work/${slug}`}
@@ -14,7 +9,7 @@ export default function ProductCard({
         <img
           src={image}
           alt=""
-          className="w-full h-full object-cover rounded-2xl group-hover:scale-[1.1] transform transition-all duration-700"
+          className="w-full h-full object-cover object-left-bottom rounded-2xl group-hover:scale-[1.1] transform transition-all duration-700"
         />
 
         <div className="absolute inset-0 transition-all duration-700 rounded-2xl" />
@@ -22,7 +17,8 @@ export default function ProductCard({
         <div className="transform transition-all duration-700 flex flex-col justify-end px-12 pb-12 w-full text-left absolute top-0 left-0 h-full overflow-hidden">
           <h2
             className="
-            text-white/90 text-4xl xl:text-3xl transform transition-all duration-700
+            text-white/90 text-4xl xl:text-4xl mb-2 transform transition-all duration-700
+            product-card-title
           "
             dangerouslySetInnerHTML={{ __html: description }}
           />

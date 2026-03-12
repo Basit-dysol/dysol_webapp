@@ -38,19 +38,20 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-[#1A1A1A] px-6 md:px-24 2xl:px-32 pt-10 pb-5 rounded-b-[80px] relative overflow-hidden">
-      <div className="grid md:grid-cols-2 gap-20 items-start">
-        <div className="">
-          <p className="text-white/40 text-sm uppercase tracking-wider mb-2">Testimonials</p>
-          <h3 className="text-3xl md:text-[40px] font-medium leading-tight">What our clients say</h3>
-
-          {/* Decorative Illustration */}
-          <Image src="/computervision/fng.png" alt="illustration" width={350} height={350}  className="mt-20"/>
+    <section className="bg-[#1A1A1A]  lg:h-[800px] lg:mt-[150px] px-6 md:px-24 2xl:px-32 pt-10 pb-5 rounded-b-[200px] relative overflow-hidden">
+      <div className="flex flex-row items-start ">
+        <div className="w-[40%] ">
+          <p className="text-white/90 text-[1.3rem] uppercase tracking-wider mb-4">Testimonials</p>
+          <h3 className="text-3xl md:text-[50px] font-medium leading-tight">What our clients say</h3>
+           <div className="bg-red-500 mt-30 mr-20 ">
+            <Image src="/computervision/fng.png" alt="illustration" width={550} height={550}  className="absolute top-50 left-1"/>
+           </div>
+          
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="flex flex-col">
-          <p className="text-xl md:text-[26px]  text-white/85 ">{testimonials[currentTestimonial].text}</p>
+        <div className="flex flex-col w-[60%]  md:mt-10">
+          <p className="text-xl md:text-5xl  text-white/85 md:leading-[1.2] ">{testimonials[currentTestimonial].text}</p>
 
           {/* Dotted Divider */}
           <div className="border-t border-dashed border-white/20 my-10"></div>
@@ -58,14 +59,14 @@ export default function Testimonials() {
           {/* Profile Row */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-white overflow-hidden">
-                <Image src={testimonials[currentTestimonial].image} alt="client" width={48} height={48} />
+              <div className="w-18 h-18 rounded-full bg-white overflow-hidden">
+                <Image src={testimonials[currentTestimonial].image} alt="client" width={70} height={70} />
               </div>
 
               <div>
-                <p className="text-white font-medium">{testimonials[currentTestimonial].name}</p>
-                <p className="text-white/70 text-xs mt-2 flex items-center gap-2">
-                  <Image src={testimonials[currentTestimonial].companyLogo} alt="client" width={14} height={14} />
+                <p className="text-white font-medium text-[20px]">{testimonials[currentTestimonial].name}</p>
+                <p className="text-white/70 text-xs mt-2 flex items-center gap-2 text-[20px]">
+                  <Image src={testimonials[currentTestimonial].companyLogo} alt="client" width={17} height={17} />
                   {testimonials[currentTestimonial].company}
                 </p>
               </div>
@@ -73,11 +74,11 @@ export default function Testimonials() {
 
             {/* Navigation Buttons */}
             <div className="flex gap-3">
-              <button onClick={handlePrevTestimonial} className="w-10 h-10 border border-white/20 rounded-lg flex items-center justify-center hover:border-white/40 transition">
+              <button onClick={handlePrevTestimonial} className="w-18 h-18 border border-white/20 rounded-[15px] flex items-center justify-center hover:border-white/40 transition">
                 <Image src="/computervision/arrowleft.png" alt="prev" width={16} height={16} />
               </button>
 
-              <button onClick={handleNextTestimonial} className="w-10 h-10 border border-white/20 rounded-lg flex items-center justify-center hover:border-white/40 transition">
+              <button onClick={handleNextTestimonial} className="w-18 h-18 border border-white/20 rounded-[15px] flex items-center justify-center hover:border-white/40 transition">
                 <Image src="/computervision/arrowright.png" alt="next" width={16} height={16} />
               </button>
             </div>

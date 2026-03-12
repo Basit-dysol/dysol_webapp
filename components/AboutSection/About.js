@@ -4,9 +4,7 @@ export default function AboutSection() {
   return (
     <section className="h-max py-20 2xl:py-28 mb-6 px-6 md:px-24 2xl:px-32 flex flex-col text-white/90 items-start justify-center">
       {/* Section Title */}
-      <h2 className="my-6 text-left 2xl:text-xl text-sm tracking-wide uppercase">
-        About Us
-      </h2>
+      <h2 className="text-gray-400 my-6 text-left 2xl:text-xl text-sm tracking-wide uppercase">About Us</h2>
 
       {/* Content Section */}
       <div className="flex w-full flex-col md:flex-row gap-16">
@@ -39,7 +37,7 @@ export default function AboutSection() {
                   className="absolute top-0 left-0 opacity-0 group-hover:opacity-75 transition-opacity duration-300 w-full"
                 />
               </div>
-            ))}{' '}
+            ))}{" "}
           </div>
         </div>
 
@@ -47,19 +45,13 @@ export default function AboutSection() {
         <div className="flex flex-col text-white/80 w-full md:max-w-[35vw] 2xl:max-w-[33vw] md:text-lg 2xl:text-2xl leading-relaxed flex-1">
           <p>
             With over
-            <span className="text-white font-semibold">
-              {' '}
-              100+ happy clients
-            </span>
-            , we blend engineering, consumer insights, and design to deliver
-            world-class innovations that make an impact.
+            <span className="text-white font-semibold"> 100+ happy clients</span>, we combine engineering, computer vision, and design to deliver
+            intelligent products and systems built for real-world use.
           </p>
           <p className="mt-4 md:mt-6">
-            Based in Dubai, UAE, our talented team brings expertise across a
-            wide range of industries. Partnering with us means accessing a
-            dynamic team of seasoned professionals in Electrical Engineering,
-            Mechatronics, AI, Product Design, and Software Development — all
-            skilled at turning your idea into a market-ready solution.
+            Based in Dubai, UAE, our team brings experience across multiple industries. Working with Dysol means partnering with experts in Electrical
+            Engineering, Mechatronics, Computer Vision, AI, Product Design, and Software Development — all focused on taking ideas from concept
+            through to factory-ready execution.
           </p>
         </div>
       </div>

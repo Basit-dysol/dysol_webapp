@@ -128,13 +128,13 @@
 // }
 
 // app/our-work/[slug]/page.jsx
-import Breadcrumbs from '@/components/Shared/Breadcrumbs';
-import { client } from '@/lib/sanity.client';
-import { projectQuery } from '@/lib/sanity.queries';
+import Breadcrumbs from "@/components/Shared/Breadcrumbs";
+import { client } from "@/lib/sanity.client";
+import { projectQuery } from "@/lib/sanity.queries";
 // import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import CaseStudyCarousel from '@/components/Shared/CaseStudyCarousel';
-import ProductCarousel from '@/components/Shared/ProductCarousel';
+import { notFound } from "next/navigation";
+import CaseStudyCarousel from "@/components/Shared/CaseStudyCarousel";
+import ProductCarousel from "@/components/Shared/ProductCarousel";
 
 export async function generateStaticParams() {
   const projects = await client.fetch(`*[_type == "project"] { slug }`);
@@ -157,7 +157,7 @@ async function getProjectData(slug) {
 }
 
 export default async function ProjectDetail({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   if (!slug) {
     return notFound();
   }
@@ -168,19 +168,20 @@ export default async function ProjectDetail({ params }) {
     next: { revalidate: 3600 },
   });
 
-  console.log('📡 Response status:', res.status);
+  console.log("📡 Response status:", res.status);
 
-  const contentType = res.headers.get('content-type');
-  console.log('📄 Content-Type:', contentType);
+  const contentType = res.headers.get("content-type");
+  console.log("📄 Content-Type:", contentType);
 
   // Check if response is actually JSON
-  if (!res.ok || !contentType?.includes('application/json')) {
+  if (!res.ok || !contentType?.includes("application/json")) {
     const text = await res.text();
-    console.error('❌ Not a valid JSON response. Raw response:', text);
-    throw new Error('Invalid JSON response from /api/projects');
+    console.error("❌ Not a valid JSON response. Raw response:", text);
+    throw new Error("Invalid JSON response from /api/projects");
   }
 
-  const projects = await res.json();
+  const allProjects = await res.json();
+  const projects = allProjects.filter((p) => p.slug.current !== slug);
   // console.log('✅ Projects received from API:', projects);
 
   // Get main image URL (using your existing function)
@@ -192,16 +193,16 @@ export default async function ProjectDetail({ params }) {
   // };
 
   const getImageUrl = (imgRef) => {
-    if (!imgRef || typeof imgRef !== 'string') {
-      console.warn('⚠️ Invalid image ref:', imgRef);
-      return '';
+    if (!imgRef || typeof imgRef !== "string") {
+      console.warn("⚠️ Invalid image ref:", imgRef);
+      return "";
     }
 
-    const refParts = imgRef.replace('image-', '').split('-');
+    const refParts = imgRef.replace("image-", "").split("-");
 
     if (refParts.length < 3) {
-      console.warn('⚠️ Unexpected Sanity image format:', imgRef);
-      return '';
+      console.warn("⚠️ Unexpected Sanity image format:", imgRef);
+      return "";
     }
 
     return `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${refParts[0]}-${refParts[1]}.${refParts[2]}`;
@@ -220,8 +221,8 @@ export default async function ProjectDetail({ params }) {
         className="relative w-full flex flex-col justify-between  2xl:px-32 xl:px-24 2xl:py-20 xl:py-20  px-6  lg:px-12 xl:aspect-[156/100]"
         style={{
           backgroundImage: `url(${imageUrl})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}>
         <div className="container">
           {/* <div className="flex items-center mt-16 gap-2 opacity-80">
@@ -242,26 +243,16 @@ export default async function ProjectDetail({ params }) {
 
         {/* Content positioned at bottom */}
         <div className="container mt-auto">
-          <h1 className="text-2xl lg:text-4xl pt-[50vh] lg:pt-0 xl:text-5xl 2xl:text-6xl font-medium lg:mb-10">
-            {project.title}
-          </h1>
+          <h1 className="text-2xl lg:text-4xl pt-[50vh] lg:pt-0 xl:text-5xl 2xl:text-6xl font-medium lg:mb-10">{project.title}</h1>
           <div className="border-t-1 border-dashed border-white/30 my-2 lg:my-6 w-1/2"></div>
           {project.projectIdea && (
             <div className="pb-8">
               {/* Add bottom padding if needed */}
               <div className="flex items-center gap-4 mb-4">
-                <img
-                  src="/ourworkdetail/idea.svg"
-                  alt="Lightbulb icon"
-                  className="w-6 h-6 lg:w-8 lg:h-8 inline-block"
-                />
-                <h2 className="text-xl lg:text-2xl m-0 inline-block">
-                  It started with an idea
-                </h2>
+                <img src="/ourworkdetail/idea.svg" alt="Lightbulb icon" className="w-6 h-6 lg:w-8 lg:h-8 inline-block" />
+                <h2 className="text-xl lg:text-2xl m-0 inline-block">It started with an idea</h2>
               </div>
-              <p className=" text-sm lg:text-lg md:text-xl max-w-2xl opacity-90">
-                {project.projectIdea}
-              </p>
+              <p className=" text-sm lg:text-lg md:text-xl max-w-2xl opacity-90">{project.projectIdea}</p>
             </div>
           )}
         </div>
@@ -272,13 +263,7 @@ export default async function ProjectDetail({ params }) {
         <div className="md:col-span-1 space-y-8">
           {/* Project Image */}
           <div className="rounded-xl overflow-hidden">
-            <img
-              src={secondImageUrl}
-              alt={project.title}
-              width={640}
-              height={480}
-              className="w-full h-72 object-cover"
-            />
+            <img src={secondImageUrl} alt={project.title} width={640} height={480} className="w-full h-72 object-cover" />
           </div>
 
           {/* Project Title */}
@@ -305,9 +290,7 @@ export default async function ProjectDetail({ params }) {
               <h3 className="text-xl font-semibold">SERVICES</h3>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="bg-white/5 text-white text-sm px-4 py-2 rounded-full ">
+                  <span key={index} className="bg-white/5 text-white text-sm px-4 py-2 rounded-full ">
                     {tag}
                   </span>
                 ))}
@@ -318,33 +301,13 @@ export default async function ProjectDetail({ params }) {
 
         {/* Right Column */}
         <div className="md:col-span-2 space-y-12">
-          {project.overview && (
-            <Section
-              title="The end-to-end innovation journey"
-              content={project.overview}
-            />
-          )}
+          {project.overview && <Section title="The end-to-end innovation journey" content={project.overview} />}
 
-          {project.challenge?.length > 0 && (
-            <Section
-              title="The challenge"
-              content={project.challenge.join('\n\n')}
-            />
-          )}
+          {project.challenge?.length > 0 && <Section title="The challenge" content={project.challenge.join("\n\n")} />}
 
-          {project.approach?.length > 0 && (
-            <Section
-              title="Our approach"
-              content={project.approach.join('\n\n')}
-            />
-          )}
+          {project.approach?.length > 0 && <Section title="Our approach" content={project.approach.join("\n\n")} />}
 
-          {project.solution?.length > 0 && (
-            <Section
-              title="The solution"
-              content={project.solution.join('\n\n')}
-            />
-          )}
+          {project.solution?.length > 0 && <Section title="The solution" content={project.solution.join("\n\n")} />}
 
           {project.finalWords && (
             <div className="bg-white/5 p-8 rounded-xl border border-white/10">
@@ -355,9 +318,7 @@ export default async function ProjectDetail({ params }) {
       </section>
 
       <section className="w-full py-20 gap-8 md:gap-16 2xl:px-24 xl:px-24 px-12">
-        <p className="text-white/78 font-[Inter] text-xl uppercase">
-          Slideshow
-        </p>
+        <p className="text-white/78 font-[Inter] text-xl uppercase">Slideshow</p>
         <h1 className="font-medium text-3xl pb-9 pt-4">Product Images</h1>
         <ProductCarousel projects={project.projectImages} />
       </section>
@@ -375,9 +336,7 @@ function Section({ title, content }) {
   return (
     <div>
       <h2 className="text-3xl font-medium mb-4">{title}</h2>
-      <p className="opacity-60 leading-relaxed whitespace-pre-line">
-        {content}
-      </p>
+      <p className="opacity-60 leading-relaxed whitespace-pre-line">{content}</p>
     </div>
   );
 }
