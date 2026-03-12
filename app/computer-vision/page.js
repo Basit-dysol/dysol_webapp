@@ -106,11 +106,11 @@ export default function ComputerVisionPage() {
         </div>
       </section>
 
-      <section className="bg-[#1A1A1A] px-6 lg:mt-[150px] md:px-24 2xl:px-32 py-20 flex flex-col md:flex-row gap-20  ">
+      <section className="bg-[#1A1A1A] px-6 md:px-24 2xl:px-32 py-12 md:py-20 lg:mt-[150px] flex flex-col md:flex-row gap-10 md:gap-20">
         {/* Left */}
-        <div className="w-[60%] ">
-          <p className="text-white/90 text-[1.3rem] uppercase mb-6">Why Dysol?</p>
-          <h3 className="text-3xl md:text-5xl font-medium leading-tight">
+        <div className="w-full md:w-[60%]">
+          <p className="text-white/90 text-base md:text-[1.3rem] uppercase mb-4 md:mb-6">Why Dysol?</p>
+          <h3 className="text-2xl sm:text-3xl md:text-5xl font-medium leading-snug md:leading-tight">
             Many teams can train models.
             <br />
             Few can deploy vision systems that perform reliably in the real world.
@@ -118,12 +118,12 @@ export default function ComputerVisionPage() {
         </div>
 
         {/* Right */}
-        <div className="w-[40%] text-white/90">
+        <div className="w-full md:w-[40%] text-white/90">
           <div>
             {cultureObjs.map((item, index) => (
-              <div key={index} className="flex items-start justify-start gap-3 md:gap-4 mt-6">
-                <Image src={`/computervision/i${index + 1}.png`} alt="arrow" width={25} height={25} className="mt-[6px]" />
-                <span className="text-sm md:text-[1.5rem] leading-relaxed">{item}</span>
+              <div key={index} className="flex items-start justify-start gap-3 md:gap-4 mt-4 md:mt-6">
+                <Image src={`/computervision/i${index + 1}.png`} alt="arrow" width={25} height={25} className="mt-1 md:mt-[6px]" />
+                <span className="text-sm sm:text-base md:text-[1.5rem] leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
