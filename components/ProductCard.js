@@ -9,7 +9,7 @@ export default function ProductCard({ image, description, subdescription, slug }
         <img
           src={image}
           alt=""
-          className="w-full h-full object-cover object-left-bottom rounded-2xl group-hover:scale-[1.1] transform transition-all duration-700"
+          className="w-full h-full object-cover object-bottom rounded-2xl transition-transform duration-500 group-hover:scale-110"
         />
 
         <div className="absolute inset-0 transition-all duration-700 rounded-2xl" />
