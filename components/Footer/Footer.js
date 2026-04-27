@@ -66,7 +66,7 @@ export default function Footer() {
                 <a
                   href="mailto:info@dysol.com"
                   className="font-[Inter] underline decoration-dotted text-sm group flex hover:text-white transition-colors ">
-                  info@dysol.ae
+                  info@dysol.co
                   <Image
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-1"
                     src="/openArrow.svg"

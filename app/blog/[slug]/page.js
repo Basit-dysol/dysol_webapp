@@ -60,7 +60,7 @@ export default async function BlogDetail({ params }) {
   const resolvedParams = await params;
   const blog = await getBlogData(resolvedParams.slug);
   const relatedBlogs = await getRelatedBlogs(resolvedParams.slug);
-
+// console.log('🔍 Blog data fetched for slug:', resolvedParams.slug, blog);
   const getImageUrl = (imgRef) => {
     if (!imgRef || !imgRef.asset?._ref) return "";
     const refParts = imgRef.asset._ref.replace("image-", "").split("-");
@@ -133,7 +133,7 @@ export default async function BlogDetail({ params }) {
                   <>
                     {section.description1 && (
                       <p className="text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
-                        {section.description1}
+                        {section.description1 + "THIS IS A TESTTTTT"}
                       </p>
                     )}
 
@@ -154,7 +154,7 @@ export default async function BlogDetail({ params }) {
 
                     {section.description2 && (
                       <p className="text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
-                        {section.description2}
+                        {section.description2 + "dwqdqwdwq"}
                       </p>
                     )}
 
