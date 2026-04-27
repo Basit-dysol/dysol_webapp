@@ -64,7 +64,7 @@ export default function Footer() {
               <div>
                 <p className="font-[Inter] text-sm">Email us</p>
                 <a
-                  href="mailto:info@dysol.com"
+                  href="mailto:info@dysol.co"
                   className="font-[Inter] underline decoration-dotted text-sm group flex hover:text-white transition-colors ">
                   info@dysol.co
                   <Image

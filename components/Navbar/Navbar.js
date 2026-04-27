@@ -122,7 +122,7 @@ export default function Navbar() {
                   {
                     Icon: "/emailUs.svg",
                     text: "Email",
-                    link: "mailto:info@dysol.com",
+                    link: "mailto:info@dysol.co",
                   },
                   {
                     Icon: "/linkedIn.svg",
@@ -214,7 +214,7 @@ export default function Navbar() {
                     {
                       Icon: "/emailUs.svg",
                       text: "Email us",
-                      link: "mailto:info@dysol.com",
+                      link: "mailto:info@dysol.co",
                     },
                     {
                       Icon: "/linkedIn.svg",
