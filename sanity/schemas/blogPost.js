@@ -12,7 +12,7 @@ export default {
     {
       name: 'subtitle',
       title: 'Blog Subtitle (Subheading)',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'slug',

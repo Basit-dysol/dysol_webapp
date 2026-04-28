@@ -2,7 +2,12 @@ import { client } from "@/lib/sanity.client";
 import { notFound } from "next/navigation";
 import ShareButtons from "@/components/Blog/ShareButtons";
 import LatestPostsCarousel from "@/components/Blog/LatestPostsCarousel";
-import Breadcrumbs from '@/components/Shared/Breadcrumbs';
+import Breadcrumbs from "@/components/Shared/Breadcrumbs";
+import { marked } from "marked";
+
+marked.setOptions({
+  breaks: true,
+});
 
 
 export async function generateStaticParams() {
@@ -69,6 +74,12 @@ export default async function BlogDetail({ params }) {
 
   const mainImageUrl = getImageUrl(blog.mainImage);
 
+  const withHtml = (text) => {
+    if (!text) return { __html: "" };
+    const normalized = text.replace(/\\n/g, "\n");
+    return { __html: marked.parse(normalized) };
+  };
+
   return (
     <main className="bg-black text-white">
       {/* HERO */}
@@ -87,9 +98,10 @@ export default async function BlogDetail({ params }) {
             </h1>
 
             {blog.subtitle && (
-              <p className="text-[14px] md:text-[18px] text-white/60 leading-[1.6] md:leading-[1.7] mr-5">
-                {blog.subtitle}
-              </p>
+              <div
+                className="markdown-subtitle text-[14px] md:text-[18px] text-white/60 leading-[1.6] md:leading-[1.7] mr-5"
+                dangerouslySetInnerHTML={withHtml(blog.subtitle)}
+              />
             )}
           </div>
         </div>
@@ -132,9 +144,9 @@ export default async function BlogDetail({ params }) {
                 {section.isIntroduction ? (
                   <>
                     {section.description1 && (
-                      <p className="text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
-                        {section.description1 + "THIS IS A TESTTTTT"}
-                      </p>
+                      <div dangerouslySetInnerHTML={withHtml(section.description1)} 
+                        className="markdown-subtitle text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
+                      </div>
                     )}
 
                     {section.introImage && (
@@ -153,8 +165,8 @@ export default async function BlogDetail({ params }) {
                     )}
 
                     {section.description2 && (
-                      <p className="text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
-                        {section.description2 + "dwqdqwdwq"}
+                      <p className="markdown-subtitle text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
+                        {section.description2}
                       </p>
                     )}
 
@@ -184,7 +196,7 @@ export default async function BlogDetail({ params }) {
                     )}
 
                     {section.description3 && (
-                      <p className="text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
+                      <p className="markdown-subtitle text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
                         {section.description3}
                       </p>
                     )}
@@ -192,9 +204,9 @@ export default async function BlogDetail({ params }) {
                 ) : (
                   <>
                     {section.subHeading && (
-                      <p className="text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
-                        {section.subHeading}
-                      </p>
+                      <div dangerouslySetInnerHTML={withHtml(section.subHeading)} className="markdown-subtitle text-[14px] md:text-[15.5px] text-white/65 leading-[1.7] md:leading-[1.85]">
+                        
+                      </div>
                     )}
                     {section.sectionImage && (
                       <img 

@@ -35,6 +35,51 @@ body {
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
+.markdown-subtitle h1,
+.markdown-subtitle h2,
+.markdown-subtitle h3,
+.markdown-subtitle h4,
+.markdown-subtitle h5,
+.markdown-subtitle h6 {
+  color: #dddddd;
+  line-height: 1.35;  
+  font-weight: 800;
+  margin: 40px 0px 10px 0px;
+}
+
+.markdown-subtitle h1 { font-size: 2.25rem; }
+.markdown-subtitle h2 { font-size: 1.875rem; }
+.markdown-subtitle h3 { font-size: 1.5rem; }
+.markdown-subtitle h4 { font-size: 1.25rem; }
+.markdown-subtitle h5 { font-size: 1.125rem; }
+.markdown-subtitle h6 { font-size: 1rem; }
+
+
+.markdown-subtitle strong {
+  font-weight: 600;
+  color: #dddddd;
+}
+
+.markdown-subtitle ul,
+.markdown-subtitle ol {
+  padding-left: 1.2em;
+  margin: 0.4em 3em 0.9em;
+  list-style-position: outside;
+}
+
+.markdown-subtitle ul {
+  list-style-type: disc;
+}
+
+.markdown-subtitle ol {
+  list-style-type: decimal;
+}
+
+.markdown-subtitle li {
+  margin: 0.2em 0;
+  color: #dddddd;
+}
+
 main {
   background-color: var(--background);
   border-bottom-left-radius: 50px;
