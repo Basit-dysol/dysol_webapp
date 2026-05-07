@@ -1,33 +1,33 @@
-import { Geist, Geist_Mono, Plus_Jakarta_Sans, Inter } from 'next/font/google';
-import Script from 'next/script';
-import { Container } from '@/components/Container';
-import Navbar from '@/components/Navbar/Navbar';
-import './globals.css';
-import Footer from '@/components/Footer/Footer';
+import { Geist, Geist_Mono, Plus_Jakarta_Sans, Inter } from "next/font/google";
+import Script from "next/script";
+import { Container } from "@/components/Container";
+import Navbar from "@/components/Navbar/Navbar";
+import "./globals.css";
+import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
 const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-jakarta',
+  subsets: ["latin"],
+  variable: "--font-jakarta",
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
+  variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const metadata = {
-  title: 'Dysol',
-  description: 'Engineering and Design',
+  title: "Dysol",
+  description: "Engineering and Design",
 };
 
 export default function RootLayout({ children }) {
@@ -36,21 +36,26 @@ export default function RootLayout({ children }) {
       <head>
         <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P4HKLSZJ');`}
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-P4HKLSZJ');`}
+        </Script>
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wnbird34ug");`}
         </Script>
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1a1a1a]`}
-        suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1a1a1a]`} suppressHydrationWarning>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-P4HKLSZJ"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}></iframe>
+            style={{ display: "none", visibility: "hidden" }}></iframe>
         </noscript>
         <Container>
           <Navbar />
