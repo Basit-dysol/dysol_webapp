@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ContactUs from "@/components/ContactUs/ContactUs";
 import TellUsMoreButton from "@/components/TellUsMoreButton/TellUsMoreButton";
 import Link from "next/link";
@@ -8,9 +8,17 @@ import { usePathname } from "next/navigation"; //
 
 export default function Footer() {
   const [isContactVisible, setContactVisible] = useState(false);
+  const [emailDomain, setEmailDomain] = useState("dysol.co");
   const pathname = usePathname();
   const isProjectPage = pathname?.startsWith("/our-work/") && pathname.split("/").length === 3;
   const isourworkPage = pathname?.startsWith("/our-work") && pathname.split("/").length === 2;
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hostname.endsWith("dysol.ae")) {
+      setEmailDomain("dysol.ae");
+    }
+  }, []);
 
   const quickLinks = [
     { label: "Our Work", link: "/our-work" },
@@ -64,9 +72,9 @@ export default function Footer() {
               <div>
                 <p className="font-[Inter] text-sm">Email us</p>
                 <a
-                  href="mailto:info@dysol.co"
+                  href={`mailto:info@${emailDomain}`}
                   className="font-[Inter] underline decoration-dotted text-sm group flex hover:text-white transition-colors ">
-                  info@dysol.co
+                  {`info@${emailDomain}`}
                   <Image
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-1"
                     src="/openArrow.svg"
